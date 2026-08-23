@@ -13,11 +13,11 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
       <div className="mx-auto max-w-3xl">
         
         {/* Main Card Frame with Enhanced Spotlight Highlight */}
-        <div className="relative overflow-hidden rounded-3xl bg-white border-2 border-[#C17D5C]/35 p-8 shadow-2xl sm:p-12 text-center ring-8 ring-[#173B4D]/5">
+        <div className="relative overflow-hidden rounded-3xl bg-white border-2 border-[#C17D5C]/40 p-8 shadow-2xl sm:p-12 text-center ring-8 ring-[#173B4D]/10">
           
           {/* Top Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold shadow-xs">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold shadow-xs border border-[#EAE5DB]">
               <Sparkles className="h-3.5 w-3.5" />
               Acesso completo e imediato
             </span>
@@ -50,30 +50,39 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
             />
           </div>
 
-          {/* Price */}
-          <div className="my-6">
-            <div className="flex items-baseline justify-center gap-1">
-              <span className="text-2xl font-bold accent-serif text-foreground">R$</span>
-              <span className="text-6xl font-extrabold tracking-tight sm:text-7xl text-foreground">
+          {/* High Impact Price Box with Ambient Glow & Shimmer */}
+          <div className="relative my-6 mx-auto max-w-md rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF6EE] border-2 border-gold/40 p-5 sm:p-6 shadow-[0_8px_30px_rgba(176,136,48,0.16)] ring-4 ring-gold/15 transition-all duration-300">
+            {/* Ambient Backlight Aura */}
+            <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-r from-gold/20 via-terracotta/20 to-gold/20 blur-lg opacity-70" />
+
+            <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#8C4827] bg-[#8C4827]/10 px-3.5 py-1 rounded-full mb-2 border border-[#8C4827]/20 shadow-xs">
+              <Sparkles className="h-3 w-3 text-gold animate-pulse" />
+              <span>Oferta Especial de Lançamento</span>
+            </div>
+            
+            <div className="relative flex items-baseline justify-center gap-1 text-[#173B4D] drop-shadow-xs">
+              <span className="text-2xl sm:text-3xl font-bold accent-serif text-terracotta">R$</span>
+              <span className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-[#173B4D]">
                 47
               </span>
-              <span className="text-base text-muted-foreground">,00</span>
+              <span className="text-xl sm:text-2xl font-bold text-muted-foreground">,00</span>
             </div>
-            <p className="mt-1 text-xs font-bold uppercase tracking-[0.2em] text-gold flex items-center justify-center gap-1.5">
+
+            <p className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-gold flex items-center justify-center gap-1.5">
               <span>Pagamento único</span>
-              <span className="text-muted-foreground/70 font-normal lowercase tracking-normal text-[11px]">(à vista)</span>
+              <span className="text-muted-foreground/75 font-normal lowercase tracking-normal text-xs">(sem mensalidades)</span>
             </p>
           </div>
 
-          {/* CTA Button (High conversion Green) */}
+          {/* CTA Button (High conversion Green with enhanced punch & scale) */}
           <a
             href={checkoutUrl}
             target="_self"
             id="offer-cta-btn"
-            className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 text-base sm:text-lg font-bold uppercase tracking-wider text-white shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer ring-4 ring-[#1e824c]/20"
+            className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 sm:px-8 text-base sm:text-xl font-extrabold uppercase tracking-wider text-white shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1 cursor-pointer ring-4 ring-[#1e824c]/30"
           >
             <span>QUERO ACESSAR O ATLAS BÍBLICO VISUAL</span>
-            <ArrowRight className="h-5 w-5 stroke-[2.5]" />
+            <ArrowRight className="h-6 w-6 stroke-[3]" />
           </a>
 
           {/* Microcopy Below CTA with Support Guarantee */}

@@ -17,7 +17,7 @@ const SUMMARY_ITEMS = [
 
 export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) => {
   return (
-    <section id="o-que-voce-vai-receber" className="bg-white px-5 py-16 sm:py-24">
+    <section id="o-que-voce-vai-receber" className="bg-white px-5 py-16 sm:py-20">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
@@ -33,8 +33,8 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
           </h2>
         </div>
 
-        {/* 4 Volumes Showcase */}
-        <div className="mt-16 space-y-16 sm:mt-24 sm:space-y-24">
+        {/* 4 Volumes Showcase - Compacted by ~25-30% on desktop/tablet */}
+        <div className="mt-14 space-y-14 sm:mt-16 sm:space-y-16 lg:space-y-14">
           {VOLUMES_DATA.map((volume, index) => {
             const isEven = index % 2 === 1;
 
@@ -42,7 +42,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
               <div
                 key={volume.id}
                 id={`volume-row-${volume.id}`}
-                className={`grid items-center gap-8 md:grid-cols-2 md:gap-12 ${
+                className={`grid items-center gap-8 md:grid-cols-2 md:gap-10 lg:gap-12 ${
                   isEven ? 'md:[&>*:first-child]:order-2' : ''
                 }`}
               >
@@ -57,7 +57,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
                     decoding="async"
                     referrerPolicy="no-referrer"
                     draggable={false}
-                    className="w-full max-w-[420px] aspect-[3/4] object-contain rounded-2xl shadow-soft transition-transform duration-500 hover:scale-[1.02] bg-[#FAF8F5] p-3 border border-[#EAE5DB]"
+                    className="w-full max-w-[400px] md:max-w-[370px] lg:max-w-[390px] aspect-[3/4] object-contain rounded-2xl shadow-soft transition-transform duration-500 hover:scale-[1.02] bg-[#FAF8F5] p-3 border border-[#EAE5DB]"
                   />
                 </div>
 
@@ -71,11 +71,11 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
                     {volume.title}
                   </h3>
 
-                  <p className="mt-3 text-lg text-terracotta font-migra italic font-normal">
+                  <p className="mt-2.5 text-lg text-terracotta font-migra italic font-normal">
                     {volume.phrase}
                   </p>
 
-                  <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+                  <p className="mt-3.5 text-base leading-relaxed text-muted-foreground">
                     {volume.description}
                   </p>
                 </div>
@@ -85,7 +85,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
         </div>
 
         {/* Summary Card Before CTA */}
-        <div className="mt-16 sm:mt-24 mx-auto max-w-2xl rounded-2xl bg-[#FAF8F5] p-6 sm:p-8 border border-[#EAE5DB] shadow-soft text-center">
+        <div className="mt-14 sm:mt-16 mx-auto max-w-2xl rounded-2xl bg-[#FAF8F5] p-6 sm:p-8 border border-[#EAE5DB] shadow-soft text-center">
           <h3 className="font-heading text-lg sm:text-xl font-bold text-foreground mb-6">
             Nos 4 volumes principais você encontrará:
           </h3>
