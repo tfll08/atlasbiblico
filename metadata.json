@@ -1,0 +1,6 @@
+{
+  "name": "Atlas Bíblico Visual",
+  "description": "Página de vendas oficial do Atlas Bíblico Visual - Coleção digital completa com 4 volumes, 4 guias visuais e presente surpresa para transformar seu estudo das Escrituras.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
