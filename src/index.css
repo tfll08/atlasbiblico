@@ -32,28 +32,17 @@
     --color-ink: #3C3830;
   }
 
-  /* Strict Anti-Copy & Anti-Selection Protection */
-  *, *::before, *::after {
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    -webkit-touch-callout: none !important;
-  }
-
-  input, textarea {
-    -webkit-user-select: auto !important;
-    -moz-user-select: auto !important;
-    -ms-user-select: auto !important;
-    user-select: auto !important;
-  }
-
+  /* Anti-Drag Protection specifically for Images */
   img {
     -webkit-user-drag: none !important;
     -khtml-user-drag: none !important;
     -moz-user-drag: none !important;
     -o-user-drag: none !important;
     user-drag: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
     pointer-events: auto;
     image-rendering: -webkit-optimize-contrast;
   }
@@ -147,6 +136,37 @@
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+/* Subtle Breathing Animation for Primary CTA Buttons */
+@keyframes button-breathe {
+  0% {
+    transform: scale(1);
+  }
+  35% {
+    transform: scale(1.02);
+  }
+  65% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-breathe {
+  animation: button-breathe 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform;
+}
+
+.animate-breathe:hover {
+  animation-play-state: paused;
+  transform: scale(1.025);
+}
+
+/* Subtle Price Glow */
+.glow-price {
+  text-shadow: 0 0 20px rgba(197, 155, 63, 0.28), 0 2px 10px rgba(23, 59, 77, 0.15);
 }
 
 

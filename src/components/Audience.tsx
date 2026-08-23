@@ -54,14 +54,14 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
   ];
 
   return (
-    <section id="pra-quem-foi-criado" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white">
+    <section id="pra-quem-foi-criado" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D]">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
+          <h2 className="mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
             Ideal para{' '}
-            <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
+            <span className="font-normal normal-case text-terracotta font-migra italic inline sm:inline-block">
               você
             </span>{' '}
             que...
@@ -81,10 +81,10 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
               <div
                 key={card.id}
                 id={`audience-${card.id}`}
-                className="rounded-xl sm:rounded-2xl bg-white p-4 sm:p-5 border border-[#EAE5DB] shadow-lg flex items-center gap-3.5 sm:gap-4 transition-transform hover:-translate-y-0.5"
+                className="rounded-xl sm:rounded-2xl bg-[#FAF8F5] p-4 sm:p-5 border border-[#EAE5DB] shadow-xs flex items-center gap-3.5 sm:gap-4 transition-transform hover:-translate-y-0.5"
               >
-                <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 rounded-xl bg-[#FAF8F5] flex items-center justify-center text-[#C6A052] shadow-xs border border-[#EAE5DB]">
-                  <Icon className="h-5 w-5 stroke-[2]" />
+                <div className="h-10 w-10 sm:h-11 sm:w-11 shrink-0 rounded-xl bg-white flex items-center justify-center text-terracotta shadow-2xs border border-[#EAE5DB]">
+                  <Icon className="h-5 w-5 stroke-[2.2]" />
                 </div>
                 <h3 className="font-heading text-sm sm:text-base font-bold text-[#173B4D] leading-snug">
                   {card.title}
@@ -99,7 +99,7 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
           <div className="mt-12 flex justify-center">
             <button
               onClick={onCtaClick}
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#C17D5C] px-8 sm:px-10 py-3.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#A96848] shadow-lg cursor-pointer"
+              className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#173B4D] px-8 sm:px-10 py-3.5 text-center text-xs font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
             >
               Quero enriquecer meus estudos bíblicos
             </button>

@@ -1,5 +1,17 @@
 import React from 'react';
-import { Sparkles, ArrowRight, ShieldCheck, Lock, Headphones } from 'lucide-react';
+import { 
+  Sparkles, 
+  ArrowRight, 
+  ShieldCheck, 
+  Lock, 
+  Headphones, 
+  BookOpen, 
+  Map, 
+  Scroll, 
+  Gift, 
+  GraduationCap, 
+  Smartphone 
+} from 'lucide-react';
 
 interface OfferSectionProps {
   onCtaClick?: () => void;
@@ -8,34 +20,82 @@ interface OfferSectionProps {
 export const OfferSection: React.FC<OfferSectionProps> = () => {
   const checkoutUrl = 'https://checkout.wiven.com.br/checkout/cmsz6ir2e00p201n3aurjcges?offer=5LL8K7X';
 
+  const offerFeatures = [
+    {
+      icon: BookOpen,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">+300 páginas</strong> de conteúdo bíblico visual
+        </span>
+      ),
+    },
+    {
+      icon: Map,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades e cenários</strong> das Escrituras
+        </span>
+      ),
+    },
+    {
+      icon: Scroll,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">Contextos, personagens, profetas e acontecimentos</strong> organizados visualmente
+        </span>
+      ),
+    },
+    {
+      icon: Gift,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">4 bônus</strong> complementares + presente surpresa
+        </span>
+      ),
+    },
+    {
+      icon: GraduationCap,
+      content: (
+        <span>
+          Material de apoio para <strong className="font-bold text-[#173B4D]">estudo, ensino e pregação</strong>
+        </span>
+      ),
+    },
+    {
+      icon: Smartphone,
+      content: (
+        <span>
+          Acesso digital <strong className="font-bold text-[#173B4D]">imediato</strong>
+        </span>
+      ),
+    },
+  ];
+
   return (
-    <section id="oferta" className="relative px-5 py-20 sm:py-28 bg-[#173A45]">
+    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#EAE5DB]">
       <div className="mx-auto max-w-3xl">
         
-        {/* Main Card Frame with Enhanced Spotlight Highlight */}
-        <div className="relative overflow-hidden rounded-3xl bg-white border-2 border-[#C17D5C]/40 p-8 shadow-2xl sm:p-12 text-center ring-8 ring-[#173B4D]/10">
+        {/* Main Card Frame with Refined Premium Elevation */}
+        <div className="relative overflow-hidden rounded-3xl bg-white border border-[#173B4D]/15 p-6 sm:p-12 text-center shadow-sm">
           
           {/* Top Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold shadow-xs border border-[#EAE5DB]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold shadow-2xs border border-[#EAE5DB]">
               <Sparkles className="h-3.5 w-3.5" />
               Acesso completo e imediato
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#173B4D]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#173B4D] border border-[#173B4D]/10">
               <Headphones className="h-3.5 w-3.5 text-gold" />
               Suporte Exclusivo
             </span>
           </div>
 
-          <h2 className="mt-5 mx-auto max-w-xl font-heading text-xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-foreground text-balance break-words">
+          {/* Title */}
+          <h2 className="mt-5 mx-auto max-w-xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
             Tenha acesso ao Atlas Bíblico Visual completo
           </h2>
 
-          <p className="mt-2 text-base font-medium text-muted-foreground">
-            4 volumes + 4 guias complementares + presente surpresa
-          </p>
-
-          {/* Bundle Showcase Image - Transparent and borderless */}
+          {/* Bundle Showcase Image */}
           <div className="my-6 w-full flex justify-center">
             <img
               src="https://i.imgur.com/punOLdB.png"
@@ -46,44 +106,91 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               decoding="async"
               referrerPolicy="no-referrer"
               draggable={false}
-              className="w-full max-w-2xl h-auto object-contain select-none filter drop-shadow-md transition-transform duration-500 hover:scale-[1.02]"
+              className="w-full max-w-2xl h-auto object-contain select-none filter drop-shadow-sm transition-transform duration-500 hover:scale-[1.01]"
             />
           </div>
 
-          {/* High Impact Price Box with Ambient Glow & Shimmer */}
-          <div className="relative my-6 mx-auto max-w-md rounded-2xl bg-gradient-to-b from-[#FFFDF9] to-[#FAF6EE] border-2 border-gold/40 p-5 sm:p-6 shadow-[0_8px_30px_rgba(176,136,48,0.16)] ring-4 ring-gold/15 transition-all duration-300">
-            {/* Ambient Backlight Aura */}
-            <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-r from-gold/20 via-terracotta/20 to-gold/20 blur-lg opacity-70" />
+          {/* Phrase before summary card */}
+          <div className="mt-6 mb-3 text-center">
+            <span className="text-sm sm:text-base font-bold uppercase tracking-[0.15em] text-[#173B4D]">
+              Receba hoje:
+            </span>
+          </div>
 
-            <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold uppercase tracking-[0.2em] text-[#8C4827] bg-[#8C4827]/10 px-3.5 py-1 rounded-full mb-2 border border-[#8C4827]/20 shadow-xs">
-              <Sparkles className="h-3 w-3 text-gold animate-pulse" />
-              <span>Oferta Especial de Lançamento</span>
+          {/* Summary Card with Distinct Bolds */}
+          <div className="mb-8 mx-auto max-w-2xl rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] p-5 sm:p-7 shadow-2xs text-left">
+            <ul className="space-y-3.5 sm:space-y-4">
+              {offerFeatures.map((item, idx) => {
+                const IconComponent = item.icon;
+                return (
+                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-foreground font-normal leading-snug">
+                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white border border-[#EAE5DB] text-terracotta shadow-2xs">
+                      <IconComponent className="h-4 w-4 stroke-[2.2]" />
+                    </span>
+                    <div className="pt-0.5">{item.content}</div>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+
+          {/* Preparation Text for Offer */}
+          <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
+            Hoje, você pode ter acesso à coleção completa por uma condição especial.
+          </p>
+
+          {/* Central Premium Price Card */}
+          <div className="my-5 sm:my-6 mx-auto max-w-md rounded-2xl bg-[#FAF8F5] border border-[#173B4D]/20 p-6 sm:p-8 shadow-xs text-center">
+            
+            {/* De R$ 149,00 */}
+            <div className="text-xs sm:text-sm font-normal text-[#6B6357]">
+              De{' '}
+              <span className="line-through decoration-[#6B6357]/50 decoration-1 font-semibold text-[#6B6357]">
+                R$ 149,00
+              </span>
+            </div>
+
+            {/* POR APENAS */}
+            <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#B08830]">
+              POR APENAS
             </div>
             
-            <div className="relative flex items-baseline justify-center gap-1 text-[#173B4D] drop-shadow-xs">
-              <span className="text-2xl sm:text-3xl font-bold accent-serif text-terracotta">R$</span>
-              <span className="text-6xl sm:text-7xl lg:text-8xl font-black tracking-tight leading-none text-[#173B4D]">
+            {/* Price R$ 47,00 */}
+            <div className="mt-2 flex items-baseline justify-center gap-1.5 whitespace-nowrap">
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
+                R$
+              </span>
+              <span className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-[#173B4D] glow-price">
                 47
               </span>
-              <span className="text-xl sm:text-2xl font-bold text-muted-foreground">,00</span>
+              <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
+                ,00
+              </span>
             </div>
 
-            <p className="mt-2 text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-gold flex items-center justify-center gap-1.5">
-              <span>Pagamento único</span>
-              <span className="text-muted-foreground/75 font-normal lowercase tracking-normal text-xs">(sem mensalidades)</span>
+            {/* à vista */}
+            <p className="mt-3.5 text-xs sm:text-sm font-medium text-[#173B4D]/75 tracking-wide">
+              à vista
+            </p>
+
+            {/* Supporting Text */}
+            <p className="mt-5 text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Mais de 300 páginas de conteúdo bíblico visual, com 4 volumes, 4 bônus e acesso digital imediato.
             </p>
           </div>
 
-          {/* CTA Button (High conversion Green with enhanced punch & scale) */}
-          <a
-            href={checkoutUrl}
-            target="_self"
-            id="offer-cta-btn"
-            className="inline-flex w-full items-center justify-center gap-2.5 rounded-2xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 sm:px-8 text-base sm:text-xl font-extrabold uppercase tracking-wider text-white shadow-xl hover:shadow-2xl transition-all duration-200 transform hover:-translate-y-1 cursor-pointer ring-4 ring-[#1e824c]/30"
-          >
-            <span>QUERO ACESSAR O ATLAS BÍBLICO VISUAL</span>
-            <ArrowRight className="h-6 w-6 stroke-[3]" />
-          </a>
+          {/* CTA Button (High conversion green with gentle breathing animation) */}
+          <div className="mt-6 sm:mt-8">
+            <a
+              href={checkoutUrl}
+              target="_self"
+              id="offer-cta-btn"
+              className="animate-breathe inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 sm:px-8 text-base sm:text-xl font-bold uppercase tracking-wider text-white shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+            >
+              <span>QUERO MEU ATLAS BÍBLICO VISUAL</span>
+              <ArrowRight className="h-6 w-6 stroke-[2.5]" />
+            </a>
+          </div>
 
           {/* Microcopy Below CTA with Support Guarantee */}
           <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
@@ -102,7 +209,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               Suporte via E-mail
             </span>
             <span>•</span>
-            <span>Acesso Imediato</span>
+            <span className="font-medium text-[#173B4D]">Acesso Imediato</span>
           </div>
 
         </div>

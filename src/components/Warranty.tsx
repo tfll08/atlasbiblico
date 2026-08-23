@@ -6,17 +6,17 @@ interface WarrantyProps {
 
 export const Warranty: React.FC<WarrantyProps> = () => {
   return (
-    <section id="garantia" className="bg-white px-5 py-14 sm:py-20">
+    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white">
       <div className="mx-auto max-w-3xl">
-        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE5DB] p-8 sm:p-10 shadow-soft text-center sm:text-left">
+        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-white border border-[#EAE5DB] p-8 sm:p-10 shadow-2xl text-center sm:text-left text-[#173B4D]">
           
           {/* Decorative Corner Glow */}
-          <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#E5C158]/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#E5C158]/15 rounded-full blur-2xl pointer-events-none" />
 
           {/* Visual Identity 7-Day Guarantee Seal */}
           <div className="shrink-0 relative flex items-center justify-center">
             <svg
-              className="w-28 h-28 sm:w-32 sm:h-32 drop-shadow-sm select-none"
+              className="w-28 h-28 sm:w-32 sm:h-32 drop-shadow-md select-none"
               viewBox="0 0 200 200"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -135,10 +135,10 @@ export const Warranty: React.FC<WarrantyProps> = () => {
 
           {/* Guarantee Text */}
           <div className="flex-1">
-            <h3 className="font-heading text-xl font-bold tracking-tight sm:text-2xl text-foreground text-balance">
+            <h3 className="font-heading text-xl font-bold tracking-tight sm:text-2xl text-[#173B4D] text-balance">
               Você tem 7 dias para conhecer o material
             </h3>
-            <p className="mt-3 text-sm leading-relaxed text-[#4A5D65] sm:text-base">
+            <p className="mt-3 text-sm leading-relaxed text-[#5C6E75] sm:text-base">
               Acesse, explore os volumes e veja se o Atlas faz sentido para o seu estudo. Se decidir que não é para você dentro do prazo da garantia, poderá solicitar o reembolso.
             </p>
           </div>

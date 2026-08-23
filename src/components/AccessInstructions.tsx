@@ -51,7 +51,7 @@ export const AccessInstructions: React.FC = () => {
                   <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FAF8F5] text-[#173B4D] border border-[#EAE5DB] shadow-xs">
                     <Icon className="h-6 w-6 text-[#173B4D]" />
                   </div>
-                  <span className="font-heading text-2xl font-black text-[#EAE5DB] select-none">
+                  <span className="font-heading text-2xl font-black text-[#EAE5DB]">
                     {item.stepNumber}
                   </span>
                 </div>
