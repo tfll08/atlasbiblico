@@ -32,28 +32,17 @@
     --color-ink: #3C3830;
   }
 
-  /* Strict Anti-Copy & Anti-Selection Protection */
-  *, *::before, *::after {
-    -webkit-user-select: none !important;
-    -moz-user-select: none !important;
-    -ms-user-select: none !important;
-    user-select: none !important;
-    -webkit-touch-callout: none !important;
-  }
-
-  input, textarea {
-    -webkit-user-select: auto !important;
-    -moz-user-select: auto !important;
-    -ms-user-select: auto !important;
-    user-select: auto !important;
-  }
-
+  /* Anti-Drag Protection specifically for Images */
   img {
     -webkit-user-drag: none !important;
     -khtml-user-drag: none !important;
     -moz-user-drag: none !important;
     -o-user-drag: none !important;
     user-drag: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
     pointer-events: auto;
     image-rendering: -webkit-optimize-contrast;
   }

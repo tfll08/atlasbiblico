@@ -18,53 +18,30 @@ export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'terms' | 'privacy' | 'contact' | null>(null);
 
-  // Anti-copy, Anti-drag, Anti-save event protection
+  // Anti-drag and context menu protection specifically for images
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
-      e.preventDefault();
-      return false;
+      const target = e.target as HTMLElement | null;
+      if (target?.tagName === 'IMG' || target?.closest('img')) {
+        e.preventDefault();
+        return false;
+      }
     };
 
     const handleDragStart = (e: DragEvent) => {
-      e.preventDefault();
-      return false;
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Prevent Ctrl+C, Ctrl+A, Ctrl+U, Ctrl+S, Ctrl+P, F12, Ctrl+Shift+I, Ctrl+Shift+C, Ctrl+Shift+J
-      if (
-        (e.ctrlKey || e.metaKey) &&
-        ['c', 'u', 's', 'p', 'a'].includes(e.key.toLowerCase())
-      ) {
+      const target = e.target as HTMLElement | null;
+      if (target?.tagName === 'IMG' || target?.closest('img')) {
         e.preventDefault();
         return false;
       }
-      if (
-        e.key === 'F12' ||
-        ((e.ctrlKey || e.metaKey) && e.shiftKey && ['i', 'c', 'j'].includes(e.key.toLowerCase()))
-      ) {
-        e.preventDefault();
-        return false;
-      }
-    };
-
-    const handleCopy = (e: ClipboardEvent) => {
-      e.preventDefault();
-      return false;
     };
 
     document.addEventListener('contextmenu', handleContextMenu);
     document.addEventListener('dragstart', handleDragStart);
-    document.addEventListener('keydown', handleKeyDown);
-    document.addEventListener('copy', handleCopy);
-    document.addEventListener('cut', handleCopy);
 
     return () => {
       document.removeEventListener('contextmenu', handleContextMenu);
       document.removeEventListener('dragstart', handleDragStart);
-      document.removeEventListener('keydown', handleKeyDown);
-      document.removeEventListener('copy', handleCopy);
-      document.removeEventListener('cut', handleCopy);
     };
   }, []);
 
@@ -81,7 +58,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white text-[#173B4D] font-sans flex flex-col select-none">
+    <div className="min-h-screen bg-white text-[#173B4D] font-sans flex flex-col">
       {/* Faixa no topo da página (não fixa) */}
       <TopBanner />
 

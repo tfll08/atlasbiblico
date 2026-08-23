@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, CreditCard, Map } from 'lucide-react';
+import { Smartphone, CreditCard, Map, BookOpen, Sparkles, GraduationCap } from 'lucide-react';
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -10,19 +10,26 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     <section id="hero" className="bg-white px-5 pt-10 sm:pt-16 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
-        {/* Big Editorial Headline */}
+        {/* Big Editorial Headline with 'lugares, rotas e cenários da Bíblia' highlighted */}
         <h1 className="mx-auto max-w-4xl font-heading text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] sm:leading-[1.15] tracking-tight text-foreground text-balance break-words">
-          Os lugares, rotas e cenários da Bíblia explicados{' '}
-          <span className="inline sm:inline-block">
-            de forma{' '}
-            <span className="font-normal normal-case text-terracotta font-migra italic">
-              visual
-            </span>
-          </span>
+          Os{' '}
+          <span className="font-normal normal-case text-terracotta font-migra italic">
+            lugares, rotas e cenários da Bíblia
+          </span>{' '}
+          explicados de forma visual
         </h1>
 
+        {/* Subheadline Directly Below Headline */}
+        <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-balance">
+          Um material ilustrado criado para tornar seu estudo bíblico{' '}
+          <span className="font-semibold text-terracotta">
+            mais claro, prático e fácil de acompanhar
+          </span>
+          .
+        </p>
+
         {/* Hero Transparent Image without background or frame */}
-        <div className="relative mx-auto mt-6 sm:mt-10 w-full max-w-4xl flex justify-center">
+        <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-4xl flex justify-center">
           <img
             src="https://i.imgur.com/VxEUXBj.png"
             alt="Volumes do Atlas Bíblico Visual"
@@ -37,17 +44,24 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           />
         </div>
 
-        {/* Subheadline Below Mockup with Highlighted Core Phrase */}
-        <p className="mx-auto mt-7 sm:mt-9 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-balance">
-          Um material ilustrado criado para tornar seu estudo bíblico{' '}
-          <span className="font-semibold text-terracotta">
-            mais claro, prático e fácil de acompanhar
-          </span>
-          .
-        </p>
+        {/* 3 Discreet Hero Cards Placed Before CTA */}
+        <div className="mx-auto mt-7 sm:mt-9 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5 max-w-3xl">
+          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
+            <BookOpen className="h-4 w-4 text-terracotta shrink-0" />
+            <span>Baseado nas Escrituras</span>
+          </div>
+          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
+            <Sparkles className="h-4 w-4 text-terracotta shrink-0" />
+            <span>Material bíblico visual</span>
+          </div>
+          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
+            <GraduationCap className="h-4 w-4 text-terracotta shrink-0" />
+            <span>Para estudo, ensino e pregação</span>
+          </div>
+        </div>
 
         {/* Primary CTA */}
-        <div className="mt-8 flex justify-center sm:mt-10">
+        <div className="mt-7 flex justify-center sm:mt-9">
           <button
             onClick={onCtaClick}
             id="hero-cta-btn"
