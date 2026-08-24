@@ -67,6 +67,9 @@ export const StudyTransformation: React.FC<StudyTransformationProps> = ({ onCtaC
         {/* Auto Carousel of Maps & Context (Above Cards) */}
         <div className="mt-8 sm:mt-10">
           <AutoCarousel images={carouselImages} />
+          <p className="mt-3 sm:mt-4 text-center text-xs sm:text-sm text-muted-foreground/85 font-medium tracking-wide">
+            ✦ Amostra de páginas e mapas ilustrados presentes nos bônus
+          </p>
         </div>
 
         {/* 4 Cards Grid */}

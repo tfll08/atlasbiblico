@@ -71,6 +71,9 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
         {/* Auto Carousel of Audiences and Pages (Above Cards) */}
         <div className="mt-8 sm:mt-10">
           <AutoCarousel images={audienceCarouselImages} />
+          <p className="mt-3 sm:mt-4 text-center text-xs sm:text-sm text-muted-foreground/85 font-medium tracking-wide">
+            ✦ Prévia visual de mapas e materiais complementares dos bônus
+          </p>
         </div>
 
         {/* 4 Cards Grid */}
