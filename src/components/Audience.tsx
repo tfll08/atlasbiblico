@@ -54,7 +54,7 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
   ];
 
   return (
-    <section id="pra-quem-foi-criado" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D]">
+    <section id="pra-quem-foi-criado" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] content-visibility-auto">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}

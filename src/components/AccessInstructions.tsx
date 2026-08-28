@@ -24,7 +24,7 @@ export const AccessInstructions: React.FC = () => {
   ];
 
   return (
-    <section id="como-receber-acesso" className="bg-[#FAF8F5] px-5 py-14 sm:py-20 border-t border-b border-[#EAE5DB]">
+    <section id="como-receber-acesso" className="bg-[#FAF8F5] px-5 py-14 sm:py-20 border-t border-b border-[#EAE5DB] content-visibility-auto">
       <div className="mx-auto max-w-5xl">
         
         {/* Section Header */}

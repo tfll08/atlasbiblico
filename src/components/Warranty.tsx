@@ -6,7 +6,7 @@ interface WarrantyProps {
 
 export const Warranty: React.FC<WarrantyProps> = () => {
   return (
-    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white">
+    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
       <div className="mx-auto max-w-3xl">
         <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-white border border-[#EAE5DB] p-8 sm:p-10 shadow-2xl text-center sm:text-left text-[#173B4D]">
           

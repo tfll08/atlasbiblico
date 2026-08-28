@@ -17,17 +17,31 @@ const BENEFIT_PHRASES = [
 
 export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaClick }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const isHovered = useRef(false);
+  const isVisible = useRef(false);
 
   useEffect(() => {
     const container = scrollRef.current;
+    const section = sectionRef.current;
     if (!container) return;
 
     let animationFrameId: number;
     const speed = 0.85; // smooth and readable gliding pace
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { rootMargin: '120px' }
+    );
+
+    if (section) {
+      observer.observe(section);
+    }
+
     const scrollStep = () => {
-      if (!isHovered.current && container) {
+      if (isVisible.current && !isHovered.current && container) {
         container.scrollLeft += speed;
 
         // When scrolled past one full set of items, loop back seamlessly
@@ -43,6 +57,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, []);
 
@@ -57,7 +72,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
   const displaySlides = [...INSIDE_SLIDES_DATA, ...INSIDE_SLIDES_DATA];
 
   return (
-    <section id="veja-por-dentro" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white overflow-hidden">
+    <section ref={sectionRef} id="veja-por-dentro" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white overflow-hidden">
       <div className="mx-auto max-w-7xl">
         
         {/* Header */}

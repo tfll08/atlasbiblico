@@ -8,7 +8,7 @@ interface ComplementaryGuidesProps {
 
 export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaClick }) => {
   return (
-    <section id="materiais-complementares" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white">
+    <section id="materiais-complementares" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white content-visibility-auto">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
 import { InsideAtlasPreview } from './components/InsideAtlasPreview';
@@ -11,8 +11,9 @@ import { Warranty } from './components/Warranty';
 import { AccessInstructions } from './components/AccessInstructions';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
-import { CheckoutModal } from './components/CheckoutModal';
-import { LegalModal } from './components/LegalModal';
+
+const CheckoutModal = lazy(() => import('./components/CheckoutModal').then(module => ({ default: module.CheckoutModal })));
+const LegalModal = lazy(() => import('./components/LegalModal').then(module => ({ default: module.LegalModal })));
 
 export default function App() {
   const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
@@ -54,7 +55,7 @@ export default function App() {
   };
 
   const handleOpenDirectCheckout = () => {
-    window.location.href = 'https://checkout.wiven.com.br/checkout/cmsz6ir2e00p201n3aurjcges?offer=5LL8K7X';
+    window.location.href = 'https://pagamento.projetoreino.com/checkout/212527976:1';
   };
 
   return (
@@ -97,16 +98,22 @@ export default function App() {
       {/* 11. RODAPÉ */}
       <Footer onOpenLegal={(type) => setLegalModalType(type)} />
 
-      {/* Interactive Modals */}
-      <CheckoutModal
-        isOpen={isCheckoutOpen}
-        onClose={() => setIsCheckoutOpen(false)}
-      />
+      {/* Interactive Modals (Lazy Loaded) */}
+      <Suspense fallback={null}>
+        {isCheckoutOpen && (
+          <CheckoutModal
+            isOpen={isCheckoutOpen}
+            onClose={() => setIsCheckoutOpen(false)}
+          />
+        )}
 
-      <LegalModal
-        type={legalModalType}
-        onClose={() => setLegalModalType(null)}
-      />
+        {legalModalType && (
+          <LegalModal
+            type={legalModalType}
+            onClose={() => setLegalModalType(null)}
+          />
+        )}
+      </Suspense>
     </div>
   );
 }

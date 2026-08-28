@@ -18,7 +18,7 @@ interface OfferSectionProps {
 }
 
 export const OfferSection: React.FC<OfferSectionProps> = () => {
-  const checkoutUrl = 'https://checkout.wiven.com.br/checkout/cmsz6ir2e00p201n3aurjcges?offer=5LL8K7X';
+  const checkoutUrl = 'https://pagamento.projetoreino.com/checkout/212527976:1';
 
   const offerFeatures = [
     {

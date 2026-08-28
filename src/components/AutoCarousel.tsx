@@ -7,17 +7,31 @@ interface AutoCarouselProps {
 
 export const AutoCarousel: React.FC<AutoCarouselProps> = ({ images }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const containerWrapperRef = useRef<HTMLDivElement>(null);
   const isHovered = useRef(false);
+  const isVisible = useRef(false);
 
   useEffect(() => {
     const container = scrollRef.current;
+    const wrapper = containerWrapperRef.current;
     if (!container) return;
 
     let animationFrameId: number;
     const step = 0.65; // slow, smooth gliding speed
 
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { rootMargin: '100px' }
+    );
+
+    if (wrapper) {
+      observer.observe(wrapper);
+    }
+
     const autoScroll = () => {
-      if (!isHovered.current && container) {
+      if (isVisible.current && !isHovered.current && container) {
         container.scrollLeft += step;
         // If scrolled past the first set of items, loop back seamlessly
         if (container.scrollLeft >= container.scrollWidth / 2) {
@@ -31,6 +45,7 @@ export const AutoCarousel: React.FC<AutoCarouselProps> = ({ images }) => {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      observer.disconnect();
     };
   }, []);
 
@@ -39,6 +54,7 @@ export const AutoCarousel: React.FC<AutoCarouselProps> = ({ images }) => {
 
   return (
     <div
+      ref={containerWrapperRef}
       className="relative w-full overflow-hidden mt-8 sm:mt-10 py-2"
       onMouseEnter={() => { isHovered.current = true; }}
       onMouseLeave={() => { isHovered.current = false; }}
