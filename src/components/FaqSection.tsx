@@ -10,15 +10,15 @@ export const FaqSection: React.FC = () => {
   };
 
   return (
-    <section id="faq" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white content-visibility-auto">
+    <section id="faq" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] content-visibility-auto">
       <div className="mx-auto max-w-3xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C158]">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C4932F]">
             Perguntas frequentes
           </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-white text-balance break-words">
+          <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-[#173B4D] text-balance break-words">
             Dúvidas frequentes
           </h2>
         </div>
@@ -31,14 +31,14 @@ export const FaqSection: React.FC = () => {
               <div
                 key={item.id}
                 id={`faq-item-${item.id}`}
-                className="overflow-hidden rounded-2xl bg-white border border-[#EAE5DB] shadow-lg transition-all text-[#173B4D]"
+                className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-xs transition-all text-[#173B4D]"
               >
                 {/* Question Trigger */}
                 <button
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between p-6 text-left cursor-pointer transition-colors hover:bg-[#FAF8F5]"
+                  className="flex w-full items-center justify-between p-6 text-left cursor-pointer transition-colors hover:bg-white"
                 >
                   <span className="text-base font-bold text-[#173B4D]">
                     {item.question}
@@ -52,7 +52,7 @@ export const FaqSection: React.FC = () => {
 
                 {/* Answer */}
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-4 text-sm sm:text-base leading-relaxed text-[#5C6E75] animate-fadeIn border-t border-[#EAE5DB]/60">
+                  <div className="px-6 pb-6 pt-4 text-sm sm:text-base leading-relaxed text-[#5C6E75] animate-fadeIn border-t border-[#EAE5DB]/60 bg-white">
                     <p>{item.answer}</p>
                   </div>
                 )}
@@ -65,4 +65,3 @@ export const FaqSection: React.FC = () => {
     </section>
   );
 };
-

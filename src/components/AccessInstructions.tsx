@@ -19,20 +19,20 @@ export const AccessInstructions: React.FC = () => {
       stepNumber: '03',
       icon: Smartphone,
       title: 'ACESSE ONDE QUISER',
-      description: 'Celular, tablet ou imprima'
+      description: 'Celular, tablet, computador ou imprima para seus estudos.'
     }
   ];
 
   return (
-    <section id="como-receber-acesso" className="bg-[#FAF8F5] px-5 py-14 sm:py-20 border-t border-b border-[#EAE5DB] content-visibility-auto">
+    <section id="como-receber-acesso" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
       <div className="mx-auto max-w-5xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C4932F]">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E5C158]">
             Passo a passo simples
           </span>
-          <h2 className="mt-2.5 font-heading text-2xl font-bold uppercase tracking-tight sm:text-3xl lg:text-4xl text-[#173B4D]">
+          <h2 className="mt-2.5 font-heading text-2xl font-bold uppercase tracking-tight sm:text-3xl lg:text-4xl text-white">
             COMO VOCÊ RECEBE O ACESSO
           </h2>
         </div>
@@ -44,7 +44,7 @@ export const AccessInstructions: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="relative flex flex-col items-center sm:items-start text-center sm:text-left rounded-2xl bg-white border border-[#EAE5DB] p-7 shadow-xs transition-all duration-300 hover:shadow-md hover:-translate-y-0.5"
+                className="relative flex flex-col items-center sm:items-start text-center sm:text-left rounded-2xl bg-white border border-[#EAE5DB] p-7 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 text-[#173B4D]"
               >
                 {/* Step badge & Icon */}
                 <div className="w-full flex items-center justify-between mb-5">

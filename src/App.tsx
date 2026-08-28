@@ -2,9 +2,10 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
 import { InsideAtlasPreview } from './components/InsideAtlasPreview';
-import { StudyTransformation } from './components/StudyTransformation';
-import { Audience } from './components/Audience';
+import { PainIdentification } from './components/PainIdentification';
 import { VolumesShowcase } from './components/VolumesShowcase';
+import { Audience } from './components/Audience';
+import { EverythingYouReceive } from './components/EverythingYouReceive';
 import { ComplementaryGuides } from './components/ComplementaryGuides';
 import { OfferSection } from './components/OfferSection';
 import { Warranty } from './components/Warranty';
@@ -46,8 +47,16 @@ export default function App() {
     };
   }, []);
 
-  const handleCtaClick = () => {
-    // Scroll smoothly to the offer section
+  // Scroll to "Tudo o que você recebe" (Hero CTA action)
+  const handleHeroCtaClick = () => {
+    const receiveElement = document.getElementById('tudo-o-que-recebe');
+    if (receiveElement) {
+      receiveElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Scroll to "Oferta"
+  const handleScrollToOffer = () => {
     const offerElement = document.getElementById('oferta');
     if (offerElement) {
       offerElement.scrollIntoView({ behavior: 'smooth' });
@@ -60,42 +69,45 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-white text-[#173B4D] font-sans flex flex-col">
-      {/* Faixa no topo da página (não fixa) */}
+      {/* Faixa no topo da página */}
       <TopBanner />
 
       <main className="flex-1 w-full">
-        {/* 1. HERO */}
-        <Hero onCtaClick={handleCtaClick} />
+        {/* 1. HERO (Branco) */}
+        <Hero onCtaClick={handleHeroCtaClick} />
 
-        {/* 2. VEJA O QUE VOCÊ VAI ENCONTRAR POR DENTRO */}
-        <InsideAtlasPreview onCtaClick={handleCtaClick} />
+        {/* 2. VEJA O QUE VOCÊ VAI ENCONTRAR POR DENTRO (Azul) */}
+        <InsideAtlasPreview onCtaClick={handleScrollToOffer} />
 
-        {/* 3. MATERIAL ILUSTRADO PARA COMPREENDER MELHOR OS LUGARES E CONTEXTOS */}
-        <StudyTransformation onCtaClick={handleCtaClick} />
+        {/* 3. NOVA SEÇÃO DE DOR / IDENTIFICAÇÃO (Branco) */}
+        <PainIdentification onCtaClick={handleScrollToOffer} />
 
-        {/* 4. CONHEÇA A COLEÇÃO */}
-        <VolumesShowcase onCtaClick={handleCtaClick} />
+        {/* 4. SEÇÃO DA COLEÇÃO COM OS 4 VOLUMES (Azul) */}
+        <VolumesShowcase onCtaClick={handleScrollToOffer} />
 
-        {/* 5. IDEAL PARA VOCÊ */}
-        <Audience onCtaClick={handleCtaClick} />
+        {/* 5. IDEAL PARA VOCÊ QUE... (Branco, com carrossel enriquecido) */}
+        <Audience onCtaClick={handleScrollToOffer} />
 
-        {/* 6. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA */}
-        <ComplementaryGuides onCtaClick={handleCtaClick} />
+        {/* 6. TUDO O QUE VOCÊ RECEBE (Azul, resumo de valor com botão para oferta) */}
+        <EverythingYouReceive onCtaClick={handleScrollToOffer} />
 
-        {/* 7. OFERTA */}
+        {/* 7. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) */}
+        <ComplementaryGuides onCtaClick={handleScrollToOffer} />
+
+        {/* 8. OFERTA (Azul com card central destacado) */}
         <OfferSection onCtaClick={handleOpenDirectCheckout} />
 
-        {/* 8. GARANTIA */}
-        <Warranty onCtaClick={handleCtaClick} />
+        {/* 9. GARANTIA (Branco) */}
+        <Warranty onCtaClick={handleScrollToOffer} />
 
-        {/* 9. COMO FUNCIONA O ACESSO */}
+        {/* 10. COMO VOCÊ RECEBE O ACESSO (Azul) */}
         <AccessInstructions />
 
-        {/* 10. FAQ */}
+        {/* 11. FAQ (Branco) */}
         <FaqSection />
       </main>
 
-      {/* 11. RODAPÉ */}
+      {/* 12. RODAPÉ (Azul Escuro / Petróleo) */}
       <Footer onOpenLegal={(type) => setLegalModalType(type)} />
 
       {/* Interactive Modals (Lazy Loaded) */}

@@ -8,18 +8,18 @@ interface ComplementaryGuidesProps {
 
 export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaClick }) => {
   return (
-    <section id="materiais-complementares" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white content-visibility-auto">
+    <section id="materiais-complementares" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] content-visibility-auto">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E5C158] border border-white/20 shadow-xs">
-            <Sparkles className="h-3.5 w-3.5 text-[#E5C158]" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
+            <Sparkles className="h-3.5 w-3.5 text-[#C4932F]" />
             <span>4 Bônus Exclusivos</span>
           </div>
-          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
+          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
             E você ainda recebe{' '}
-            <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
+            <span className="font-normal normal-case text-terracotta font-migra italic inline sm:inline-block">
               4 guias visuais
             </span>{' '}
             complementares
@@ -32,10 +32,10 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <div
               key={guide.id}
               id={`complementary-${guide.id}`}
-              className="overflow-hidden rounded-2xl bg-white border border-[#EAE5DB] shadow-lg flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative text-[#173B4D]"
+              className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative text-[#173B4D]"
             >
               {/* Image & Bonus Badge Container */}
-              <div className="relative bg-[#FAF8F5] flex items-center justify-center overflow-hidden border-b border-[#EAE5DB]">
+              <div className="relative bg-white flex items-center justify-center overflow-hidden border-b border-[#EAE5DB]">
                 <img
                   src={guide.imageSrc}
                   alt={guide.title}
@@ -80,11 +80,11 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
         {/* PRESENTE SURPRESA SECTION */}
         <div
           id="presente-surpresa"
-          className="mt-12 overflow-hidden rounded-2xl bg-white border border-[#EAE5DB] shadow-lg text-[#173B4D]"
+          className="mt-12 overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md text-[#173B4D]"
         >
           <div className="grid md:grid-cols-2 items-center">
             {/* Gift Mockup Image - Full Bleed Object Cover */}
-            <div className="w-full h-full flex items-center justify-center p-4 sm:p-6 bg-[#FAF8F5]">
+            <div className="w-full h-full flex items-center justify-center p-4 sm:p-6 bg-white border-b md:border-b-0 md:border-r border-[#EAE5DB]">
               <img
                 src="https://i.imgur.com/vQOLSq6.png"
                 alt="Presente Surpresa - Atlas Bíblico Visual"
@@ -100,7 +100,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
 
             {/* Gift Text */}
             <div className="p-8 sm:p-12">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#C6A052] border border-[#EAE5DB] shadow-xs">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
                 <Sparkles className="h-3.5 w-3.5" />
                 Presente surpresa
               </span>
@@ -125,7 +125,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           <div className="mt-12 sm:mt-16 flex justify-center">
             <button
               onClick={onCtaClick}
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#C17D5C] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#A96848] shadow-lg cursor-pointer"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#173B4D] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
             >
               Quero garantir todos os bônus inclusos
             </button>
@@ -136,4 +136,3 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
     </section>
   );
 };
-

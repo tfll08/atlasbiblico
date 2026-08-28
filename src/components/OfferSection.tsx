@@ -72,11 +72,11 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
   ];
 
   return (
-    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-[#FAF8F5] border-t border-[#EAE5DB]">
+    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-[#173A45] content-visibility-auto">
       <div className="mx-auto max-w-3xl">
         
         {/* Main Card Frame with Refined Premium Elevation */}
-        <div className="relative overflow-hidden rounded-3xl bg-white border border-[#173B4D]/15 p-6 sm:p-12 text-center shadow-sm">
+        <div className="relative overflow-hidden rounded-3xl bg-white border border-[#EAE5DB] p-6 sm:p-12 text-center shadow-2xl">
           
           {/* Top Badges */}
           <div className="flex flex-wrap items-center justify-center gap-2">
@@ -218,4 +218,3 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
     </section>
   );
 };
-

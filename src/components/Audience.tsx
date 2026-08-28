@@ -30,26 +30,39 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
     },
   ];
 
+  // Combined rich gallery of unique high-quality previews from the atlas and complementary guides
   const audienceCarouselImages = [
     {
       url: 'https://i.imgur.com/VMfmqDu.png',
       alt: 'Topografia, rotas e mapas bíblicos'
     },
     {
+      url: 'https://i.imgur.com/OzOrsrx.png',
+      alt: 'Página ilustrada do material de estudo bíblico'
+    },
+    {
       url: 'https://i.imgur.com/K7rRGqE.png',
       alt: 'Estudo dos caminhos e cidades bíblicas'
     },
     {
+      url: 'https://i.imgur.com/Hvej8Ye.png',
+      alt: 'Mapa visual e contexto geográfico bíblico'
+    },
+    {
       url: 'https://i.imgur.com/Rgb6acs.png',
-      alt: 'Cenários do Novo Testamento'
+      alt: 'Cenários e regiões do Novo Testamento'
+    },
+    {
+      url: 'https://i.imgur.com/yYEJZPh.png',
+      alt: 'Lugares e acontecimentos históricos das Escrituras'
     },
     {
       url: 'https://i.imgur.com/4g8ot0a.png',
       alt: 'Jornadas e eventos das Escrituras'
     },
     {
-      url: 'https://i.imgur.com/VMfmqDu.png',
-      alt: 'Visualização dos mapas bíblicos'
+      url: 'https://i.imgur.com/DC2nvH7.png',
+      alt: 'Cenários, rotas e relevos bíblicos'
     },
   ];
 
@@ -72,7 +85,7 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
         <div className="mt-8 sm:mt-10">
           <AutoCarousel images={audienceCarouselImages} />
           <p className="mt-3 sm:mt-4 text-center text-xs sm:text-sm text-muted-foreground/85 font-medium tracking-wide">
-            ✦ Prévia visual de mapas e materiais complementares dos bônus
+            ✦ Amostra de páginas, mapas e materiais visuais inclusos
           </p>
         </div>
 
@@ -113,4 +126,3 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
     </section>
   );
 };
-

@@ -6,9 +6,9 @@ interface WarrantyProps {
 
 export const Warranty: React.FC<WarrantyProps> = () => {
   return (
-    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
+    <section id="garantia" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D] content-visibility-auto">
       <div className="mx-auto max-w-3xl">
-        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-white border border-[#EAE5DB] p-8 sm:p-10 shadow-2xl text-center sm:text-left text-[#173B4D]">
+        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE5DB] p-8 sm:p-10 shadow-md text-center sm:text-left text-[#173B4D]">
           
           {/* Decorative Corner Glow */}
           <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#E5C158]/15 rounded-full blur-2xl pointer-events-none" />
@@ -58,95 +58,81 @@ export const Warranty: React.FC<WarrantyProps> = () => {
                 stroke="#E5C158"
                 strokeWidth="1.2"
                 strokeDasharray="2 3"
-                opacity="0.85"
+                opacity="0.8"
               />
 
-              {/* 3 Delicate Gold Stars */}
-              <g fill="#E5C158">
-                <polygon points="100,36 102,40 106.5,40.5 103,43.5 104,48 100,45.5 96,48 97,43.5 93.5,40.5 98,40" />
-                <polygon points="86,39 87.5,42 91,42.5 88.5,45 89,48.5 86,46.5 83,48.5 83.5,45 81,42.5 84.5,42" opacity="0.9" />
-                <polygon points="114,39 115.5,42 119,42.5 116.5,45 117,48.5 114,46.5 111,48.5 111.5,45 109,42.5 112.5,42" opacity="0.9" />
-              </g>
-
-              {/* Top Text: GARANTIA */}
-              <text
-                x="100"
-                y="63"
-                fill="#FAF8F5"
-                fontSize="11"
-                fontWeight="700"
-                letterSpacing="2.5"
-                textAnchor="middle"
-                fontFamily="system-ui, -apple-system, sans-serif"
-              >
-                GARANTIA
+              {/* Top Arc "GARANTIA INCONDICIONAL" */}
+              <path
+                id="textPathGuarantee"
+                d="M 40,100 A 60,60 0 0,1 160,100"
+                fill="none"
+              />
+              <text fill="#FFFDF8" fontSize="8" fontWeight="bold" letterSpacing="0.18em">
+                <textPath href="#textPathGuarantee" startOffset="50%" textAnchor="middle">
+                  GARANTIA DE RISCO ZERO
+                </textPath>
               </text>
 
-              {/* Big "7" Number */}
+              {/* Central Big Number "7" */}
               <text
                 x="100"
                 y="114"
-                fill="#E5C158"
-                fontSize="50"
+                fill="#FFFDF8"
+                fontSize="48"
                 fontWeight="900"
+                fontFamily="'Outfit', sans-serif"
                 textAnchor="middle"
-                fontFamily="system-ui, -apple-system, sans-serif"
+                className="select-none"
               >
                 7
               </text>
 
-              {/* Bottom Text: DIAS */}
+              {/* "DIAS" Text */}
               <text
                 x="100"
-                y="134"
-                fill="#FAF8F5"
-                fontSize="13"
+                y="132"
+                fill="#E5C158"
+                fontSize="12"
                 fontWeight="800"
-                letterSpacing="3.5"
+                letterSpacing="0.2em"
                 textAnchor="middle"
-                fontFamily="system-ui, -apple-system, sans-serif"
+                className="select-none"
               >
                 DIAS
               </text>
 
-              {/* Terracotta Ribbon at Bottom */}
-              <g>
-                <path
-                  d="M 38 150 L 162 150 L 154 168 L 46 168 Z"
-                  fill="url(#sealTerracotta)"
-                  stroke="#FAF8F5"
-                  strokeWidth="1"
-                />
-                <text
-                  x="100"
-                  y="162.5"
-                  fill="#FFF"
-                  fontSize="8.5"
-                  fontWeight="700"
-                  letterSpacing="1.2"
-                  textAnchor="middle"
-                  fontFamily="system-ui, -apple-system, sans-serif"
-                >
-                  100% INCONDICIONAL
-                </text>
-              </g>
+              {/* Star Badges */}
+              <polygon points="50,100 52,94 57,94 53,91 55,85 50,88 45,85 47,91 43,94 48,94" fill="#E5C158" />
+              <polygon points="150,100 152,94 157,94 153,91 155,85 150,88 145,85 147,91 143,94 148,94" fill="#E5C158" />
+
+              {/* Bottom Arc "100% SATISFAÇÃO" */}
+              <path
+                id="textPathSat"
+                d="M 160,100 A 60,60 0 0,1 40,100"
+                fill="none"
+              />
+              <text fill="#E5C158" fontSize="7.5" fontWeight="bold" letterSpacing="0.15em">
+                <textPath href="#textPathSat" startOffset="50%" textAnchor="middle">
+                  100% SATISFAÇÃO
+                </textPath>
+              </text>
             </svg>
           </div>
 
-          {/* Guarantee Text */}
-          <div className="flex-1">
-            <h3 className="font-heading text-xl font-bold tracking-tight sm:text-2xl text-[#173B4D] text-balance">
-              Você tem 7 dias para conhecer o material
-            </h3>
-            <p className="mt-3 text-sm leading-relaxed text-[#5C6E75] sm:text-base">
-              Acesse, explore os volumes e veja se o Atlas faz sentido para o seu estudo. Se decidir que não é para você dentro do prazo da garantia, poderá solicitar o reembolso.
+          {/* Guarantee Copy */}
+          <div className="flex flex-col justify-center">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C4932F]">
+              Compra 100% Segura
+            </span>
+            <h2 className="mt-1 font-heading text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#173B4D]">
+              Garantia incondicional de 7 dias
+            </h2>
+            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#5C6E75]">
+              Se por qualquer motivo você achar que o material não atendeu às suas expectativas, basta solicitar o reembolso em até 7 dias e devolveremos 100% do seu dinheiro. Sem burocracia.
             </p>
           </div>
-
         </div>
       </div>
     </section>
   );
 };
-
-

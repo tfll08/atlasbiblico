@@ -44,18 +44,20 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           />
         </div>
 
-        {/* 3 Discreet Hero Cards Placed Before CTA */}
-        <div className="mx-auto mt-7 sm:mt-9 grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3.5 max-w-3xl">
-          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
-            <BookOpen className="h-4 w-4 text-terracotta shrink-0" />
-            <span>Baseado nas Escrituras</span>
+        {/* 3 Golden Hero Cards Placed Before CTA */}
+        <div className="mx-auto mt-7 sm:mt-9 grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 max-w-3xl">
+          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-b from-[#FDF8EE] to-[#F8EED6] border border-[#D8AC4F]/60 px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-[#173B4D] shadow-xs transition-transform hover:-translate-y-0.5">
+            <BookOpen className="h-4 w-4 text-[#B08830] shrink-0 stroke-[2.2]" />
+            <span>
+              Baseado na <strong className="font-bold text-[#7A4E10]">Bíblia Sagrada</strong>
+            </span>
           </div>
-          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
-            <Sparkles className="h-4 w-4 text-terracotta shrink-0" />
+          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-b from-[#FDF8EE] to-[#F8EED6] border border-[#D8AC4F]/60 px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-[#173B4D] shadow-xs transition-transform hover:-translate-y-0.5">
+            <Sparkles className="h-4 w-4 text-[#B08830] shrink-0 stroke-[2.2]" />
             <span>Material bíblico visual</span>
           </div>
-          <div className="flex items-center justify-center gap-2.5 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] px-4 py-2.5 text-xs sm:text-sm font-medium text-foreground shadow-2xs">
-            <GraduationCap className="h-4 w-4 text-terracotta shrink-0" />
+          <div className="flex items-center justify-center gap-2.5 rounded-2xl bg-gradient-to-b from-[#FDF8EE] to-[#F8EED6] border border-[#D8AC4F]/60 px-4 sm:px-5 py-3 text-xs sm:text-sm font-medium text-[#173B4D] shadow-xs transition-transform hover:-translate-y-0.5">
+            <GraduationCap className="h-4 w-4 text-[#B08830] shrink-0 stroke-[2.2]" />
             <span>Para estudo, ensino e pregação</span>
           </div>
         </div>
