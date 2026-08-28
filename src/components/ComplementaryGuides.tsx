@@ -66,7 +66,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                 {/* Price Tag with Slashed Red Price and Green Gratis */}
                 <div className="mt-5 pt-4 border-t border-[#EAE5DB] flex items-center justify-between">
                   <span className="text-red-500 font-semibold text-sm line-through">
-                    Valor: R$ 29
+                    Valor: {guide.originalPrice || (index < 2 ? 'R$ 29,90' : 'R$ 27,90')}
                   </span>
                   <span className="font-bold text-emerald-600 text-xs uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
                     Grátis

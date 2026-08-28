@@ -33,6 +33,7 @@ export interface ComplementaryGuideItem {
   iconName: string;
   imageSrc: string;
   fallbackSrc?: string;
+  originalPrice?: string;
 }
 
 export interface FaqItem {

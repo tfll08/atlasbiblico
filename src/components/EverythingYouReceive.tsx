@@ -3,7 +3,7 @@ import {
   BookOpen, 
   Layers, 
   Map, 
-  Scroll, 
+  Users, 
   GraduationCap, 
   Smartphone,
   ArrowRight,
@@ -19,32 +19,32 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
     {
       icon: BookOpen,
       title: '4 volumes principais',
-      description: 'Uma jornada completa da geografia bíblica às viagens missionárias.'
-    },
-    {
-      icon: Layers,
-      title: '+300 páginas de conteúdo bíblico visual',
-      description: 'Material visual rico e diagramado para facilitar o entendimento.'
+      description: 'O Mundo da Bíblia, Os Patriarcas, Os Caminhos de Jesus e As Viagens de Paulo.'
     },
     {
       icon: Map,
-      title: 'Mapas, rotas, cidades e cenários das Escrituras',
-      description: 'Localização precisa de eventos, caminhos e relevos bíblicos.'
+      title: 'Mapas dos principais lugares bíblicos',
+      description: 'Jerusalém, Galileia, Judeia, Egito, Canaã, Babilônia e outros cenários das Escrituras.'
     },
     {
-      icon: Scroll,
-      title: 'Personagens, profetas e acontecimentos organizados visualmente',
-      description: 'Conecte nomes históricos, épocas e seus contextos geográficos.'
+      icon: Users,
+      title: 'Personagens e profetas organizados visualmente',
+      description: 'Abraão, José, Moisés, Davi, Elias, Isaías, Jeremias, Paulo e muitos outros.'
     },
     {
       icon: GraduationCap,
       title: 'Material para estudo, ensino e pregação',
-      description: 'Recurso de apoio essencial para devocionais, aulas e sermões.'
+      description: 'Ideal para devocionais, aulas, EBD, células, pregações e estudo pessoal.'
     },
     {
       icon: Smartphone,
       title: 'Acesso digital imediato',
-      description: 'Consulte no celular, tablet, computador ou imprima para suas anotações.'
+      description: 'Acesse pela área de membros no celular, tablet ou computador. Também pode baixar e imprimir.'
+    },
+    {
+      icon: Layers,
+      title: '+300 páginas de conteúdo visual',
+      description: 'Material organizado para facilitar a compreensão e a consulta durante o estudo bíblico.'
     }
   ];
 
@@ -66,8 +66,8 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-white/80 text-balance">
-            Uma estrutura completa e organizada para transformar a forma como você lê e estuda as Escrituras Sagradas.
+          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-white/85 text-balance">
+            Uma coleção visual e organizada para ajudar você a compreender lugares, jornadas, personagens e contextos da Bíblia com mais clareza.
           </p>
         </div>
 
@@ -100,21 +100,19 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
             return (
               <div
                 key={index}
-                className="rounded-2xl bg-white/10 border border-white/15 p-6 sm:p-7 backdrop-blur-xs flex flex-col justify-between transition-all duration-300 hover:bg-white/15 hover:-translate-y-1 hover:border-white/25 shadow-lg"
+                className="rounded-2xl bg-white/10 border border-white/15 p-6 sm:p-7 backdrop-blur-xs flex flex-col justify-start transition-all duration-300 hover:bg-white/15 hover:-translate-y-1 hover:border-white/25 shadow-lg"
               >
-                <div>
-                  <div className="h-11 w-11 rounded-xl bg-[#E5C158]/15 border border-[#E5C158]/30 flex items-center justify-center text-[#E5C158] mb-4">
-                    <Icon className="h-5 w-5 stroke-[2.2]" />
-                  </div>
-
-                  <h3 className="font-heading text-lg font-bold text-white leading-snug">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-2 text-sm leading-relaxed text-white/75">
-                    {item.description}
-                  </p>
+                <div className="h-11 w-11 rounded-xl bg-[#E5C158]/15 border border-[#E5C158]/30 flex items-center justify-center text-[#E5C158] mb-4 shrink-0">
+                  <Icon className="h-5 w-5 stroke-[2.2]" />
                 </div>
+
+                <h3 className="font-heading text-lg font-bold text-white leading-snug">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2.5 text-sm leading-relaxed text-white/80">
+                  {item.description}
+                </p>
               </div>
             );
           })}

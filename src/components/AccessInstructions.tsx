@@ -1,66 +1,75 @@
 import React from 'react';
-import { Lock, MailCheck, Smartphone } from 'lucide-react';
+import { ShieldCheck, MailCheck, LayoutDashboard, Smartphone } from 'lucide-react';
 
 export const AccessInstructions: React.FC = () => {
   const steps = [
     {
       stepNumber: '01',
-      icon: Lock,
-      title: 'FINALIZE SUA COMPRA',
-      description: 'Pagamento 100% seguro e protegido por criptografia de dados.'
+      icon: ShieldCheck,
+      title: 'Finalize sua compra',
+      description: 'Pagamento seguro e confirmação automática.'
     },
     {
       stepNumber: '02',
       icon: MailCheck,
-      title: 'RECEBA SEU ACESSO',
-      description: 'Após a confirmação do pagamento, você recebe as instruções de acesso no seu email.'
+      title: 'Receba seus dados de acesso',
+      description: 'Após a confirmação do pagamento, você recebe as instruções no e-mail cadastrado.'
     },
     {
       stepNumber: '03',
+      icon: LayoutDashboard,
+      title: 'Entre na área de membros',
+      description: 'Todo o conteúdo fica organizado em um só lugar para facilitar sua navegação.'
+    },
+    {
+      stepNumber: '04',
       icon: Smartphone,
-      title: 'ACESSE ONDE QUISER',
-      description: 'Celular, tablet, computador ou imprima para seus estudos.'
+      title: 'Acesse onde quiser',
+      description: 'Abra no celular, tablet ou computador. Se quiser, também pode baixar e imprimir.'
     }
   ];
 
   return (
     <section id="como-receber-acesso" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
-      <div className="mx-auto max-w-5xl">
+      <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E5C158]">
-            Passo a passo simples
+            Praticidade e Segurança
           </span>
-          <h2 className="mt-2.5 font-heading text-2xl font-bold uppercase tracking-tight sm:text-3xl lg:text-4xl text-white">
-            COMO VOCÊ RECEBE O ACESSO
+          <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-white">
+            Como você recebe o acesso
           </h2>
+          <p className="mt-3 mx-auto max-w-xl text-sm sm:text-base text-white/80 leading-relaxed">
+            Passo a passo simples para começar a usar seu material no mesmo dia.
+          </p>
         </div>
 
-        {/* 3 Step Cards */}
-        <div className="mt-10 sm:mt-14 grid gap-6 sm:grid-cols-3">
+        {/* 4 Step Cards */}
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="relative flex flex-col items-center sm:items-start text-center sm:text-left rounded-2xl bg-white border border-[#EAE5DB] p-7 shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-0.5 text-[#173B4D]"
+                className="relative flex flex-col justify-start rounded-2xl bg-white border border-[#EAE5DB] p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-[#173B4D]"
               >
                 {/* Step badge & Icon */}
-                <div className="w-full flex items-center justify-between mb-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#FAF8F5] text-[#173B4D] border border-[#EAE5DB] shadow-xs">
-                    <Icon className="h-6 w-6 text-[#173B4D]" />
+                <div className="w-full flex items-center justify-between mb-4">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FAF8F5] text-[#173B4D] border border-[#EAE5DB] shadow-2xs">
+                    <Icon className="h-5 w-5 text-[#173B4D] stroke-[2.2]" />
                   </div>
-                  <span className="font-heading text-2xl font-black text-[#EAE5DB]">
+                  <span className="font-heading text-xl font-black text-[#D8AC4F]/60">
                     {item.stepNumber}
                   </span>
                 </div>
 
                 {/* Title & Description */}
-                <h3 className="font-heading text-base sm:text-lg font-bold uppercase tracking-wide text-[#173B4D]">
+                <h3 className="font-heading text-base font-bold text-[#173B4D] leading-snug">
                   {item.title}
                 </h3>
-                <p className="mt-2.5 text-sm leading-relaxed text-[#5C6E75]">
+                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#5C6E75]">
                   {item.description}
                 </p>
               </div>

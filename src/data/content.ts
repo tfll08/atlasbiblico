@@ -106,7 +106,8 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     theme: 'characters',
     accentColor: '#1F424D',
     iconName: 'Users',
-    imageSrc: 'https://i.imgur.com/upYI4le.png'
+    imageSrc: 'https://i.imgur.com/upYI4le.png',
+    originalPrice: 'R$ 29,90'
   },
   {
     id: 'guide-2',
@@ -115,7 +116,8 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     theme: 'timeline',
     accentColor: '#A37222',
     iconName: 'Clock',
-    imageSrc: 'https://i.imgur.com/6Pmkeyc.png'
+    imageSrc: 'https://i.imgur.com/6Pmkeyc.png',
+    originalPrice: 'R$ 29,90'
   },
   {
     id: 'guide-3',
@@ -124,7 +126,8 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     theme: 'prophets',
     accentColor: '#8C3E26',
     iconName: 'Scroll',
-    imageSrc: 'https://i.imgur.com/JxlTGmS.png'
+    imageSrc: 'https://i.imgur.com/JxlTGmS.png',
+    originalPrice: 'R$ 27,90'
   },
   {
     id: 'guide-4',
@@ -133,7 +136,8 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     theme: 'kingdoms',
     accentColor: '#345243',
     iconName: 'Shield',
-    imageSrc: 'https://i.imgur.com/T7yHAKD.png'
+    imageSrc: 'https://i.imgur.com/T7yHAKD.png',
+    originalPrice: 'R$ 27,90'
   }
 ];
 

@@ -142,11 +142,10 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
           {/* Central Premium Price Card */}
           <div className="my-5 sm:my-6 mx-auto max-w-md rounded-2xl bg-[#FAF8F5] border border-[#173B4D]/20 p-6 sm:p-8 shadow-xs text-center">
             
-            {/* De R$ 149,00 */}
-            <div className="text-xs sm:text-sm font-normal text-[#6B6357]">
-              De{' '}
-              <span className="line-through decoration-[#6B6357]/50 decoration-1 font-semibold text-[#6B6357]">
-                R$ 149,00
+            {/* De R$ 116,00 */}
+            <div className="text-xs sm:text-sm font-normal text-red-500">
+              <span className="line-through decoration-red-500 font-semibold text-red-500">
+                De R$ 116,00
               </span>
             </div>
 
@@ -168,14 +167,14 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               </span>
             </div>
 
-            {/* à vista */}
-            <p className="mt-3.5 text-xs sm:text-sm font-medium text-[#173B4D]/75 tracking-wide">
-              à vista
+            {/* à vista ou parcelado */}
+            <p className="mt-3.5 text-xs sm:text-sm font-medium text-[#173B4D]/80 tracking-wide">
+              à vista ou em <strong className="font-bold text-[#173B4D]">7x de R$ 7,70</strong>
             </p>
 
             {/* Supporting Text */}
-            <p className="mt-5 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              Mais de 300 páginas de conteúdo bíblico visual, com 4 volumes, 4 bônus e acesso digital imediato.
+            <p className="mt-4 pt-3.5 border-t border-[#173B4D]/10 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
+              Acesso enviado por e-mail • Garantia de 7 dias • Suporte
             </p>
           </div>
 
@@ -201,12 +200,12 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
             <span>•</span>
             <span className="flex items-center gap-1 font-medium">
               <ShieldCheck className="h-3.5 w-3.5 text-gold" />
-              Garantia de 7 Dias
+              Satisfação Garantida
             </span>
             <span>•</span>
             <span className="flex items-center gap-1 font-medium">
-              <Headphones className="h-3.5 w-3.5 text-gold" />
-              Suporte via E-mail
+              <Lock className="h-3.5 w-3.5 text-gold" />
+              Privacidade protegida
             </span>
             <span>•</span>
             <span className="font-medium text-[#173B4D]">Acesso Imediato</span>
