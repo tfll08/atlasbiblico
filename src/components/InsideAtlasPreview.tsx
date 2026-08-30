@@ -7,12 +7,10 @@ interface InsideAtlasPreviewProps {
 }
 
 const BENEFIT_PHRASES = [
-  'Entenda onde os acontecimentos bíblicos aconteceram',
-  'Visualize mapas, cidades e regiões com clareza',
+  'Localize onde os acontecimentos bíblicos aconteceram',
   'Acompanhe jornadas e rotas importantes das Escrituras',
-  'Veja os caminhos de Jesus de forma visual',
-  'Compreenda as viagens missionárias de Paulo',
-  'Estude a Bíblia com mais contexto e profundidade'
+  'Consulte referências bíblicas na própria página',
+  'Use o Atlas em estudos, aulas e pregações'
 ];
 
 export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaClick }) => {
@@ -78,16 +76,16 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
         {/* Header */}
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C158]">
-            Por dentro do material
+            EXPLORE O CONTEÚDO
           </span>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
-            Veja o que você vai encontrar{' '}
+            Veja o que você vai encontrar no{' '}
             <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
-              por dentro
+              Atlas
             </span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-[#D1E0E5] sm:text-lg">
-            Mapas, trajetos, cidades, regiões e contextos organizados para consultar enquanto você lê e estuda a Bíblia.
+            Veja onde os relatos aconteceram e como os lugares se conectam.
           </p>
         </div>
 
@@ -143,12 +141,12 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
 
         {/* Carousel Footer Guidance */}
         <div className="mt-6 flex items-center justify-center gap-1.5 text-xs uppercase tracking-[0.15em] text-[#D1E0E5] font-medium">
-          <span>Deslize ou passe o mouse para pausar</span>
+          <span>Deslize para explorar as páginas</span>
           <ArrowRight className="h-3.5 w-3.5 text-[#E5C158] inline-block animate-pulse" />
         </div>
 
         {/* Feature Benefit Cards */}
-        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 max-w-5xl mx-auto">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 max-w-6xl mx-auto">
           {BENEFIT_PHRASES.map((phrase, i) => (
             <div
               key={i}
