@@ -7,6 +7,7 @@ import { VolumesShowcase } from './components/VolumesShowcase';
 import { Audience } from './components/Audience';
 import { EverythingYouReceive } from './components/EverythingYouReceive';
 import { ComplementaryGuides } from './components/ComplementaryGuides';
+import { Testimonials } from './components/Testimonials';
 import { OfferSection } from './components/OfferSection';
 import { Warranty } from './components/Warranty';
 import { AccessInstructions } from './components/AccessInstructions';
@@ -94,7 +95,10 @@ export default function App() {
         {/* 7. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) */}
         <ComplementaryGuides onCtaClick={handleScrollToOffer} />
 
-        {/* 8. OFERTA (Azul com card central destacado) */}
+        {/* 8. DEPOIMENTOS EM CARROSSEL */}
+        <Testimonials onCtaClick={handleScrollToOffer} />
+
+        {/* 9. OFERTA (Azul com card central destacado) */}
         <OfferSection onCtaClick={handleOpenDirectCheckout} />
 
         {/* 9. GARANTIA (Branco) */}
