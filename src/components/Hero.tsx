@@ -12,11 +12,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         
         {/* Big Editorial Headline with 'lugares, rotas e cenários da Bíblia' highlighted */}
         <h1 className="mx-auto max-w-4xl font-heading text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] sm:leading-[1.15] tracking-tight text-foreground text-balance break-words">
-          Os{' '}
+          Entenda os{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
             lugares, rotas e cenários da Bíblia
           </span>{' '}
-          explicados de forma visual
+          com mapas visuais
         </h1>
 
         {/* Subheadline Directly Below Headline */}
