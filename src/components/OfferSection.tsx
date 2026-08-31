@@ -136,7 +136,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
 
           {/* Preparation Text for Offer */}
           <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
-            Hoje, você pode ter acesso à coleção completa por uma condição especial.
+            Depois de conhecer o Atlas Bíblico Visual, você nunca mais vai ler a Bíblia como antes.
           </p>
 
           {/* Central Premium Price Card */}
@@ -174,7 +174,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
 
             {/* Supporting Text */}
             <p className="mt-4 pt-3.5 border-t border-[#173B4D]/10 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-              Acesso enviado por e-mail • Garantia de 7 dias • Suporte
+              Acesso enviado por e-mail • Garantia de 7 dias
             </p>
           </div>
 

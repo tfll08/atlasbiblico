@@ -7,7 +7,6 @@ interface VolumesShowcaseProps {
 }
 
 const SUMMARY_ITEMS = [
-  '+170 páginas visuais',
   'Mapas geográficos e históricos',
   'Rotas e jornadas bíblicas',
   'Cidades e regiões explicadas',
@@ -86,9 +85,12 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
 
         {/* Summary Card Before CTA */}
         <div className="mt-14 sm:mt-16 mx-auto max-w-2xl rounded-2xl bg-white p-6 sm:p-8 border border-[#EAE5DB] shadow-xl text-center text-[#173B4D]">
-          <h3 className="font-heading text-lg sm:text-xl font-bold text-[#173B4D] mb-6">
+          <h3 className="font-heading text-lg sm:text-xl font-bold text-[#173B4D]">
             Nos 4 volumes principais você encontrará:
           </h3>
+          <p className="mt-2.5 mb-6 text-sm sm:text-base text-[#5C6E75] leading-relaxed max-w-xl mx-auto">
+            Os quatro volumes principais reúnem + 170 páginas visuais. Com os materiais complementares e bônus, a coleção completa ultrapassa 300 páginas.
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
             {SUMMARY_ITEMS.map((item, idx) => (
               <div key={idx} className="flex items-center gap-2.5 rounded-lg bg-[#FAF8F5] p-3 border border-[#EAE5DB] shadow-2xs">

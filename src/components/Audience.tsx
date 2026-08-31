@@ -15,7 +15,7 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
     },
     {
       id: 'audience-2',
-      title: 'Tem dificuldade para entender lugares, rotas e contextos bíblicos',
+      title: 'Tem dificuldade para visualizar lugares, rotas e contextos bíblicos',
       icon: Navigation,
     },
     {
@@ -25,7 +25,7 @@ export const Audience: React.FC<AudienceProps> = ({ onCtaClick }) => {
     },
     {
       id: 'audience-4',
-      title: 'Quer conectar acontecimentos, personagens e lugares com mais clareza',
+      title: 'Quer conectar acontecimentos, personagens e lugares',
       icon: Layers,
     },
   ];
