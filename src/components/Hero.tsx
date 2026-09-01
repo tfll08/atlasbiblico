@@ -10,20 +10,20 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     <section id="hero" className="bg-white px-5 pt-10 sm:pt-16 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
-        {/* Big Editorial Headline with 'lugares, rotas e cenários da Bíblia' highlighted */}
+        {/* Big Editorial Headline */}
         <h1 className="mx-auto max-w-4xl font-heading text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] sm:leading-[1.15] tracking-tight text-foreground text-balance break-words">
           Entenda os{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
-            lugares, rotas e cenários da Bíblia
+            lugares e as rotas por trás dos relatos bíblicos
           </span>{' '}
           com mapas visuais
         </h1>
 
         {/* Subheadline Directly Below Headline */}
         <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-balance">
-          Mapas, rotas, cidades e contextos organizados para você{' '}
+          Veja onde os relatos aconteceram e conecte{' '}
           <span className="font-semibold text-terracotta">
-            estudar, ensinar e preparar mensagens
+            personagens, cidades e jornadas com mais clareza
           </span>
           .
         </p>
