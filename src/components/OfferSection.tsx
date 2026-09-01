@@ -9,8 +9,7 @@ import {
   Map, 
   Scroll, 
   Gift, 
-  GraduationCap, 
-  Smartphone 
+  Zap 
 } from 'lucide-react';
 
 interface OfferSectionProps {
@@ -25,7 +24,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
       icon: BookOpen,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">+300 páginas</strong> de conteúdo bíblico visual
+          <strong className="font-bold text-[#173B4D]">Os 4 volumes principais</strong> do Atlas Bíblico Visual
         </span>
       ),
     },
@@ -33,7 +32,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
       icon: Map,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades e cenários</strong> das Escrituras
+          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades, cenários e contextos bíblicos</strong> organizados visualmente
         </span>
       ),
     },
@@ -41,7 +40,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
       icon: Scroll,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Contextos, personagens, profetas e acontecimentos</strong> organizados visualmente
+          <strong className="font-bold text-[#173B4D]">+300 páginas</strong> de conteúdo bíblico visual
         </span>
       ),
     },
@@ -49,23 +48,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
       icon: Gift,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">4 bônus</strong> complementares + presente surpresa
-        </span>
-      ),
-    },
-    {
-      icon: GraduationCap,
-      content: (
-        <span>
-          Material de apoio para <strong className="font-bold text-[#173B4D]">estudo, ensino e pregação</strong>
-        </span>
-      ),
-    },
-    {
-      icon: Smartphone,
-      content: (
-        <span>
-          Acesso digital <strong className="font-bold text-[#173B4D]">imediato</strong>
+          <strong className="font-bold text-[#173B4D]">4 guias visuais complementares</strong> + presente surpresa
         </span>
       ),
     },
@@ -92,7 +75,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
 
           {/* Title */}
           <h2 className="mt-5 mx-auto max-w-xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-            Tenha acesso ao Atlas Bíblico Visual completo
+            Receba a coleção completa do Atlas Bíblico Visual
           </h2>
 
           {/* Bundle Showcase Image */}
@@ -113,7 +96,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
           {/* Phrase before summary card */}
           <div className="mt-6 mb-3 text-center">
             <span className="text-sm sm:text-base font-bold uppercase tracking-[0.15em] text-[#173B4D]">
-              Receba hoje:
+              O QUE VOCÊ VAI RECEBER:
             </span>
           </div>
 
@@ -136,7 +119,7 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
 
           {/* Preparation Text for Offer */}
           <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
-            Depois de conhecer o Atlas Bíblico Visual, você nunca mais vai ler a Bíblia como antes.
+            Visualize os lugares da Bíblia e entenda como os acontecimentos se conectam.
           </p>
 
           {/* Central Premium Price Card */}
@@ -167,9 +150,9 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               </span>
             </div>
 
-            {/* à vista ou parcelado */}
+            {/* à vista */}
             <p className="mt-3.5 text-xs sm:text-sm font-medium text-[#173B4D]/80 tracking-wide">
-              à vista ou em <strong className="font-bold text-[#173B4D]">7x de R$ 7,70</strong>
+              à vista
             </p>
 
             {/* Supporting Text */}
@@ -186,29 +169,27 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               id="offer-cta-btn"
               className="animate-breathe inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 sm:px-8 text-base sm:text-xl font-bold uppercase tracking-wider text-white shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
             >
-              <span>QUERO MEU ATLAS BÍBLICO VISUAL</span>
+              <span>QUERO ACESSAR O ATLAS COMPLETO</span>
               <ArrowRight className="h-6 w-6 stroke-[2.5]" />
             </a>
           </div>
 
           {/* Microcopy Below CTA with Support Guarantee */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1 font-medium">
-              <Lock className="h-3.5 w-3.5 text-gold" />
-              Pagamento 100% Seguro
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#5C6E75]">
+            <span className="flex items-center gap-1.5 font-medium">
+              <Zap className="h-3.5 w-3.5 text-gold" />
+              Acesso imediato
             </span>
             <span>•</span>
-            <span className="flex items-center gap-1 font-medium">
+            <span className="flex items-center gap-1.5 font-medium">
+              <Lock className="h-3.5 w-3.5 text-gold" />
+              Pagamento seguro
+            </span>
+            <span>•</span>
+            <span className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="h-3.5 w-3.5 text-gold" />
               Satisfação Garantida
             </span>
-            <span>•</span>
-            <span className="flex items-center gap-1 font-medium">
-              <Lock className="h-3.5 w-3.5 text-gold" />
-              Privacidade protegida
-            </span>
-            <span>•</span>
-            <span className="font-medium text-[#173B4D]">Acesso Imediato</span>
           </div>
 
         </div>
