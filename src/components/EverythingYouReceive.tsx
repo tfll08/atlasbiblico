@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   BookOpen, 
   Layers, 
@@ -7,7 +7,8 @@ import {
   GraduationCap, 
   Smartphone,
   ArrowRight,
-  Sparkles
+  Sparkles,
+  Play
 } from 'lucide-react';
 
 interface EverythingYouReceiveProps {
@@ -15,6 +16,21 @@ interface EverythingYouReceiveProps {
 }
 
 export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCtaClick }) => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handlePlayClick = () => {
+    if (videoRef.current) {
+      if (videoRef.current.paused) {
+        videoRef.current.play();
+        setIsPlaying(true);
+      } else {
+        videoRef.current.pause();
+        setIsPlaying(false);
+      }
+    }
+  };
+
   const items = [
     {
       icon: BookOpen,
@@ -67,30 +83,51 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
           </h2>
 
           <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-white/85 text-balance">
-            Uma coleção visual e organizada para ajudar você a compreender lugares, jornadas, personagens e contextos da Bíblia com mais clareza.
+            Veja por dentro uma coleção completa de mapas, jornadas, personagens e contextos bíblicos, organizada para facilitar seu estudo.
           </p>
         </div>
 
-        {/* Showcase Image */}
-        <div className="mt-8 sm:mt-10 mx-auto max-w-4xl flex justify-center">
-          <img
-            src="https://i.imgur.com/b9audEu.webp"
-            onError={(e) => {
-              // Fallback to png if webp direct endpoint fails
-              const target = e.currentTarget;
-              if (target.src !== 'https://i.imgur.com/b9audEu.png') {
-                target.src = 'https://i.imgur.com/b9audEu.png';
-              }
-            }}
-            alt="Tudo o que você recebe com o Atlas Bíblico Visual"
-            width={1200}
-            height={700}
-            loading="lazy"
-            decoding="async"
-            referrerPolicy="no-referrer"
-            draggable={false}
-            className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
-          />
+        {/* Video Preview Section replacing the static mockup */}
+        <div id="video-colecao" className="mt-10 sm:mt-12 flex flex-col items-center justify-center scroll-mt-10">
+          {/* Invitation to press play */}
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#E5C158]/15 px-4 py-1.5 text-xs font-semibold text-[#E5C158] border border-[#E5C158]/30 mb-5 shadow-xs">
+            <Play className="h-3 w-3 fill-[#E5C158]" />
+            <span>Clique no play para assistir</span>
+          </div>
+
+          {/* Video Container Frame */}
+          <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] rounded-3xl overflow-hidden border-4 border-white/20 bg-black shadow-2xl transition-all duration-300 hover:border-white/35">
+            <video
+              ref={videoRef}
+              src="https://i.imgur.com/bs5WKaq.mp4"
+              poster="/video-preview-thumb.jpg"
+              preload="metadata"
+              playsInline
+              controls
+              controlsList="nodownload noplaybackrate"
+              disablePictureInPicture
+              onContextMenu={(e) => e.preventDefault()}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+              className="w-full aspect-[9/16] object-cover block select-none"
+            />
+
+            {/* Custom interactive play overlay when paused */}
+            {!isPlaying && (
+              <div 
+                onClick={handlePlayClick}
+                className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 hover:bg-black/25 z-10 p-4"
+                title="Clique no play para assistir"
+              >
+                <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-full bg-[#E5C158] text-[#173A45] flex items-center justify-center shadow-2xl transform transition-transform duration-300 hover:scale-110 active:scale-95 pl-1">
+                  <Play className="h-7 w-7 sm:h-9 sm:w-9 fill-[#173A45]" />
+                </div>
+                <span className="mt-4 px-4 py-1.5 rounded-full bg-black/70 backdrop-blur-xs text-xs sm:text-sm font-semibold text-white tracking-wide border border-white/25 shadow-md text-center">
+                  Clique no play para assistir
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Feature Grid */}

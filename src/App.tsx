@@ -25,7 +25,12 @@ export default function App() {
   useEffect(() => {
     const handleContextMenu = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
-      if (target?.tagName === 'IMG' || target?.closest('img')) {
+      if (
+        target?.tagName === 'IMG' || 
+        target?.closest('img') || 
+        target?.tagName === 'VIDEO' || 
+        target?.closest('video')
+      ) {
         e.preventDefault();
         return false;
       }
@@ -33,7 +38,12 @@ export default function App() {
 
     const handleDragStart = (e: DragEvent) => {
       const target = e.target as HTMLElement | null;
-      if (target?.tagName === 'IMG' || target?.closest('img')) {
+      if (
+        target?.tagName === 'IMG' || 
+        target?.closest('img') || 
+        target?.tagName === 'VIDEO' || 
+        target?.closest('video')
+      ) {
         e.preventDefault();
         return false;
       }
@@ -48,11 +58,11 @@ export default function App() {
     };
   }, []);
 
-  // Scroll to "Tudo o que você recebe" (Hero CTA action)
-  const handleHeroCtaClick = () => {
-    const receiveElement = document.getElementById('tudo-o-que-recebe');
-    if (receiveElement) {
-      receiveElement.scrollIntoView({ behavior: 'smooth' });
+  // Scroll directly to the video in "Tudo o que você recebe"
+  const handleScrollToReceiveVideo = () => {
+    const videoElement = document.getElementById('video-colecao') || document.getElementById('tudo-o-que-recebe');
+    if (videoElement) {
+      videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   };
 
@@ -75,16 +85,16 @@ export default function App() {
 
       <main className="flex-1 w-full">
         {/* 1. HERO (Branco) */}
-        <Hero onCtaClick={handleHeroCtaClick} />
+        <Hero onCtaClick={handleScrollToReceiveVideo} />
 
         {/* 2. VEJA O QUE VOCÊ VAI ENCONTRAR POR DENTRO (Azul) */}
-        <InsideAtlasPreview onCtaClick={handleScrollToOffer} />
+        <InsideAtlasPreview onCtaClick={handleScrollToReceiveVideo} />
 
         {/* 3. NOVA SEÇÃO DE DOR / IDENTIFICAÇÃO (Branco) */}
-        <PainIdentification onCtaClick={handleScrollToOffer} />
+        <PainIdentification onCtaClick={handleScrollToReceiveVideo} />
 
         {/* 4. SEÇÃO DA COLEÇÃO COM OS 4 VOLUMES (Azul) */}
-        <VolumesShowcase onCtaClick={handleScrollToOffer} />
+        <VolumesShowcase onCtaClick={handleScrollToReceiveVideo} />
 
         {/* 5. IDEAL PARA VOCÊ QUE... (Branco, com carrossel enriquecido) */}
         <Audience onCtaClick={handleScrollToOffer} />
