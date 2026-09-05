@@ -137,13 +137,13 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
               POR APENAS
             </div>
             
-            {/* Price R$ 47,00 */}
+            {/* Price R$ 39,00 */}
             <div className="mt-2 flex items-baseline justify-center gap-1.5 whitespace-nowrap">
               <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
                 R$
               </span>
               <span className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-[#173B4D] glow-price">
-                47
+                39
               </span>
               <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
                 ,00

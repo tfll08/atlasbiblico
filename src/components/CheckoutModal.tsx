@@ -79,7 +79,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                   <span className="text-sm font-bold text-foreground">Coleção Digital Completa</span>
                 </div>
                 <div className="text-right">
-                  <span className="text-2xl font-extrabold text-foreground">R$ 47</span>
+                  <span className="text-2xl font-extrabold text-foreground">R$ 39</span>
                   <span className="block text-[10px] text-gold font-bold uppercase tracking-wider">
                     Pagamento Único
                   </span>
@@ -152,7 +152,7 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({ isOpen, onClose })
                   className="w-full py-4 rounded-xl bg-primary hover:bg-[#1f4a5f] text-primary-foreground font-bold text-base tracking-wide transition-all shadow-soft cursor-pointer flex items-center justify-center gap-2"
                 >
                   <Lock className="h-4 w-4" />
-                  <span>PAGAR R$ 47 E LIBERAR ACESSO</span>
+                  <span>PAGAR R$ 39 E LIBERAR ACESSO</span>
                 </button>
               </div>
 
