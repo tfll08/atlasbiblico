@@ -108,7 +108,7 @@ export default function App() {
         <AccessInstructions />
 
         {/* 10. PERGUNTAS FREQUENTES (Azul) */}
-        <FaqSection />
+        <FaqSection onCtaClick={handleScrollToOffer} />
       </main>
 
       {/* 12. RODAPÉ (Azul Escuro / Petróleo) */}

@@ -9,7 +9,8 @@ import {
   Scroll, 
   Gift, 
   Smartphone,
-  Printer
+  Printer,
+  Headphones
 } from 'lucide-react';
 
 interface OfferSectionProps {
@@ -72,7 +73,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Smartphone,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Acesso digital pela área de membros</strong>, no celular, tablet ou computador
+          <strong className="font-bold text-[#173B4D]">Acesso vitalício pela área de membros</strong>, no celular, tablet ou computador
         </span>
       ),
     },
@@ -190,7 +191,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
           {/* Observação abaixo do preço */}
           <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-            Acesso enviado por e-mail • Suporte exclusivo
+            Pagamento único • Acesso vitalício • Liberação imediata
           </p>
         </div>
 
@@ -214,7 +215,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             </a>
           )}
           
-          {/* Security Badges */}
+          {/* Security & Support Badges */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#5C6E75]">
             <div className="flex items-center gap-1.5 font-medium">
               <Lock className="h-3.5 w-3.5 text-emerald-600" />
@@ -223,6 +224,10 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             <div className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="h-3.5 w-3.5 text-[#173B4D]" />
               <span>Garantia Incondicional de 7 Dias</span>
+            </div>
+            <div className="flex items-center gap-1.5 font-medium">
+              <Headphones className="h-3.5 w-3.5 text-[#C4932F]" />
+              <span>Suporte Exclusivo</span>
             </div>
           </div>
         </div>
