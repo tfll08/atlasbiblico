@@ -6,11 +6,12 @@ export const VOLUMES_DATA: VolumeItem[] = [
     volumeNumber: 1,
     title: 'O Mundo da Bíblia',
     subtitle: 'Geografia, Impérios e Regiões das Escrituras',
-    phrase: 'Cidades, regiões, rios, montanhas e cenários bíblicos de forma visual.',
-    description: 'Entenda onde os principais acontecimentos das Escrituras se passaram.',
+    phrase: 'Conheça o cenário geográfico das Escrituras.',
+    description: 'Explore cidades, regiões, rios, montanhas e outros lugares importantes para compreender onde os principais acontecimentos bíblicos aconteceram.',
     accentColor: '#1B4958',
     badge: 'Volume 1',
     imageSrc: 'https://i.imgur.com/oYbpctK.png',
+    insideMapSrc: 'https://i.imgur.com/4bXSoPw.png',
     coverImageTheme: 'world',
     mapHighlights: ['Crescente Fértil', 'Império Babilônico, Persa e Romano', 'Topografia do Oriente Médio']
   },
@@ -19,11 +20,12 @@ export const VOLUMES_DATA: VolumeItem[] = [
     volumeNumber: 2,
     title: 'Os Patriarcas',
     subtitle: 'De Ur dos Caldeus ao Sinai e Entrada em Canaã',
-    phrase: 'As jornadas de Abraão, Isaque, Jacó e José, do Êxodo ao caminho para Canaã.',
-    description: 'Acompanhe os deslocamentos e acontecimentos que marcaram essa parte da história bíblica.',
+    phrase: 'Acompanhe as jornadas que marcaram a história dos patriarcas.',
+    description: 'Visualize os caminhos e acontecimentos relacionados a Abraão, Isaque, Jacó e José, do êxodo ao caminho de Canaã conectando personagens, lugares e jornadas.',
     accentColor: '#8C4827',
     badge: 'Volume 2',
     imageSrc: 'https://i.imgur.com/GCPoAHE.png',
+    insideMapSrc: 'https://i.imgur.com/atlM0mG.png',
     coverImageTheme: 'patriarchs',
     mapHighlights: ['Rota de Abraão', 'Descida e Saída do Egito', 'Jornada no Deserto e Tabernáculo']
   },
@@ -32,11 +34,12 @@ export const VOLUMES_DATA: VolumeItem[] = [
     volumeNumber: 3,
     title: 'Os Caminhos de Jesus',
     subtitle: 'Os Lugares e Trajetos dos Quatro Evangelhos',
-    phrase: 'Lugares, regiões e trajetos da vida e do ministério de Jesus.',
-    description: 'Visualize onde seus principais acontecimentos e deslocamentos ocorreram.',
+    phrase: 'Explore os lugares por onde Jesus passou.',
+    description: 'Visualize regiões, cidades e trajetos relacionados à vida e ao ministério de Jesus.',
     accentColor: '#B08830',
     badge: 'Volume 3',
     imageSrc: 'https://i.imgur.com/CfnIevz.png',
+    insideMapSrc: 'https://i.imgur.com/S8EgDFM.png',
     coverImageTheme: 'jesus',
     mapHighlights: ['Mar da Galileia e Cidades Circunvizinhas', 'Caminho por Samaria', 'Jerusalém na Paixão']
   },
@@ -45,11 +48,12 @@ export const VOLUMES_DATA: VolumeItem[] = [
     volumeNumber: 4,
     title: 'As Viagens de Paulo',
     subtitle: 'As Rotas Missionárias no Mundo Mediterrâneo',
-    phrase: 'Rotas, cidades e viagens missionárias pelo mundo mediterrâneo.',
-    description: 'Acompanhe visualmente a expansão do Evangelho e os caminhos percorridos por Paulo.',
+    phrase: 'Siga pelo mapa as viagens missionárias de Paulo.',
+    description: 'Acompanhe cidades, rotas e deslocamentos pelo mundo mediterrâneo e visualize os caminhos relacionados à expansão do Evangelho.',
     accentColor: '#2B5349',
     badge: 'Volume 4',
     imageSrc: 'https://i.imgur.com/j0qZp6v.png',
+    insideMapSrc: 'https://i.imgur.com/6OYfDT2.png',
     coverImageTheme: 'paul',
     mapHighlights: ['1ª, 2ª e 3ª Viagens Missionárias', 'Viagem a Roma e Naufrágio em Malta', 'As Igrejas do Novo Testamento']
   }
@@ -102,7 +106,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-1',
     title: 'Guia Visual dos Personagens da Bíblia',
-    description: 'Conheça os principais personagens, suas relações, contextos e acontecimentos.',
+    description: 'Conheça os principais personagens, suas relações, contextos e acontecimentos de forma organizada visualmente.',
     theme: 'characters',
     accentColor: '#1F424D',
     iconName: 'Users',
@@ -112,7 +116,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-2',
     title: 'Linha do Tempo Bíblica Visual',
-    description: 'Veja o que veio antes, o que aconteceu depois e como os grandes períodos se conectam.',
+    description: 'Visualize o que aconteceu antes, o que veio depois e como os grandes períodos da história bíblica se conectam.',
     theme: 'timeline',
     accentColor: '#A37222',
     iconName: 'Clock',
@@ -122,7 +126,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-3',
     title: 'Guia Visual dos Profetas Bíblicos',
-    description: 'Entenda quando viveram, para quem profetizaram e o contexto por trás de suas mensagens.',
+    description: 'Entenda quando viveram, para quem profetizaram e qual era o contexto por trás de suas mensagens.',
     theme: 'prophets',
     accentColor: '#8C3E26',
     iconName: 'Scroll',
@@ -132,7 +136,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-4',
     title: 'Reinos, Reis e Conflitos da Bíblia',
-    description: 'Entenda quem governava, quem guerreava e como os grandes conflitos mudaram a história bíblica.',
+    description: 'Visualize quem governava, os principais conflitos e acontecimentos que marcaram diferentes períodos da história bíblica.',
     theme: 'kingdoms',
     accentColor: '#345243',
     iconName: 'Shield',
@@ -145,12 +149,12 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'O Atlas é físico ou digital?',
-    answer: 'O Atlas Bíblico Visual é um produto 100% digital.'
+    answer: 'O Atlas Bíblico Visual é 100% digital, disponibilizado pela área de membros.'
   },
   {
     id: 'faq-2',
     question: 'Como vou receber o material?',
-    answer: 'Após a confirmação da compra, você receberá as instruções para acessar os arquivos digitais.'
+    answer: 'Após a confirmação do pagamento, você recebe as instruções de acesso á área de membros no e-mail cadastrado na compra.'
   },
   {
     id: 'faq-3',
@@ -160,7 +164,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-4',
     question: 'Posso imprimir?',
-    answer: 'Sim. Você pode imprimir as páginas para seu uso pessoal.'
+    answer: 'Sim. Você pode baixar e imprimir os materiais, se preferir estudar dessa forma.'
   },
   {
     id: 'faq-5',

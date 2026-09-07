@@ -30,18 +30,18 @@ export const AccessInstructions: React.FC = () => {
   ];
 
   return (
-    <section id="como-receber-acesso" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
+    <section id="como-receber-acesso" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D] content-visibility-auto">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E5C158]">
+          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C4932F]">
             Praticidade e Segurança
           </span>
-          <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-white">
+          <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-[#173B4D]">
             Como você recebe o acesso
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-sm sm:text-base text-white/80 leading-relaxed">
+          <p className="mt-3 mx-auto max-w-xl text-sm sm:text-base text-[#5C6E75] leading-relaxed">
             Passo a passo simples para começar a usar seu material no mesmo dia.
           </p>
         </div>
@@ -53,12 +53,12 @@ export const AccessInstructions: React.FC = () => {
             return (
               <div
                 key={idx}
-                className="relative flex flex-col justify-start rounded-2xl bg-white border border-[#EAE5DB] p-6 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 text-[#173B4D]"
+                className="relative flex flex-col justify-start rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] p-6 shadow-xs transition-all duration-300 hover:shadow-md hover:-translate-y-1 text-[#173B4D]"
               >
                 {/* Step badge & Icon */}
                 <div className="w-full flex items-center justify-between mb-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#FAF8F5] text-[#173B4D] border border-[#EAE5DB] shadow-2xs">
-                    <Icon className="h-5 w-5 text-[#173B4D] stroke-[2.2]" />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#173B4D] border border-[#EAE5DB] shadow-2xs">
+                    <Icon className="h-5 w-5 text-[#C4932F] stroke-[2.2]" />
                   </div>
                   <span className="font-heading text-xl font-black text-[#D8AC4F]/60">
                     {item.stepNumber}

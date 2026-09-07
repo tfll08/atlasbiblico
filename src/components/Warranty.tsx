@@ -6,9 +6,9 @@ interface WarrantyProps {
 
 export const Warranty: React.FC<WarrantyProps> = () => {
   return (
-    <section id="garantia" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D] content-visibility-auto">
+    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
       <div className="mx-auto max-w-3xl">
-        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-[#FAF8F5] border border-[#EAE5DB] p-8 sm:p-10 shadow-md text-center sm:text-left text-[#173B4D]">
+        <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-white/10 border border-white/20 p-8 sm:p-10 shadow-xl backdrop-blur-xs text-center sm:text-left text-white">
           
           {/* Decorative Corner Glow */}
           <div className="absolute -top-12 -right-12 w-36 h-36 bg-[#E5C158]/15 rounded-full blur-2xl pointer-events-none" />
@@ -42,9 +42,9 @@ export const Warranty: React.FC<WarrantyProps> = () => {
               </defs>
 
               {/* Smooth Outer Ring */}
-              <circle cx="100" cy="100" r="94" fill="#FAF8F5" stroke="#EAE5DB" strokeWidth="2" />
+              <circle cx="100" cy="100" r="94" fill="#173A45" stroke="rgba(255,255,255,0.3)" strokeWidth="2" />
               <circle cx="100" cy="100" r="88" fill="url(#sealGold)" />
-              <circle cx="100" cy="100" r="82" fill="#FAF8F5" />
+              <circle cx="100" cy="100" r="82" fill="#173A45" />
               
               {/* Inner Circle with Petrol Blue */}
               <circle cx="100" cy="100" r="76" fill="url(#sealPetrol)" />
@@ -121,13 +121,13 @@ export const Warranty: React.FC<WarrantyProps> = () => {
 
           {/* Guarantee Copy */}
           <div className="flex flex-col justify-center">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C4932F]">
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#E5C158]">
               Compra 100% Segura
             </span>
-            <h2 className="mt-1 font-heading text-xl sm:text-2xl font-bold uppercase tracking-tight text-[#173B4D]">
+            <h2 className="mt-1 font-heading text-xl sm:text-2xl font-bold uppercase tracking-tight text-white">
               Garantia incondicional de 7 dias
             </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#5C6E75]">
+            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#D1E0E5]">
               Se por qualquer motivo você achar que o material não atendeu às suas expectativas, basta solicitar o reembolso em até 7 dias e devolveremos 100% do seu dinheiro. Sem burocracia.
             </p>
           </div>

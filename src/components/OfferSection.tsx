@@ -4,20 +4,28 @@ import {
   ArrowRight, 
   ShieldCheck, 
   Lock, 
-  Headphones, 
   BookOpen, 
   Map, 
   Scroll, 
   Gift, 
-  Zap 
+  Smartphone,
+  Printer
 } from 'lucide-react';
 
 interface OfferSectionProps {
   onCtaClick?: () => void;
 }
 
-export const OfferSection: React.FC<OfferSectionProps> = () => {
+export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
   const checkoutUrl = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+
+  const handleCta = () => {
+    if (onCtaClick) {
+      onCtaClick();
+    } else {
+      window.location.href = checkoutUrl;
+    }
+  };
 
   const offerFeatures = [
     {
@@ -52,146 +60,153 @@ export const OfferSection: React.FC<OfferSectionProps> = () => {
         </span>
       ),
     },
+    {
+      icon: Smartphone,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">Acesso digital pela área de membros</strong>, no celular, tablet ou computador
+        </span>
+      ),
+    },
+    {
+      icon: Printer,
+      content: (
+        <span>
+          <strong className="font-bold text-[#173B4D]">Baixe e imprima os materiais</strong> se quiser.
+        </span>
+      ),
+    },
   ];
 
   return (
-    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-[#173A45] content-visibility-auto">
-      <div className="mx-auto max-w-3xl">
+    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-white content-visibility-auto scroll-mt-6">
+      <div className="mx-auto max-w-4xl text-center">
         
-        {/* Main Card Frame with Refined Premium Elevation */}
-        <div className="relative overflow-hidden rounded-3xl bg-white border border-[#EAE5DB] p-6 sm:p-12 text-center shadow-2xl">
+        {/* Top Badge */}
+        <div className="flex items-center justify-center">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
+            <Sparkles className="h-3.5 w-3.5" />
+            Acesso completo e imediato
+          </span>
+        </div>
+
+        {/* Title */}
+        <h2 className="mt-5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
+          Tenha acesso à coleção completa do Atlas Bíblico Visual
+        </h2>
+
+        {/* Subtitle */}
+        <p className="mt-3.5 mx-auto max-w-2xl text-base sm:text-lg text-[#5C6E75] leading-relaxed text-balance">
+          Tudo o que você precisa para visualizar lugares, rotas e contextos dos relatos bíblicos em um único material.
+        </p>
+
+        {/* Bundle Showcase Image */}
+        <div className="my-8 w-full flex justify-center">
+          <img
+            src="https://i.imgur.com/punOLdB.png"
+            alt="Coleção Atlas Bíblico Visual Completo"
+            width={1200}
+            height={800}
+            loading="lazy"
+            decoding="async"
+            referrerPolicy="no-referrer"
+            draggable={false}
+            className="w-full max-w-2xl h-auto object-contain select-none filter drop-shadow-md transition-transform duration-500 hover:scale-[1.01]"
+          />
+        </div>
+
+        {/* Header Before What You Will Receive */}
+        <div className="mt-10 mb-4 text-center">
+          <span className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#C4932F]">
+            O QUE VOCÊ VAI RECEBER:
+          </span>
+        </div>
+
+        {/* Clean Integrated Grid of Features */}
+        <div className="mb-10 mx-auto max-w-3xl grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
+          {offerFeatures.map((item, idx) => {
+            const IconComponent = item.icon;
+            return (
+              <div 
+                key={idx} 
+                className="flex items-start gap-3 rounded-xl bg-[#FAF8F5] border border-[#EAE5DB] p-4 shadow-2xs transition-all hover:bg-white hover:shadow-xs"
+              >
+                <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white border border-[#EAE5DB] text-[#C85A32] shadow-2xs">
+                  <IconComponent className="h-4 w-4 stroke-[2.2]" />
+                </span>
+                <div className="text-sm sm:text-base text-[#173B4D] font-normal leading-snug pt-0.5">
+                  {item.content}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Preparation Text for Offer */}
+        <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
+          Visualize os lugares da Bíblia e entenda como os acontecimentos se conectam.
+        </p>
+
+        {/* Unboxed, Clean & Seamless Pricing Block */}
+        <div className="mt-8 mb-6 flex flex-col items-center justify-center">
           
-          {/* Top Badges */}
-          <div className="flex flex-wrap items-center justify-center gap-2">
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-gold shadow-2xs border border-[#EAE5DB]">
-              <Sparkles className="h-3.5 w-3.5" />
-              Acesso completo e imediato
-            </span>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/5 px-3 py-1 text-xs font-bold uppercase tracking-wider text-[#173B4D] border border-[#173B4D]/10">
-              <Headphones className="h-3.5 w-3.5 text-gold" />
-              Suporte Exclusivo
+          {/* De: R$ 166,00 */}
+          <div className="text-sm sm:text-base font-semibold text-red-500">
+            <span className="line-through decoration-red-500 font-bold text-red-500">
+              De: R$ 166,00
             </span>
           </div>
 
-          {/* Title */}
-          <h2 className="mt-5 mx-auto max-w-xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-            Receba a coleção completa do Atlas Bíblico Visual
-          </h2>
-
-          {/* Bundle Showcase Image */}
-          <div className="my-6 w-full flex justify-center">
-            <img
-              src="https://i.imgur.com/punOLdB.png"
-              alt="Coleção Atlas Bíblico Visual Completo"
-              width={1200}
-              height={800}
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              draggable={false}
-              className="w-full max-w-2xl h-auto object-contain select-none filter drop-shadow-sm transition-transform duration-500 hover:scale-[1.01]"
-            />
+          {/* POR APENAS */}
+          <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#B08830]">
+            POR APENAS
           </div>
-
-          {/* Phrase before summary card */}
-          <div className="mt-6 mb-3 text-center">
-            <span className="text-sm sm:text-base font-bold uppercase tracking-[0.15em] text-[#173B4D]">
-              O QUE VOCÊ VAI RECEBER:
+          
+          {/* Price R$ 39,00 */}
+          <div className="mt-2 flex items-baseline justify-center gap-1.5 whitespace-nowrap">
+            <span className="text-3xl sm:text-4xl lg:text-5xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-4">
+              R$
+            </span>
+            <span className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-[#173B4D] glow-price">
+              39
+            </span>
+            <span className="text-3xl sm:text-4xl lg:text-5xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-4">
+              ,00
             </span>
           </div>
 
-          {/* Summary Card with Distinct Bolds */}
-          <div className="mb-8 mx-auto max-w-2xl rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] p-5 sm:p-7 shadow-2xs text-left">
-            <ul className="space-y-3.5 sm:space-y-4">
-              {offerFeatures.map((item, idx) => {
-                const IconComponent = item.icon;
-                return (
-                  <li key={idx} className="flex items-start gap-3 text-sm sm:text-base text-foreground font-normal leading-snug">
-                    <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-white border border-[#EAE5DB] text-terracotta shadow-2xs">
-                      <IconComponent className="h-4 w-4 stroke-[2.2]" />
-                    </span>
-                    <div className="pt-0.5">{item.content}</div>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* Preparation Text for Offer */}
-          <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
-            Visualize os lugares da Bíblia e entenda como os acontecimentos se conectam.
+          {/* à vista */}
+          <p className="mt-2.5 text-sm sm:text-base font-medium text-[#173B4D]/80 tracking-wide">
+            à vista
           </p>
 
-          {/* Central Premium Price Card */}
-          <div className="my-5 sm:my-6 mx-auto max-w-md rounded-2xl bg-[#FAF8F5] border border-[#173B4D]/20 p-6 sm:p-8 shadow-xs text-center">
-            
-            {/* De R$ 116,00 */}
-            <div className="text-xs sm:text-sm font-normal text-red-500">
-              <span className="line-through decoration-red-500 font-semibold text-red-500">
-                De R$ 116,00
-              </span>
+          {/* Observação abaixo do preço */}
+          <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
+            Acesso enviado por e-mail • Suporte exclusivo • Garantia de 7 dias
+          </p>
+        </div>
+
+        {/* CTA Button & Security Badges */}
+        <div className="mt-8 flex flex-col items-center">
+          <button
+            onClick={handleCta}
+            className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+          >
+            <span>Garantir Meu Acesso Agora</span>
+            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+          </button>
+          
+          {/* Security Badges */}
+          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#5C6E75]">
+            <div className="flex items-center gap-1.5 font-medium">
+              <Lock className="h-3.5 w-3.5 text-emerald-600" />
+              <span>Pagamento 100% Seguro</span>
             </div>
-
-            {/* POR APENAS */}
-            <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#B08830]">
-              POR APENAS
+            <div className="flex items-center gap-1.5 font-medium">
+              <ShieldCheck className="h-3.5 w-3.5 text-[#173B4D]" />
+              <span>Garantia Incondicional de 7 Dias</span>
             </div>
-            
-            {/* Price R$ 39,00 */}
-            <div className="mt-2 flex items-baseline justify-center gap-1.5 whitespace-nowrap">
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
-                R$
-              </span>
-              <span className="relative text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-[#173B4D] glow-price">
-                39
-              </span>
-              <span className="text-2xl sm:text-3xl lg:text-4xl font-bold accent-serif text-[#B08830] self-end mb-2 sm:mb-3">
-                ,00
-              </span>
-            </div>
-
-            {/* à vista */}
-            <p className="mt-3.5 text-xs sm:text-sm font-medium text-[#173B4D]/80 tracking-wide">
-              à vista
-            </p>
-
-            {/* Supporting Text */}
-            <p className="mt-4 pt-3.5 border-t border-[#173B4D]/10 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-              Acesso enviado por e-mail • Garantia de 7 dias
-            </p>
           </div>
-
-          {/* CTA Button (High conversion green with gentle breathing animation) */}
-          <div className="mt-6 sm:mt-8">
-            <a
-              href={checkoutUrl}
-              target="_self"
-              id="offer-cta-btn"
-              className="animate-breathe inline-flex w-full items-center justify-center gap-2.5 rounded-xl bg-[#1e824c] hover:bg-[#166534] active:bg-[#14532d] py-5 px-6 sm:px-8 text-base sm:text-xl font-bold uppercase tracking-wider text-white shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
-            >
-              <span>QUERO ACESSAR O ATLAS COMPLETO</span>
-              <ArrowRight className="h-6 w-6 stroke-[2.5]" />
-            </a>
-          </div>
-
-          {/* Microcopy Below CTA with Support Guarantee */}
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-[#5C6E75]">
-            <span className="flex items-center gap-1.5 font-medium">
-              <Zap className="h-3.5 w-3.5 text-gold" />
-              Acesso imediato
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5 font-medium">
-              <Lock className="h-3.5 w-3.5 text-gold" />
-              Pagamento seguro
-            </span>
-            <span>•</span>
-            <span className="flex items-center gap-1.5 font-medium">
-              <ShieldCheck className="h-3.5 w-3.5 text-gold" />
-              Satisfação Garantida
-            </span>
-          </div>
-
         </div>
 
       </div>

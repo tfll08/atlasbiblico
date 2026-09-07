@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { MessageSquareQuote, ChevronLeft, ChevronRight, Star, Sparkles } from 'lucide-react';
+import { MessageSquareQuote, ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 interface TestimonialsProps {
   onCtaClick?: () => void;
@@ -62,62 +62,50 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
     };
   }, [updateScrollButtons]);
 
-  // Auto slide interval when not hovered
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (isHovered.current) return;
-      const el = scrollContainerRef.current;
-      if (!el) return;
-
-      const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-      if (!card) return;
-
-      const cardWidth = card.offsetWidth + 20; // width + gap
-      const maxScroll = el.scrollWidth - el.clientWidth;
-
-      if (el.scrollLeft >= maxScroll - 10) {
-        el.scrollTo({ left: 0, behavior: 'smooth' });
-      } else {
-        el.scrollBy({ left: cardWidth, behavior: 'smooth' });
-      }
-    }, 4500);
-
-    return () => clearInterval(interval);
-  }, []);
-
   const scrollToIndex = (index: number) => {
     const el = scrollContainerRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>('[data-carousel-item]');
     if (!card) return;
-
-    const cardWidth = card.offsetWidth + 20;
-    el.scrollTo({
-      left: index * cardWidth,
-      behavior: 'smooth'
-    });
+    const cardWidth = card.offsetWidth + 20; // width + gap
+    el.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
   };
 
   const scrollPrev = () => {
     const el = scrollContainerRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-    if (!card) return;
-    el.scrollBy({ left: -(card.offsetWidth + 20), behavior: 'smooth' });
+    const step = (card?.offsetWidth || 300) + 20;
+    el.scrollBy({ left: -step, behavior: 'smooth' });
   };
 
   const scrollNext = () => {
     const el = scrollContainerRef.current;
     if (!el) return;
     const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-    if (!card) return;
-    el.scrollBy({ left: card.offsetWidth + 20, behavior: 'smooth' });
+    const step = (card?.offsetWidth || 300) + 20;
+    el.scrollBy({ left: step, behavior: 'smooth' });
   };
+
+  // Autoplay functionality (pauses on user hover)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered.current) {
+        setActiveIndex((prev) => {
+          const nextIndex = (prev + 1) % TESTIMONIAL_IMAGES.length;
+          scrollToIndex(nextIndex);
+          return nextIndex;
+        });
+      }
+    }, 6000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section
       id="depoimentos"
-      className="bg-[#FAF8F5] border-y border-[#EAE5DB] px-4 sm:px-6 py-16 sm:py-24 text-[#173B4D] relative overflow-hidden content-visibility-auto"
+      className="bg-[#173A45] px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden content-visibility-auto scroll-mt-6"
       onMouseEnter={() => { isHovered.current = true; }}
       onMouseLeave={() => { isHovered.current = false; }}
     >
@@ -125,28 +113,28 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
         
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-            <MessageSquareQuote className="h-3.5 w-3.5 text-[#C4932F]" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#E5C158]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E5C158] border border-[#E5C158]/30 shadow-2xs">
+            <MessageSquareQuote className="h-3.5 w-3.5 text-[#E5C158]" />
             <span>Depoimentos Reais</span>
           </div>
 
-          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            O que estão dizendo sobre o{' '}
-            <span className="font-normal normal-case text-terracotta font-migra italic inline sm:inline-block">
-              Atlas Bíblico Visual
+          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
+            Veja o que estão dizendo sobre o{' '}
+            <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
+              Atlas
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-[#5C6E75] text-balance">
+          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-[#D1E0E5] text-balance">
             Veja a experiência de quem já está usando o material para estudar a Bíblia com mais profundidade e apoio visual.
           </p>
 
           {/* Social Proof Stars Summary */}
-          <div className="mt-4 flex items-center justify-center gap-1.5 text-[#D8AC4F]">
+          <div className="mt-4 flex items-center justify-center gap-1.5 text-[#E5C158]">
             {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-[#D8AC4F] text-[#D8AC4F]" />
+              <Star key={i} className="h-4 w-4 fill-[#E5C158] text-[#E5C158]" />
             ))}
-            <span className="ml-2 text-xs sm:text-sm font-semibold text-[#173B4D]">
+            <span className="ml-2 text-xs sm:text-sm font-semibold text-white/90">
               Avaliação de quem já estuda conosco
             </span>
           </div>
@@ -162,7 +150,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             onClick={scrollPrev}
             disabled={!canScrollPrev}
             aria-label="Depoimento anterior"
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-[#173B4D] shadow-lg border border-[#EAE5DB] backdrop-blur-xs transition-all duration-200 hover:scale-105 hover:bg-white hover:border-[#173B4D]/30 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100`}
+            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-xs transition-all duration-200 hover:scale-110 hover:bg-[#173A45] disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer`}
           >
             <ChevronLeft className="h-6 w-6 stroke-[2.5]" />
           </button>
@@ -174,7 +162,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             onClick={scrollNext}
             disabled={!canScrollNext}
             aria-label="Próximo depoimento"
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-white/95 text-[#173B4D] shadow-lg border border-[#EAE5DB] backdrop-blur-xs transition-all duration-200 hover:scale-105 hover:bg-white hover:border-[#173B4D]/30 disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100`}
+            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-xs transition-all duration-200 hover:scale-110 hover:bg-[#173A45] disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer`}
           >
             <ChevronRight className="h-6 w-6 stroke-[2.5]" />
           </button>
@@ -185,17 +173,19 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             className="flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 px-2 sm:px-4 -mx-2 sm:-mx-4 scroll-smooth"
             style={{ scrollSnapType: 'x mandatory' }}
           >
-            {TESTIMONIAL_IMAGES.map((item, index) => (
+            {TESTIMONIAL_IMAGES.map((item) => (
               <div
                 key={item.id}
                 data-carousel-item
                 className="w-[85vw] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] shrink-0 snap-center select-none"
               >
-                <div className="overflow-hidden rounded-2xl bg-white border border-[#EAE5DB] shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="relative bg-white flex items-center justify-center p-2 sm:p-3">
+                <div className="overflow-hidden rounded-2xl bg-white/10 border border-white/20 shadow-md backdrop-blur-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
+                  <div className="relative bg-white flex items-center justify-center p-2 sm:p-3 rounded-2xl">
                     <img
                       src={item.src}
                       alt={item.alt}
+                      width={600}
+                      height={400}
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
@@ -215,15 +205,27 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                 type="button"
                 onClick={() => scrollToIndex(dotIndex)}
                 aria-label={`Ir para depoimento ${dotIndex + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 ${
+                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                   activeIndex === dotIndex
-                    ? 'w-8 bg-[#C85A32]'
-                    : 'w-2.5 bg-[#EAE5DB] hover:bg-[#C4932F]/50'
+                    ? 'w-8 bg-[#E5C158]'
+                    : 'w-2.5 bg-white/30 hover:bg-white/50'
                 }`}
               />
             ))}
           </div>
         </div>
+
+        {/* Section CTA Button leading to offer */}
+        {onCtaClick && (
+          <div className="mt-12 sm:mt-16 flex justify-center">
+            <button
+              onClick={onCtaClick}
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#C17D5C] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#A96848] shadow-md cursor-pointer"
+            >
+              Quero garantir meu acesso ao atlas
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

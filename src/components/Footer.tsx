@@ -6,7 +6,7 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
   return (
-    <footer className="w-full bg-[#0E252D] py-12 px-5 text-center text-xs text-white/70 border-t border-white/10">
+    <footer className="w-full bg-[#0E252D] py-12 px-5 text-center text-xs text-white/70 border-t-0">
       <div className="mx-auto max-w-6xl flex flex-col items-center gap-4">
         
         {/* Copyright */}
@@ -18,10 +18,10 @@ export const Footer: React.FC<FooterProps> = ({ onOpenLegal }) => {
         <p className="text-xs text-white/70">
           Suporte ao cliente:{' '}
           <a
-            href="mailto:sac.inspirahub@gmail.com"
+            href="mailto:suporte@projetoreino.com"
             className="font-medium text-white hover:text-[#E0936F] hover:underline transition-colors"
           >
-            sac.inspirahub@gmail.com
+            suporte@projetoreino.com
           </a>
         </p>
 

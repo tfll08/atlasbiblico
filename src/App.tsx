@@ -1,11 +1,9 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
-import { InsideAtlasPreview } from './components/InsideAtlasPreview';
 import { PainIdentification } from './components/PainIdentification';
+import { InsideAtlasPreview } from './components/InsideAtlasPreview';
 import { VolumesShowcase } from './components/VolumesShowcase';
-import { Audience } from './components/Audience';
-import { EverythingYouReceive } from './components/EverythingYouReceive';
 import { ComplementaryGuides } from './components/ComplementaryGuides';
 import { Testimonials } from './components/Testimonials';
 import { OfferSection } from './components/OfferSection';
@@ -87,38 +85,32 @@ export default function App() {
         {/* 1. HERO (Branco) */}
         <Hero onCtaClick={handleScrollToReceiveVideo} />
 
-        {/* 2. VEJA O QUE VOCÊ VAI ENCONTRAR POR DENTRO (Azul) */}
-        <InsideAtlasPreview onCtaClick={handleScrollToReceiveVideo} />
+        {/* 2. COMPREENSÃO E CONTEXTO - MAPA COM SETAS (Azul) */}
+        <PainIdentification />
 
-        {/* 3. NOVA SEÇÃO DE DOR / IDENTIFICAÇÃO (Branco) */}
-        <PainIdentification onCtaClick={handleScrollToReceiveVideo} />
+        {/* 3. VEJA O QUE VOCÊ VAI ENCONTRAR NO ATLAS - VÍDEO + BENEFÍCIOS (Branco) */}
+        <InsideAtlasPreview onCtaClick={handleScrollToOffer} />
 
-        {/* 4. SEÇÃO DA COLEÇÃO COM OS 4 VOLUMES (Azul) */}
-        <VolumesShowcase onCtaClick={handleScrollToReceiveVideo} />
+        {/* 4. COLEÇÃO COM OS 4 VOLUMES (Azul) */}
+        <VolumesShowcase onCtaClick={handleScrollToOffer} />
 
-        {/* 5. IDEAL PARA VOCÊ QUE... (Branco, com carrossel enriquecido) */}
-        <Audience onCtaClick={handleScrollToOffer} />
-
-        {/* 6. TUDO O QUE VOCÊ RECEBE (Azul, resumo de valor com botão para oferta) */}
-        <EverythingYouReceive onCtaClick={handleScrollToOffer} />
-
-        {/* 7. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) */}
+        {/* 5. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) */}
         <ComplementaryGuides onCtaClick={handleScrollToOffer} />
 
-        {/* 8. DEPOIMENTOS EM CARROSSEL */}
+        {/* 6. DEPOIMENTOS EM CARROSSEL (Azul) */}
         <Testimonials onCtaClick={handleScrollToOffer} />
 
-        {/* 9. OFERTA (Azul com card central destacado) */}
+        {/* 7. OFERTA COMPLETA (Branco) */}
         <OfferSection onCtaClick={handleOpenDirectCheckout} />
 
-        {/* 9. GARANTIA (Branco) */}
+        {/* 8. GARANTIA INCONDICIONAL DE 7 DIAS (Azul) */}
         <Warranty onCtaClick={handleScrollToOffer} />
 
-        {/* 10. COMO VOCÊ RECEBE O ACESSO (Azul) */}
+        {/* 9. COMO VOCÊ RECEBE O ACESSO (Branco) */}
         <AccessInstructions />
 
-        {/* 11. FAQ (Branco) */}
-        <FaqSection />
+        {/* 10. PERGUNTAS FREQUENTES (Azul) */}
+        <FaqSection onCtaClick={handleOpenDirectCheckout} />
       </main>
 
       {/* 12. RODAPÉ (Azul Escuro / Petróleo) */}

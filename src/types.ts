@@ -8,6 +8,7 @@ export interface VolumeItem {
   accentColor: string;
   badge: string;
   imageSrc?: string;
+  insideMapSrc?: string;
   fallbackSrc?: string;
   coverImageTheme?: 'world' | 'patriarchs' | 'jesus' | 'paul';
   mapHighlights?: string[];

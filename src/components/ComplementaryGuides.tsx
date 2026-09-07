@@ -18,12 +18,11 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <span>4 Bônus Exclusivos</span>
           </div>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            E você ainda recebe{' '}
-            <span className="font-normal normal-case text-terracotta font-migra italic inline sm:inline-block">
-              4 guias visuais
-            </span>{' '}
-            complementares
+            E para deixar sua coleção ainda mais completa...
           </h2>
+          <p className="mx-auto mt-3 max-w-2xl text-base sm:text-lg text-[#5C6E75] leading-relaxed text-balance">
+            Você também recebe 4 guias visuais complementares.
+          </p>
         </div>
 
         {/* 4 Complementary Guides Grid */}
@@ -115,6 +114,10 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
               
               <p className="mt-3 text-base leading-relaxed text-[#5C6E75]">
                 Um material extra criado para colocar seus conhecimentos à prova de uma forma leve e prática.
+              </p>
+
+              <p className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B08830] bg-white px-3.5 py-1.5 rounded-lg border border-[#EAE5DB] shadow-2xs">
+                ✦ Você só descobre o que é depois de garantir seu acesso.
               </p>
             </div>
           </div>

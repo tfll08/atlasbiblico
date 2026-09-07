@@ -74,7 +74,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
                   <span>E-mail de Suporte:</span>
                 </div>
                 <p className="text-foreground font-mono text-sm pl-6">
-                  sac.inspirahub@gmail.com
+                  suporte@projetoreino.com
                 </p>
                 <p className="text-xs text-muted-foreground pl-6">
                   Horário de atendimento: Segunda a Sexta, das 09h às 18h.
