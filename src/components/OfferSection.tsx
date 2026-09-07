@@ -182,7 +182,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
           {/* Observação abaixo do preço */}
           <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-            Acesso enviado por e-mail • Suporte exclusivo • Garantia de 7 dias
+            Acesso enviado por e-mail • Suporte exclusivo
           </p>
         </div>
 
