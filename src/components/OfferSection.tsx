@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Sparkles, 
   ArrowRight, 
@@ -17,15 +17,23 @@ interface OfferSectionProps {
 }
 
 export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
-  const checkoutUrl = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+  const BASE_CHECKOUT_URL = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+  const [checkoutUrl, setCheckoutUrl] = useState(BASE_CHECKOUT_URL);
 
-  const handleCta = () => {
-    if (onCtaClick) {
-      onCtaClick();
-    } else {
-      window.location.href = checkoutUrl;
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.search) {
+      try {
+        const url = new URL(BASE_CHECKOUT_URL);
+        const searchParams = new URLSearchParams(window.location.search);
+        searchParams.forEach((value, key) => {
+          url.searchParams.set(key, value);
+        });
+        setCheckoutUrl(url.toString());
+      } catch {
+        // Fallback to BASE_CHECKOUT_URL
+      }
     }
-  };
+  }, []);
 
   const offerFeatures = [
     {
@@ -188,13 +196,23 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* CTA Button & Security Badges */}
         <div className="mt-8 flex flex-col items-center">
-          <button
-            onClick={handleCta}
-            className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
-          >
-            <span>Garantir Meu Acesso Agora</span>
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
+          {onCtaClick ? (
+            <button
+              onClick={onCtaClick}
+              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+            >
+              <span>Garantir Meu Acesso Agora</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </button>
+          ) : (
+            <a
+              href={checkoutUrl}
+              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+            >
+              <span>Garantir Meu Acesso Agora</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+          )}
           
           {/* Security Badges */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#5C6E75]">

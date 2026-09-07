@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FAQ_DATA } from '../data/content';
 import { ChevronDown, ArrowRight } from 'lucide-react';
 
@@ -8,17 +8,26 @@ interface FaqSectionProps {
 
 export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
   const [openId, setOpenId] = useState<string | null>(null);
+  const BASE_CHECKOUT_URL = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+  const [checkoutUrl, setCheckoutUrl] = useState(BASE_CHECKOUT_URL);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.location.search) {
+      try {
+        const url = new URL(BASE_CHECKOUT_URL);
+        const searchParams = new URLSearchParams(window.location.search);
+        searchParams.forEach((value, key) => {
+          url.searchParams.set(key, value);
+        });
+        setCheckoutUrl(url.toString());
+      } catch {
+        // Fallback to BASE_CHECKOUT_URL
+      }
+    }
+  }, []);
 
   const toggleItem = (id: string) => {
     setOpenId((prev) => (prev === id ? null : id));
-  };
-
-  const handleCheckout = () => {
-    if (onCtaClick) {
-      onCtaClick();
-    } else {
-      window.location.href = 'https://pagamento.projetoreino.com/checkout/212527976:1';
-    }
   };
 
   return (
@@ -75,13 +84,23 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
 
         {/* CTA Button at the end of FAQ */}
         <div className="mt-12 sm:mt-14 flex flex-col items-center">
-          <button
-            onClick={handleCheckout}
-            className="animate-breathe group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-12 py-4 sm:py-5 text-sm sm:text-base font-bold uppercase tracking-[0.1em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
-          >
-            <span>TIREI MINHAS DÚVIDAS, QUERO O ATLAS</span>
-            <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
-          </button>
+          {onCtaClick ? (
+            <button
+              onClick={onCtaClick}
+              className="animate-breathe group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-12 py-4 sm:py-5 text-sm sm:text-base font-bold uppercase tracking-[0.1em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+            >
+              <span>TIREI MINHAS DÚVIDAS, QUERO O ATLAS</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </button>
+          ) : (
+            <a
+              href={checkoutUrl}
+              className="animate-breathe group inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-12 py-4 sm:py-5 text-sm sm:text-base font-bold uppercase tracking-[0.1em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
+            >
+              <span>TIREI MINHAS DÚVIDAS, QUERO O ATLAS</span>
+              <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
+            </a>
+          )}
         </div>
 
       </div>

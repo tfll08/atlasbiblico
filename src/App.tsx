@@ -12,11 +12,9 @@ import { AccessInstructions } from './components/AccessInstructions';
 import { FaqSection } from './components/FaqSection';
 import { Footer } from './components/Footer';
 
-const CheckoutModal = lazy(() => import('./components/CheckoutModal').then(module => ({ default: module.CheckoutModal })));
 const LegalModal = lazy(() => import('./components/LegalModal').then(module => ({ default: module.LegalModal })));
 
 export default function App() {
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'terms' | 'privacy' | 'contact' | null>(null);
 
   // Anti-drag and context menu protection specifically for images
@@ -101,7 +99,7 @@ export default function App() {
         <Testimonials onCtaClick={handleScrollToOffer} />
 
         {/* 7. OFERTA COMPLETA (Branco) */}
-        <OfferSection onCtaClick={handleOpenDirectCheckout} />
+        <OfferSection />
 
         {/* 8. GARANTIA INCONDICIONAL DE 7 DIAS (Azul) */}
         <Warranty onCtaClick={handleScrollToOffer} />
@@ -110,7 +108,7 @@ export default function App() {
         <AccessInstructions />
 
         {/* 10. PERGUNTAS FREQUENTES (Azul) */}
-        <FaqSection onCtaClick={handleOpenDirectCheckout} />
+        <FaqSection />
       </main>
 
       {/* 12. RODAPÉ (Azul Escuro / Petróleo) */}
@@ -118,13 +116,6 @@ export default function App() {
 
       {/* Interactive Modals (Lazy Loaded) */}
       <Suspense fallback={null}>
-        {isCheckoutOpen && (
-          <CheckoutModal
-            isOpen={isCheckoutOpen}
-            onClose={() => setIsCheckoutOpen(false)}
-          />
-        )}
-
         {legalModalType && (
           <LegalModal
             type={legalModalType}
