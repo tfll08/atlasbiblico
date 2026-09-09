@@ -191,7 +191,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
           {/* Observação abaixo do preço */}
           <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-            Pagamento único • Acesso vitalício • Liberação imediata
+            Pagamento único • Acesso vitalício
           </p>
         </div>
 
@@ -202,7 +202,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               onClick={onCtaClick}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>Garantir Meu Acesso Agora</span>
+              <span>QUERO ACESSAR O ATLAS BÍBLICO VISUAL</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
           ) : (
@@ -210,7 +210,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               href={checkoutUrl}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>Garantir Meu Acesso Agora</span>
+              <span>QUERO ACESSAR O ATLAS BÍBLICO VISUAL</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           )}

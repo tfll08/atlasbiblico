@@ -1,5 +1,5 @@
 import React from 'react';
-import { Smartphone, CreditCard, Zap } from 'lucide-react';
+import { Smartphone, CreditCard, Infinity } from 'lucide-react';
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -10,13 +10,13 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     <section id="hero" className="bg-white px-5 pt-10 sm:pt-16 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
-        {/* Big Editorial Headline */}
-        <h1 className="mx-auto max-w-4xl font-heading text-[1.85rem] sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.2] sm:leading-[1.15] tracking-tight text-foreground text-balance break-words">
-          Entenda os{' '}
-          <span className="font-normal normal-case text-terracotta font-migra italic">
-            lugares e as rotas por trás dos relatos bíblicos
-          </span>{' '}
-          com mapas visuais
+        {/* Big Editorial Headline - estruturada em 3 linhas elegantes e legíveis */}
+        <h1 className="mx-auto max-w-5xl font-heading text-[1.4rem] xs:text-[1.55rem] sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground">
+          <span className="block">Entenda os lugares e as rotas</span>
+          <span className="block font-normal normal-case text-terracotta font-migra italic">
+            por trás dos relatos bíblicos
+          </span>
+          <span className="block">com mapas visuais</span>
         </h1>
 
         {/* Subheadline Directly Below Headline */}
@@ -49,9 +49,9 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           <button
             onClick={onCtaClick}
             id="hero-cta-btn"
-            className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#173B4D] px-8 sm:px-12 py-4 text-center text-sm sm:text-base font-semibold tracking-wide text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
+            className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 sm:py-5 text-center text-sm sm:text-base font-bold tracking-wide uppercase text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
           >
-            Veja o que VOCÊ vai receber
+            QUERO ACESSAR O ATLAS BÍBLICO VISUAL
           </button>
         </div>
 
@@ -66,8 +66,8 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             <span>Pagamento único</span>
           </li>
           <li className="flex items-center gap-2">
-            <Zap className="h-4 w-4 shrink-0 text-gold" />
-            <span>Acesso imediato</span>
+            <Infinity className="h-4 w-4 shrink-0 text-gold" />
+            <span>Acesso vitalício</span>
           </li>
         </ul>
 
