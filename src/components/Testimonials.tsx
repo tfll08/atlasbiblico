@@ -135,7 +135,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
               <Star key={i} className="h-4 w-4 fill-[#E5C158] text-[#E5C158]" />
             ))}
             <span className="ml-2 text-xs sm:text-sm font-semibold text-white/90">
-              Avaliação de quem já estuda conosco
+              Depoimentos reais de quem já recebeu o Atlas
             </span>
           </div>
         </div>

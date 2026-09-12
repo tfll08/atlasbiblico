@@ -8,7 +8,7 @@ export const PainIdentification: React.FC = () => {
         {/* Section Header */}
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C158]">
-            COMPREENSÃO E CONTEXTO
+            ABRA, CONSULTE E CONTINUE
           </span>
 
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white text-balance break-words">
@@ -19,11 +19,7 @@ export const PainIdentification: React.FC = () => {
           </h2>
 
           <p className="mt-4 mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Muitos acontecimentos ficam mais fáceis de compreender quando conseguimos visualizar os lugares, as distâncias e os caminhos percorridos.
-          </p>
-
-          <p className="mt-3 mx-auto max-w-2xl text-base sm:text-lg font-medium text-[#E5C158] leading-relaxed text-balance">
-            O Atlas Bíblico Visual transforma esse contexto em uma experiência visual.
+            Muitos relatos ganham outra clareza quando você consegue visualizar os lugares, as distâncias e os caminhos percorridos. Veja abaixo um exemplo dentro do Atlas.
           </p>
         </div>
 

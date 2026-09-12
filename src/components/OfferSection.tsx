@@ -41,7 +41,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: BookOpen,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Os 4 volumes principais</strong> do Atlas Bíblico Visual
+          <strong className="font-bold text-[#173B4D]">4 volumes completos</strong> do Atlas Bíblico Visual
         </span>
       ),
     },
@@ -49,7 +49,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Map,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades, cenários e contextos bíblicos</strong> organizados visualmente
+          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades e contextos</strong> organizados visualmente
         </span>
       ),
     },
@@ -57,7 +57,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Scroll,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">+300 páginas</strong> de conteúdo bíblico visual
+          <strong className="font-bold text-[#173B4D]">+300 páginas visuais</strong> prontas para consulta
         </span>
       ),
     },
@@ -73,7 +73,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Smartphone,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Acesso vitalício pela área de membros</strong>, no celular, tablet ou computador
+          <strong className="font-bold text-[#173B4D]">Acesso vitalício</strong> pelo celular, tablet ou computador
         </span>
       ),
     },
@@ -81,7 +81,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Printer,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Baixe e imprima os materiais</strong> se quiser.
+          <strong className="font-bold text-[#173B4D]">Download e impressão</strong> para consultar como preferir
         </span>
       ),
     },
@@ -101,13 +101,8 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* Title */}
         <h2 className="mt-5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-          Tenha acesso à coleção completa do Atlas Bíblico Visual
+          Visualize os lugares e acompanhe as jornadas da Bíblia enquanto você estuda.
         </h2>
-
-        {/* Subtitle */}
-        <p className="mt-3.5 mx-auto max-w-2xl text-base sm:text-lg text-[#5C6E75] leading-relaxed text-balance">
-          Tudo o que você precisa para visualizar lugares, rotas e contextos dos relatos bíblicos em um único material.
-        </p>
 
         {/* Bundle Showcase Image */}
         <div className="my-8 w-full flex justify-center">
@@ -153,7 +148,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* Preparation Text for Offer */}
         <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
-          Visualize os lugares da Bíblia e entenda como os acontecimentos se conectam.
+          Abra. Encontre. Consulte. Use sempre que precisar.
         </p>
 
         {/* Unboxed, Clean & Seamless Pricing Block */}

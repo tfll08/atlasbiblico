@@ -142,10 +142,11 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             A coleção
           </span>
           <h2 className="mt-3 mx-auto max-w-4xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
-            Uma coleção para acompanhar você{' '}
+            Tudo organizado em{' '}
             <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
-              da geografia às grandes jornadas bíblicas
-            </span>
+              4 volumes
+            </span>{' '}
+            para você consultar quando precisar
           </h2>
         </div>
 
@@ -191,7 +192,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
         {/* Summary Card Before CTA */}
         <div className="mt-16 sm:mt-20 mx-auto max-w-2xl rounded-2xl bg-white p-6 sm:p-8 border border-[#EAE5DB] shadow-xl text-center text-[#173B4D]">
           <h3 className="font-heading text-lg sm:text-xl font-bold text-[#173B4D] mb-6">
-            Nos 4 volumes principais você encontrará:
+            Nos 4 volumes, você terá à mão:
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-left">
             {SUMMARY_ITEMS.map((item, idx) => (
@@ -210,7 +211,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
         {/* Phrase at the end of "A Coleção" */}
         <div className="mt-10 sm:mt-12 text-center max-w-3xl mx-auto">
           <p className="text-sm sm:text-base text-[#D1E0E5] font-medium leading-relaxed bg-white/10 border border-white/15 rounded-xl px-6 py-4 backdrop-blur-xs text-balance">
-            Ideal para quem quer aprofundar seus estudos bíblicos, visualizar melhor lugares e jornadas das Escrituras e usar um material de apoio em estudos pessoais, aulas, EBD, células ou pregações.
+            Abra no celular, tablet ou computador e consulte sempre que precisar durante seus estudos, aulas ou pregações.
           </p>
         </div>
 

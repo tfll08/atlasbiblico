@@ -6,10 +6,10 @@ interface InsideAtlasPreviewProps {
 }
 
 const BENEFIT_PHRASES = [
-  'Localize os acontecimentos bíblicos',
-  'Acompanhe jornadas e rotas importantes das Escrituras',
+  'Encontre os lugares dos acontecimentos bíblicos',
+  'Acompanhe jornadas e rotas visualmente',
   'Consulte referências bíblicas na própria página',
-  'Use o Atlas em estudos, aulas e pregações'
+  'Use em estudos, aulas e pregações'
 ];
 
 export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaClick }) => {
@@ -30,13 +30,10 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
         {/* Header */}
         <div className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#C4932F]">
-            EXPLORE O CONTEÚDO
+            VEJA POR DENTRO
           </span>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Veja o que você vai encontrar no{' '}
-            <span className="font-normal normal-case text-[#C85A32] font-migra italic inline sm:inline-block">
-              Atlas
-            </span>
+            Veja como o Atlas funciona na prática
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-[#5C6E75] sm:text-lg leading-relaxed text-balance">
             Assista ao vídeo e explore algumas das páginas, mapas, rotas e conteúdos que fazem parte do Atlas Bíblico Visual.

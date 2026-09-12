@@ -10,22 +10,22 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     <section id="hero" className="bg-white px-5 pt-10 sm:pt-16 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
-        {/* Big Editorial Headline - estruturada em 3 linhas elegantes e legíveis */}
-        <h1 className="mx-auto max-w-5xl font-heading text-[1.4rem] xs:text-[1.55rem] sm:text-4xl md:text-5xl lg:text-[3.35rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground">
-          <span className="block">Entenda os lugares e as rotas</span>
-          <span className="block font-normal normal-case text-terracotta font-migra italic">
-            por trás dos relatos bíblicos
-          </span>
-          <span className="block">com mapas visuais</span>
+        {/* Big Editorial Headline */}
+        <h1 className="mx-auto max-w-5xl font-heading text-[1.45rem] xs:text-[1.65rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground text-balance">
+          Veja onde aconteceram os relatos da{' '}
+          <span className="font-normal normal-case text-terracotta font-migra italic">
+            Bíblia
+          </span>{' '}
+          e acompanhe{' '}
+          <span className="font-normal normal-case text-terracotta font-migra italic">
+            rotas e jornadas
+          </span>{' '}
+          no mapa
         </h1>
 
         {/* Subheadline Directly Below Headline */}
         <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg text-balance">
-          Veja onde os relatos aconteceram e conecte{' '}
-          <span className="font-semibold text-terracotta">
-            personagens, cidades e jornadas com mais clareza
-          </span>
-          .
+          Mapas, rotas, cidades e contextos bíblicos organizados para você encontrar e consultar sempre que precisar.
         </p>
 
         {/* Hero Transparent Image without background or frame */}
