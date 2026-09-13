@@ -10,7 +10,8 @@ import {
   Gift, 
   Smartphone,
   Printer,
-  Headphones
+  Headphones,
+  Mail
 } from 'lucide-react';
 
 interface OfferSectionProps {
@@ -215,6 +216,10 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             <div className="flex items-center gap-1.5 font-medium">
               <Lock className="h-3.5 w-3.5 text-emerald-600" />
               <span>Pagamento 100% Seguro</span>
+            </div>
+            <div className="flex items-center gap-1.5 font-medium text-[#173B4D]">
+              <Mail className="h-3.5 w-3.5 text-[#C85A32]" />
+              <span className="font-semibold">Acesso por e-mail</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="h-3.5 w-3.5 text-[#173B4D]" />
