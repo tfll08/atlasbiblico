@@ -8,106 +8,194 @@ interface TestimonialsProps {
 const TESTIMONIAL_IMAGES = [
   {
     id: 'depoimento-1',
-    src: 'https://i.imgur.com/TTYt6OZ.png',
-    alt: 'Depoimento de leitor sobre o Atlas Bíblico Visual'
+    src: 'https://i.imgur.com/Va6temt.jpeg',
+    alt: 'Depoimento de leitor sobre o Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-2',
-    src: 'https://i.imgur.com/3LntJAu.png',
-    alt: 'Feedback sobre os mapas e clareza do Atlas Bíblico Visual'
+    src: 'https://i.imgur.com/AU9FO0p.jpeg',
+    alt: 'Feedback sobre os mapas e clareza do Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-3',
-    src: 'https://i.imgur.com/DswAsSF.png',
-    alt: 'Avaliação da experiência de estudo bíblico visual'
+    src: 'https://i.imgur.com/NocHzLy.jpeg',
+    alt: 'Avaliação da experiência de estudo bíblico com o Atlas',
   },
   {
     id: 'depoimento-4',
-    src: 'https://i.imgur.com/xUPC9Kf.png',
-    alt: 'Comentário sobre a facilidade de compreensão dos mapas'
-  }
+    src: 'https://i.imgur.com/lAJacRD.jpeg',
+    alt: 'Comentário sobre a riqueza de detalhes e mapas bíblicos',
+  },
+  {
+    id: 'depoimento-5',
+    src: 'https://i.imgur.com/12mF9Me.jpeg',
+    alt: 'Depoimento recomendando o Atlas Bíblico Visual para estudos',
+  },
 ];
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [canScrollPrev, setCanScrollPrev] = useState(false);
-  const [canScrollNext, setCanScrollNext] = useState(true);
-  const isHovered = useRef(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const isInteractingRef = useRef(false);
+  const pauseTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isVisibleRef = useRef(true);
 
-  const updateScrollButtons = useCallback(() => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
-    const { scrollLeft, scrollWidth, clientWidth } = el;
-    setCanScrollPrev(scrollLeft > 10);
-    setCanScrollNext(scrollLeft < scrollWidth - clientWidth - 10);
+  // Mouse drag state for desktop
+  const [isDragging, setIsDragging] = useState(false);
+  const dragStartXRef = useRef(0);
+  const dragScrollLeftRef = useRef(0);
 
-    // Calculate active slide based on scroll offset
-    const cardWidth = el.querySelector<HTMLElement>('[data-carousel-item]')?.offsetWidth || clientWidth;
-    const index = Math.round(scrollLeft / (cardWidth + 20));
-    setActiveIndex(Math.min(Math.max(index, 0), TESTIMONIAL_IMAGES.length - 1));
+  // Create 4 sets for continuous infinite seamless looping
+  const infiniteTestimonials = [
+    ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set0-${idx}` })),
+    ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set1-${idx}` })),
+    ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set2-${idx}` })),
+    ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set3-${idx}` })),
+  ];
+
+  // Helper to pause auto scroll on user action and resume after a delay
+  const pauseTemporarily = useCallback((durationMs = 4000) => {
+    isInteractingRef.current = true;
+    if (pauseTimeoutRef.current) {
+      clearTimeout(pauseTimeoutRef.current);
+    }
+    pauseTimeoutRef.current = setTimeout(() => {
+      isInteractingRef.current = false;
+    }, durationMs);
   }, []);
 
+  // Compute card step width (card width + gap)
+  const getCardStep = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return 304;
+    const firstItem = container.querySelector<HTMLElement>('[data-carousel-item]');
+    if (firstItem) {
+      const style = window.getComputedStyle(container);
+      const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+      return firstItem.offsetWidth + gap;
+    }
+    return 304;
+  }, []);
+
+  // Slide navigation actions
+  const scrollNext = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const step = getCardStep();
+    const setWidth = step * TESTIMONIAL_IMAGES.length;
+
+    // Boundary check for infinite forward looping
+    if (container.scrollLeft >= setWidth * 2.5) {
+      container.scrollLeft -= setWidth;
+    }
+
+    container.scrollBy({ left: step, behavior: 'smooth' });
+  }, [getCardStep]);
+
+  const scrollPrev = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const step = getCardStep();
+    const setWidth = step * TESTIMONIAL_IMAGES.length;
+
+    // Boundary check for infinite backward looping
+    if (container.scrollLeft <= setWidth * 0.5) {
+      container.scrollLeft += setWidth;
+    }
+
+    container.scrollBy({ left: -step, behavior: 'smooth' });
+  }, [getCardStep]);
+
+  // Initialize scroll position in the center set
   useEffect(() => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
+    const container = scrollRef.current;
+    if (!container) return;
 
-    updateScrollButtons();
-    el.addEventListener('scroll', updateScrollButtons, { passive: true });
-    window.addEventListener('resize', updateScrollButtons);
-
-    return () => {
-      el.removeEventListener('scroll', updateScrollButtons);
-      window.removeEventListener('resize', updateScrollButtons);
+    const initializeScroll = () => {
+      const step = getCardStep();
+      const setWidth = step * TESTIMONIAL_IMAGES.length;
+      container.scrollLeft = setWidth;
     };
-  }, [updateScrollButtons]);
 
-  const scrollToIndex = (index: number) => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-    if (!card) return;
-    const cardWidth = card.offsetWidth + 20; // width + gap
-    el.scrollTo({ left: index * cardWidth, behavior: 'smooth' });
-  };
+    const timer = setTimeout(initializeScroll, 120);
+    return () => clearTimeout(timer);
+  }, [getCardStep]);
 
-  const scrollPrev = () => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-    const step = (card?.offsetWidth || 300) + 20;
-    el.scrollBy({ left: -step, behavior: 'smooth' });
-  };
-
-  const scrollNext = () => {
-    const el = scrollContainerRef.current;
-    if (!el) return;
-    const card = el.querySelector<HTMLElement>('[data-carousel-item]');
-    const step = (card?.offsetWidth || 300) + 20;
-    el.scrollBy({ left: step, behavior: 'smooth' });
-  };
-
-  // Autoplay functionality (pauses on user hover)
+  // Intersection Observer to run auto-slide only when visible on screen
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isHovered.current) {
-        setActiveIndex((prev) => {
-          const nextIndex = (prev + 1) % TESTIMONIAL_IMAGES.length;
-          scrollToIndex(nextIndex);
-          return nextIndex;
-        });
-      }
-    }, 6000);
+    const wrapper = wrapperRef.current;
+    if (!wrapper) return;
 
-    return () => clearInterval(interval);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisibleRef.current = entry.isIntersecting;
+      },
+      { rootMargin: '100px' }
+    );
+
+    observer.observe(wrapper);
+    return () => observer.disconnect();
   }, []);
+
+  // Automatic slide progression with faster interval (2 seconds)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (!isInteractingRef.current && isVisibleRef.current) {
+        scrollNext();
+      }
+    }, 2000);
+
+    return () => clearInterval(timer);
+  }, [scrollNext]);
+
+  // Scroll listener to manage continuous infinite loop
+  const handleScroll = useCallback(() => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const step = getCardStep();
+    const setWidth = step * TESTIMONIAL_IMAGES.length;
+    if (setWidth <= 0) return;
+
+    // Infinite loop re-centering without visual jump
+    if (container.scrollLeft >= setWidth * 2.8) {
+      container.scrollLeft -= setWidth;
+    } else if (container.scrollLeft <= setWidth * 0.2) {
+      container.scrollLeft += setWidth;
+    }
+  }, [getCardStep]);
+
+  // Mouse drag handlers for desktop
+  const handleMouseDown = (e: React.MouseEvent) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    setIsDragging(true);
+    isInteractingRef.current = true;
+    dragStartXRef.current = e.pageX - container.offsetLeft;
+    dragScrollLeftRef.current = container.scrollLeft;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const container = scrollRef.current;
+    if (!container) return;
+    const x = e.pageX - container.offsetLeft;
+    const walk = (x - dragStartXRef.current) * 1.3;
+    container.scrollLeft = dragScrollLeftRef.current - walk;
+  };
+
+  const handleMouseUpOrLeave = () => {
+    if (isDragging) {
+      setIsDragging(false);
+      pauseTemporarily(4000);
+    }
+  };
 
   return (
     <section
       id="depoimentos"
       className="bg-[#173A45] px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden content-visibility-auto scroll-mt-6"
-      onMouseEnter={() => { isHovered.current = true; }}
-      onMouseLeave={() => { isHovered.current = false; }}
     >
       <div className="mx-auto max-w-6xl">
         
@@ -140,56 +228,87 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
           </div>
         </div>
 
-        {/* Carousel Container with Arrows */}
-        <div className="relative mt-10 sm:mt-14">
-          
-          {/* Arrow Left */}
+        {/* Carousel Container with lateral blur overlay and controls */}
+        <div 
+          ref={wrapperRef}
+          className="relative mt-10 sm:mt-14"
+          onTouchStart={() => { isInteractingRef.current = true; }}
+          onTouchEnd={() => { pauseTemporarily(4000); }}
+        >
+          {/* Efeito Blur Lateral Esquerdo */}
+          <div 
+            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 sm:w-28 md:w-40 bg-gradient-to-r from-[#173A45] via-[#173A45]/85 to-transparent backdrop-blur-[2px]"
+            aria-hidden="true"
+          />
+
+          {/* Efeito Blur Lateral Direito */}
+          <div 
+            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 sm:w-28 md:w-40 bg-gradient-to-l from-[#173A45] via-[#173A45]/85 to-transparent backdrop-blur-[2px]"
+            aria-hidden="true"
+          />
+
+          {/* Seta Esquerda */}
           <button
             id="testimonial-prev-btn"
             type="button"
-            onClick={scrollPrev}
-            disabled={!canScrollPrev}
+            onClick={() => {
+              pauseTemporarily(5000);
+              scrollPrev();
+            }}
             aria-label="Depoimento anterior"
-            className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-xs transition-all duration-200 hover:scale-110 hover:bg-[#173A45] disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer`}
+            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
           >
             <ChevronLeft className="h-6 w-6 stroke-[2.5]" />
           </button>
 
-          {/* Arrow Right */}
+          {/* Seta Direita */}
           <button
             id="testimonial-next-btn"
             type="button"
-            onClick={scrollNext}
-            disabled={!canScrollNext}
+            onClick={() => {
+              pauseTemporarily(5000);
+              scrollNext();
+            }}
             aria-label="Próximo depoimento"
-            className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-5 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-xs transition-all duration-200 hover:scale-110 hover:bg-[#173A45] disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100 cursor-pointer`}
+            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
           >
             <ChevronRight className="h-6 w-6 stroke-[2.5]" />
           </button>
 
-          {/* Carousel Scrollable Track */}
+          {/* Carousel Infinite Scrollable Track */}
           <div
-            ref={scrollContainerRef}
-            className="flex gap-5 overflow-x-auto scrollbar-none snap-x snap-mandatory py-4 px-2 sm:px-4 -mx-2 sm:-mx-4 scroll-smooth"
-            style={{ scrollSnapType: 'x mandatory' }}
+            ref={scrollRef}
+            onScroll={handleScroll}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUpOrLeave}
+            className={`flex gap-5 sm:gap-6 overflow-x-auto no-scrollbar py-4 px-6 sm:px-12 select-none ${
+              isDragging ? 'cursor-grabbing' : 'cursor-grab'
+            }`}
+            style={{ 
+              scrollbarWidth: 'none', 
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
           >
-            {TESTIMONIAL_IMAGES.map((item) => (
+            {infiniteTestimonials.map((item) => (
               <div
-                key={item.id}
+                key={item.uniqueKey}
                 data-carousel-item
-                className="w-[85vw] sm:w-[calc(50%-10px)] lg:w-[calc(33.333%-14px)] shrink-0 snap-center select-none"
+                className="w-[240px] xs:w-[260px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
               >
-                <div className="overflow-hidden rounded-2xl bg-white/10 border border-white/20 shadow-md backdrop-blur-xs transition-all duration-300 hover:shadow-xl hover:-translate-y-1 group">
-                  <div className="relative bg-white flex items-center justify-center p-2 sm:p-3 rounded-2xl">
+                <div className="overflow-hidden rounded-2xl bg-white/5 border border-white/20 shadow-xl backdrop-blur-xs transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-white/40">
+                  <div className="relative aspect-[9/16] w-full bg-[#0D262F] flex items-center justify-center overflow-hidden">
                     <img
                       src={item.src}
                       alt={item.alt}
-                      width={600}
-                      height={400}
+                      width={1080}
+                      height={1920}
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
-                      className="w-full h-auto object-contain rounded-xl select-none pointer-events-none transition-transform duration-300 group-hover:scale-[1.01]"
+                      draggable={false}
+                      className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
                 </div>
@@ -197,27 +316,16 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             ))}
           </div>
 
-          {/* Navigation Dots */}
-          <div className="mt-6 flex items-center justify-center gap-2">
-            {TESTIMONIAL_IMAGES.map((_, dotIndex) => (
-              <button
-                key={dotIndex}
-                type="button"
-                onClick={() => scrollToIndex(dotIndex)}
-                aria-label={`Ir para depoimento ${dotIndex + 1}`}
-                className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
-                  activeIndex === dotIndex
-                    ? 'w-8 bg-[#E5C158]'
-                    : 'w-2.5 bg-white/30 hover:bg-white/50'
-                }`}
-              />
-            ))}
+          <div className="mt-4 text-center">
+            <span className="text-xs text-[#D1E0E5]/70 font-medium tracking-wide">
+              Passando automaticamente • Você também pode arrastar ou usar as setas
+            </span>
           </div>
         </div>
 
         {/* Section CTA Button leading to offer */}
         {onCtaClick && (
-          <div className="mt-12 sm:mt-16 flex justify-center">
+          <div className="mt-10 sm:mt-14 flex justify-center">
             <button
               onClick={onCtaClick}
               className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#C17D5C] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#A96848] shadow-md cursor-pointer"
