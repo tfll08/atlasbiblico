@@ -57,7 +57,7 @@ export const PainIdentification: React.FC = () => {
           {/* Central Image Container */}
           <div className="relative mx-auto max-w-[340px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-white/10 border-2 border-white/20 shadow-2xl backdrop-blur-xs">
             <img
-              src="https://i.imgur.com/uMa1QCh.png"
+              src="https://i.imgur.com/GXIy7Ky.png"
               alt="Páginas e mapas do Atlas Bíblico Visual com rotas e contextos detalhados"
               width={1000}
               height={700}

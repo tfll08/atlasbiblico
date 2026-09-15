@@ -11,7 +11,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     accentColor: '#1B4958',
     badge: 'Volume 1',
     imageSrc: 'https://i.imgur.com/oYbpctK.png',
-    insideMapSrc: 'https://i.imgur.com/4bXSoPw.png',
+    insideMapSrc: 'https://i.imgur.com/xszeYxL.png',
     coverImageTheme: 'world',
     mapHighlights: ['Crescente Fértil', 'Império Babilônico, Persa e Romano', 'Topografia do Oriente Médio']
   },
