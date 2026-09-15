@@ -54,7 +54,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   ];
 
   // Helper to pause auto scroll on user action and resume after a delay
-  const pauseTemporarily = useCallback((durationMs = 4000) => {
+  const pauseTemporarily = useCallback((durationMs = 3500) => {
     isInteractingRef.current = true;
     if (pauseTimeoutRef.current) {
       clearTimeout(pauseTimeoutRef.current);
@@ -67,25 +67,24 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   // Compute card step width (card width + gap)
   const getCardStep = useCallback(() => {
     const container = scrollRef.current;
-    if (!container) return 304;
+    if (!container) return 280;
     const firstItem = container.querySelector<HTMLElement>('[data-carousel-item]');
     if (firstItem) {
       const style = window.getComputedStyle(container);
-      const gap = parseFloat(style.columnGap || style.gap || '24') || 24;
+      const gap = parseFloat(style.columnGap || style.gap || '20') || 20;
       return firstItem.offsetWidth + gap;
     }
-    return 304;
+    return 280;
   }, []);
 
-  // Slide navigation actions
+  // Slide navigation actions for manual arrow buttons
   const scrollNext = useCallback(() => {
     const container = scrollRef.current;
     if (!container) return;
     const step = getCardStep();
     const setWidth = step * TESTIMONIAL_IMAGES.length;
 
-    // Boundary check for infinite forward looping
-    if (container.scrollLeft >= setWidth * 2.5) {
+    if (container.scrollLeft >= setWidth * 2.6) {
       container.scrollLeft -= setWidth;
     }
 
@@ -98,8 +97,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
     const step = getCardStep();
     const setWidth = step * TESTIMONIAL_IMAGES.length;
 
-    // Boundary check for infinite backward looping
-    if (container.scrollLeft <= setWidth * 0.5) {
+    if (container.scrollLeft <= setWidth * 0.4) {
       container.scrollLeft += setWidth;
     }
 
@@ -117,7 +115,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
       container.scrollLeft = setWidth;
     };
 
-    const timer = setTimeout(initializeScroll, 120);
+    const timer = setTimeout(initializeScroll, 100);
     return () => clearTimeout(timer);
   }, [getCardStep]);
 
@@ -137,32 +135,46 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
     return () => observer.disconnect();
   }, []);
 
-  // Automatic slide progression with faster interval (2 seconds)
+  // Continuous smooth auto-glide (accelerated speed, frame-independent)
   useEffect(() => {
-    const timer = setInterval(() => {
-      if (!isInteractingRef.current && isVisibleRef.current) {
-        scrollNext();
-      }
-    }, 2000);
-
-    return () => clearInterval(timer);
-  }, [scrollNext]);
-
-  // Scroll listener to manage continuous infinite loop
-  const handleScroll = useCallback(() => {
     const container = scrollRef.current;
     if (!container) return;
 
-    const step = getCardStep();
-    const setWidth = step * TESTIMONIAL_IMAGES.length;
-    if (setWidth <= 0) return;
+    let animationFrameId: number;
+    let lastTime = performance.now();
+    // Accelerated continuous glide speed in pixels per second
+    const speed = 90;
 
-    // Infinite loop re-centering without visual jump
-    if (container.scrollLeft >= setWidth * 2.8) {
-      container.scrollLeft -= setWidth;
-    } else if (container.scrollLeft <= setWidth * 0.2) {
-      container.scrollLeft += setWidth;
-    }
+    const autoScroll = (currentTime: number) => {
+      const delta = (currentTime - lastTime) / 1000;
+      lastTime = currentTime;
+
+      // Only scroll when visible and user is not actively interacting
+      if (isVisibleRef.current && !isInteractingRef.current && container) {
+        const step = getCardStep();
+        const setWidth = step * TESTIMONIAL_IMAGES.length;
+
+        // Apply smooth delta increment (capped to prevent big jumps on tab blur)
+        container.scrollLeft += speed * Math.min(delta, 0.08);
+
+        // Seamless infinite loop without any visual flicker
+        if (setWidth > 0) {
+          if (container.scrollLeft >= setWidth * 2.8) {
+            container.scrollLeft -= setWidth;
+          } else if (container.scrollLeft <= setWidth * 0.2) {
+            container.scrollLeft += setWidth;
+          }
+        }
+      }
+
+      animationFrameId = requestAnimationFrame(autoScroll);
+    };
+
+    animationFrameId = requestAnimationFrame(autoScroll);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [getCardStep]);
 
   // Mouse drag handlers for desktop
@@ -188,14 +200,14 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   const handleMouseUpOrLeave = () => {
     if (isDragging) {
       setIsDragging(false);
-      pauseTemporarily(4000);
+      pauseTemporarily(3000);
     }
   };
 
   return (
     <section
       id="depoimentos"
-      className="bg-[#173A45] px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden content-visibility-auto scroll-mt-6"
+      className="bg-[#173A45] px-3 xs:px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden content-visibility-auto scroll-mt-6"
     >
       <div className="mx-auto max-w-6xl">
         
@@ -213,8 +225,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Veja a experiência de quem já está usando o material para estudar a Bíblia com mais profundidade e apoio visual.
+          <p className="mx-auto mt-3.5 sm:mt-4 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
+            <span className="block">Veja a experiência de quem já está usando o material</span>
+            <span className="block">para estudar a Bíblia com mais profundidade e apoio visual.</span>
           </p>
 
           {/* Social Proof Stars Summary */}
@@ -232,18 +245,24 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
         <div 
           ref={wrapperRef}
           className="relative mt-10 sm:mt-14"
+          onMouseEnter={() => { isInteractingRef.current = true; }}
+          onMouseLeave={() => { 
+            if (!isDragging) {
+              isInteractingRef.current = false; 
+            }
+          }}
           onTouchStart={() => { isInteractingRef.current = true; }}
-          onTouchEnd={() => { pauseTemporarily(4000); }}
+          onTouchEnd={() => { pauseTemporarily(2800); }}
         >
-          {/* Efeito Blur Lateral Esquerdo */}
+          {/* Efeito Blur Lateral Esquerdo - Otimizado para Mobile */}
           <div 
-            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-16 sm:w-28 md:w-40 bg-gradient-to-r from-[#173A45] via-[#173A45]/85 to-transparent backdrop-blur-[2px]"
+            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-r from-[#173A45] via-[#173A45]/70 to-transparent sm:backdrop-blur-xs"
             aria-hidden="true"
           />
 
-          {/* Efeito Blur Lateral Direito */}
+          {/* Efeito Blur Lateral Direito - Otimizado para Mobile */}
           <div 
-            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-16 sm:w-28 md:w-40 bg-gradient-to-l from-[#173A45] via-[#173A45]/85 to-transparent backdrop-blur-[2px]"
+            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-l from-[#173A45] via-[#173A45]/70 to-transparent sm:backdrop-blur-xs"
             aria-hidden="true"
           />
 
@@ -252,13 +271,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             id="testimonial-prev-btn"
             type="button"
             onClick={() => {
-              pauseTemporarily(5000);
+              pauseTemporarily(4000);
               scrollPrev();
             }}
             aria-label="Depoimento anterior"
-            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
+            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
           >
-            <ChevronLeft className="h-6 w-6 stroke-[2.5]" />
+            <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2.5]" />
           </button>
 
           {/* Seta Direita */}
@@ -266,23 +285,22 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             id="testimonial-next-btn"
             type="button"
             onClick={() => {
-              pauseTemporarily(5000);
+              pauseTemporarily(4000);
               scrollNext();
             }}
             aria-label="Próximo depoimento"
-            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
+            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
           >
-            <ChevronRight className="h-6 w-6 stroke-[2.5]" />
+            <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2.5]" />
           </button>
 
-          {/* Carousel Infinite Scrollable Track */}
+          {/* Carousel Infinite Continuous Scrollable Track */}
           <div
             ref={scrollRef}
-            onScroll={handleScroll}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
             onMouseUp={handleMouseUpOrLeave}
-            className={`flex gap-5 sm:gap-6 overflow-x-auto no-scrollbar py-4 px-6 sm:px-12 select-none ${
+            className={`flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar py-3 sm:py-4 px-4 sm:px-12 select-none ${
               isDragging ? 'cursor-grabbing' : 'cursor-grab'
             }`}
             style={{ 
@@ -295,7 +313,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
               <div
                 key={item.uniqueKey}
                 data-carousel-item
-                className="w-[240px] xs:w-[260px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
+                className="w-[220px] xs:w-[250px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
               >
                 <div className="overflow-hidden rounded-2xl bg-white/5 border border-white/20 shadow-xl backdrop-blur-xs transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-white/40">
                   <div className="relative aspect-[9/16] w-full bg-[#0D262F] flex items-center justify-center overflow-hidden">
@@ -318,7 +336,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
 
           <div className="mt-4 text-center">
             <span className="text-xs text-[#D1E0E5]/70 font-medium tracking-wide">
-              Passando automaticamente • Você também pode arrastar ou usar as setas
+              Rolagem contínua automática • Toque ou use as setas para pausar e navegar
             </span>
           </div>
         </div>
