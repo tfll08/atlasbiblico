@@ -148,6 +148,10 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             </span>{' '}
             para você consultar quando precisar
           </h2>
+          <p className="mt-3.5 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#D1E0E5] leading-relaxed">
+            <span className="block">Quatro volumes temáticos completos com mapas</span>
+            <span className="block">e contextos organizados de cada período bíblico.</span>
+          </p>
         </div>
 
         {/* 4 Volumes Showcase with Image Carousel (Cover + Inside Map) */}

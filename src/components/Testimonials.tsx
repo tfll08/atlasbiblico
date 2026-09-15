@@ -230,9 +230,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-3.5 sm:mt-4 max-w-xl text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
+          <p className="mx-auto mt-3.5 sm:mt-4 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
             <span className="block">Veja a experiência de quem já está usando o material</span>
-            <span className="block">para estudar a Bíblia com mais profundidade e apoio visual.</span>
+            <span className="block">para estudar a Bíblia com apoio visual e profundidade.</span>
           </p>
 
           {/* Social Proof Stars Summary */}

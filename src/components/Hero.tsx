@@ -24,12 +24,12 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </h1>
 
         {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3.5 sm:mt-6 max-w-2xl text-[0.82rem] xs:text-[0.9rem] sm:text-lg leading-snug sm:leading-relaxed text-muted-foreground text-balance">
-          <span className="font-semibold text-terracotta block sm:inline">
+        <p className="mx-auto mt-3.5 sm:mt-6 max-w-xl text-[0.85rem] xs:text-[0.92rem] sm:text-lg leading-snug sm:leading-relaxed text-muted-foreground">
+          <span className="font-semibold text-terracotta block">
             Mapas, rotas, cidades e contextos bíblicos
-          </span>{' '}
-          <span className="block sm:inline">
-            organizados para você <span className="hidden sm:inline">encontrar e </span>consultar sempre que precisar.
+          </span>
+          <span className="block">
+            organizados para você consultar sempre que precisar.
           </span>
         </p>
 

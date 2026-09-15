@@ -127,8 +127,9 @@ export const Warranty: React.FC<WarrantyProps> = () => {
             <h2 className="mt-1 font-heading text-xl sm:text-2xl font-bold uppercase tracking-tight text-white">
               Garantia incondicional de 7 dias
             </h2>
-            <p className="mt-3 text-sm sm:text-base leading-relaxed text-[#D1E0E5]">
-              Se por qualquer motivo você achar que o material não atendeu às suas expectativas, basta solicitar o reembolso em até 7 dias e devolveremos 100% do seu dinheiro. Sem burocracia.
+            <p className="mt-3 text-xs xs:text-sm sm:text-base leading-relaxed text-[#D1E0E5]">
+              <span className="block">Teste com total tranquilidade durante 7 dias. Se não amar,</span>
+              <span className="block">devolvemos 100% do seu dinheiro, sem burocracia.</span>
             </p>
           </div>
         </div>

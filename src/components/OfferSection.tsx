@@ -105,6 +105,12 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           Visualize os lugares e acompanhe as jornadas da Bíblia enquanto você estuda.
         </h2>
 
+        {/* Subtitle formatted in two lines */}
+        <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
+          <span className="block">Garanta acesso completo à coleção visual</span>
+          <span className="block">com todos os bônus e atualizações inclusas.</span>
+        </p>
+
         {/* Bundle Showcase Image */}
         <div className="my-8 w-full flex justify-center">
           <img

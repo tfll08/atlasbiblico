@@ -35,8 +35,9 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
             Veja como o Atlas funciona na prática
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-[#5C6E75] sm:text-lg leading-relaxed text-balance">
-            Assista ao vídeo e explore algumas das páginas, mapas, rotas e conteúdos que fazem parte do Atlas Bíblico Visual.
+          <p className="mx-auto mt-3.5 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed">
+            <span className="block">Assista ao vídeo e conheça as páginas e rotas</span>
+            <span className="block">que fazem parte do Atlas Bíblico Visual.</span>
           </p>
         </div>
 

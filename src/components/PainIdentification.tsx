@@ -18,8 +18,9 @@ export const PainIdentification: React.FC = () => {
             </span>
           </h2>
 
-          <p className="mt-4 mx-auto max-w-2xl text-base sm:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Muitos relatos ganham outra clareza quando você consegue visualizar os lugares, as distâncias e os caminhos percorridos. Veja abaixo um exemplo dentro do Atlas.
+          <p className="mt-3.5 mx-auto max-w-xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
+            <span className="block">Muitos relatos ganham clareza ao visualizar lugares e rotas.</span>
+            <span className="block">Veja abaixo um exemplo de página dentro do Atlas.</span>
           </p>
         </div>
 
