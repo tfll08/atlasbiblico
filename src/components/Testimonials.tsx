@@ -31,6 +31,11 @@ const TESTIMONIAL_IMAGES = [
     src: 'https://i.imgur.com/12mF9Me.jpeg',
     alt: 'Depoimento recomendando o Atlas Bíblico Visual para estudos',
   },
+  {
+    id: 'depoimento-6',
+    src: 'https://i.imgur.com/WrJjTyK.jpeg',
+    alt: 'Depoimento destacando a riqueza de mapas e estudos bíblicos do Atlas',
+  },
 ];
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
