@@ -7,29 +7,41 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <section id="hero" className="bg-white px-5 pt-10 sm:pt-16 pb-16 sm:pb-24">
+    <section id="hero" className="bg-white px-5 pt-8 sm:pt-14 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
+        {/* Product Brand with Logo above Headline */}
+        <div className="mb-5 sm:mb-7 flex items-center justify-center">
+          <div className="inline-flex items-center gap-2.5 rounded-full bg-[#FAF8F5] px-4 sm:px-5 py-1.5 sm:py-2 border border-[#EAE5DB] shadow-2xs">
+            <img 
+              src="/favicon.svg" 
+              alt="Logo Atlas Bíblico Visual" 
+              width={24}
+              height={24}
+              className="h-4 w-4 sm:h-5 sm:w-5 rounded-md object-contain shrink-0" 
+            />
+            <span className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#173B4D]">
+              Atlas Bíblico Visual
+            </span>
+          </div>
+        </div>
+
         {/* Big Editorial Headline */}
         <h1 className="mx-auto max-w-5xl font-heading text-[1.45rem] xs:text-[1.65rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Veja onde aconteceram os relatos da{' '}
+          Entenda os{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
-            Bíblia
+            lugares, rotas e jornadas da Bíblia
           </span>{' '}
-          e acompanhe{' '}
-          <span className="font-normal normal-case text-terracotta font-migra italic">
-            rotas e jornadas
-          </span>{' '}
-          no mapa
+          com mapas visuais
         </h1>
 
         {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3.5 sm:mt-6 max-w-xl text-[0.85rem] xs:text-[0.92rem] sm:text-lg leading-snug sm:leading-relaxed text-muted-foreground">
-          <span className="font-semibold text-terracotta block">
-            Mapas, rotas, cidades e contextos bíblicos
-          </span>
-          <span className="block">
-            organizados para você consultar sempre que precisar.
+        <p className="mx-auto mt-3 sm:mt-5 max-w-xl text-[0.82rem] xs:text-[0.88rem] sm:text-lg leading-[1.38] sm:leading-relaxed text-balance">
+          <span className="font-semibold text-terracotta sm:block">
+            Uma coleção visual com mapas, cidades, contextos e referências
+          </span>{' '}
+          <span className="text-muted-foreground sm:block">
+            para consultar enquanto você estuda, ensina ou prepara uma mensagem.
           </span>
         </p>
 
@@ -56,7 +68,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             id="hero-cta-btn"
             className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 sm:py-5 text-center text-sm sm:text-base font-bold tracking-wide uppercase text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
           >
-            QUERO ACESSAR O ATLAS BÍBLICO VISUAL
+            QUERO CONHECER O ATLAS
           </button>
         </div>
 
