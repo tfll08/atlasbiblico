@@ -25,7 +25,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     accentColor: '#8C4827',
     badge: 'Volume 2',
     imageSrc: 'https://i.imgur.com/GCPoAHE.png',
-    insideMapSrc: 'https://i.imgur.com/atlM0mG.png',
+    insideMapSrc: 'https://i.imgur.com/jBpMsM3.png',
     coverImageTheme: 'patriarchs',
     mapHighlights: ['Rota de Abraão', 'Descida e Saída do Egito', 'Jornada no Deserto e Tabernáculo']
   },
@@ -39,7 +39,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     accentColor: '#B08830',
     badge: 'Volume 3',
     imageSrc: 'https://i.imgur.com/CfnIevz.png',
-    insideMapSrc: 'https://i.imgur.com/S8EgDFM.png',
+    insideMapSrc: 'https://i.imgur.com/MfLDu9A.png',
     coverImageTheme: 'jesus',
     mapHighlights: ['Mar da Galileia e Cidades Circunvizinhas', 'Caminho por Samaria', 'Jerusalém na Paixão']
   },

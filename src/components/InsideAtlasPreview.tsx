@@ -53,7 +53,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
           <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] rounded-3xl overflow-hidden border-4 border-[#173B4D]/15 bg-black shadow-2xl transition-all duration-300 hover:border-[#173B4D]/30">
             <video
               ref={videoRef}
-              src="https://i.imgur.com/bs5WKaq.mp4"
+              src="https://i.imgur.com/nPQAjhn.mp4"
               poster="/video-preview-thumb.jpg"
               preload="metadata"
               playsInline

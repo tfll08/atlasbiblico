@@ -99,7 +99,7 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
           <div className="relative mx-auto w-full max-w-[320px] sm:max-w-[360px] rounded-3xl overflow-hidden border-4 border-white/20 bg-black shadow-2xl transition-all duration-300 hover:border-white/35">
             <video
               ref={videoRef}
-              src="https://i.imgur.com/bs5WKaq.mp4"
+              src="https://i.imgur.com/nPQAjhn.mp4"
               poster="/video-preview-thumb.jpg"
               preload="metadata"
               playsInline
