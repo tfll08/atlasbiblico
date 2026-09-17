@@ -9,7 +9,7 @@ const BENEFIT_PHRASES = [
   'Encontre os lugares dos acontecimentos bíblicos',
   'Acompanhe jornadas e rotas visualmente',
   'Consulte referências bíblicas na própria página',
-  'Use em estudos, aulas e pregações'
+  'Acesse o Atlas como um app no celular'
 ];
 
 export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaClick }) => {
@@ -36,8 +36,8 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
             Veja como o Atlas funciona na prática
           </h2>
           <p className="mx-auto mt-3.5 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed">
-            <span className="block">Assista ao vídeo e conheça as páginas e rotas</span>
-            <span className="block">que fazem parte do Atlas Bíblico Visual.</span>
+            <span className="block">Assista ao vídeo e veja por dentro os materiais do Atlas</span>
+            <span className="block">e a área de membros em formato de app.</span>
           </p>
         </div>
 

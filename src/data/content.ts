@@ -149,7 +149,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'O Atlas é físico ou digital?',
-    answer: 'O Atlas Bíblico Visual é 100% digital, disponibilizado pela área de membros.'
+    answer: 'O Atlas Bíblico Visual é 100% digital. O conteúdo fica disponível em uma área de membros com experiência de app, que pode ser acessada facilmente pelo celular, tablet ou computador.'
   },
   {
     id: 'faq-2',
@@ -159,7 +159,7 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-3',
     question: 'Posso acessar pelo celular?',
-    answer: 'Sim. Os arquivos podem ser consultados no celular, tablet ou computador.'
+    answer: 'Sim. O Atlas fica disponível em uma área de membros acessível pelo celular, tablet e computador, com experiência de app para facilitar o uso.'
   },
   {
     id: 'faq-4',

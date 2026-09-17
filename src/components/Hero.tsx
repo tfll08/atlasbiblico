@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         {/* Hero Transparent Image without background or frame */}
         <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-4xl flex justify-center">
           <img
-            src="https://i.imgur.com/VxEUXBj.png"
+            src="https://i.imgur.com/GqMNX5T.png"
             alt="Volumes do Atlas Bíblico Visual"
             width={1200}
             height={900}
@@ -64,7 +64,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         <ul className="mx-auto mt-6 flex max-w-2xl flex-col items-center justify-center gap-3 text-sm text-muted-foreground sm:flex-row sm:gap-8">
           <li className="flex items-center gap-2">
             <Smartphone className="h-4 w-4 shrink-0 text-gold" />
-            <span>Produto 100% digital</span>
+            <span>Área de membros estilo app</span>
           </li>
           <li className="flex items-center gap-2">
             <CreditCard className="h-4 w-4 shrink-0 text-gold" />

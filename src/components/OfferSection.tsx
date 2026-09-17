@@ -9,7 +9,7 @@ import {
   Scroll, 
   Gift, 
   Smartphone,
-  Printer,
+  LayoutDashboard,
   Headphones,
   Mail
 } from 'lucide-react';
@@ -79,10 +79,10 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       ),
     },
     {
-      icon: Printer,
+      icon: LayoutDashboard,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Download e impressão</strong> para consultar como preferir
+          <strong className="font-bold text-[#173B4D]">Área de membros em formato de app</strong> para facilitar o acesso
         </span>
       ),
     },
@@ -192,8 +192,12 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           </p>
 
           {/* Observação abaixo do preço */}
-          <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed">
-            Pagamento único • Acesso vitalício
+          <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+            <span>Pagamento único</span>
+            <span>•</span>
+            <span>Acesso vitalício</span>
+            <span>•</span>
+            <span>Área de membros em formato de app</span>
           </p>
         </div>
 

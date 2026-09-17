@@ -19,13 +19,13 @@ export const AccessInstructions: React.FC = () => {
       stepNumber: '03',
       icon: LayoutDashboard,
       title: 'Entre na área de membros',
-      description: 'Todo o conteúdo fica organizado em um só lugar para facilitar sua navegação.'
+      description: 'Todo o conteúdo fica organizado em um só lugar, com experiência de app para facilitar o acesso.'
     },
     {
       stepNumber: '04',
       icon: Smartphone,
       title: 'Acesse onde quiser',
-      description: 'Abra no celular, tablet ou computador. Se quiser, também pode baixar e imprimir.'
+      description: 'Use no celular, tablet ou computador. Se quiser, também pode baixar e imprimir.'
     }
   ];
 
