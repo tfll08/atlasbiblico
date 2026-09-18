@@ -28,25 +28,25 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Big Editorial Headline */}
         <h1 className="mx-auto max-w-5xl font-heading text-[1.45rem] xs:text-[1.65rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Entenda os{' '}
+          Veja onde os acontecimentos da{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
-            lugares, rotas e jornadas da Bíblia
+            Bíblia
           </span>{' '}
-          com mapas visuais
+          realmente aconteceram
         </h1>
 
         {/* Subheadline Directly Below Headline */}
         <p className="mx-auto mt-3 sm:mt-5 max-w-xl text-[0.82rem] xs:text-[0.88rem] sm:text-lg leading-[1.38] sm:leading-relaxed text-balance">
           <span className="font-semibold text-terracotta sm:block">
-            Uma coleção visual com mapas, cidades, contextos e referências
+            Um atlas visual para acompanhar lugares, rotas e jornadas bíblicas
           </span>{' '}
           <span className="text-muted-foreground sm:block">
-            para consultar enquanto você estuda, ensina ou prepara uma mensagem.
+            enquanto você estuda, ensina ou prepara uma mensagem.
           </span>
         </p>
 
         {/* Hero Transparent Image without background or frame */}
-        <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-4xl flex justify-center">
+        <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-4xl flex flex-col items-center justify-center">
           <img
             src="https://i.imgur.com/GqMNX5T.png"
             alt="Volumes do Atlas Bíblico Visual"
@@ -59,6 +59,9 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             draggable={false}
             className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-md"
           />
+          <p className="mt-3.5 text-xs sm:text-sm font-medium tracking-wide text-[#5C6E75] text-center">
+            Mapas e rotas bíblicas · Cidades e contextos
+          </p>
         </div>
 
         {/* Primary CTA */}
@@ -68,7 +71,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             id="hero-cta-btn"
             className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 sm:py-5 text-center text-sm sm:text-base font-bold tracking-wide uppercase text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
           >
-            QUERO CONHECER O ATLAS
+            QUERO ACESSAR O ATLAS VISUAL
           </button>
         </div>
 

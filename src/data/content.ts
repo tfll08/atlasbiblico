@@ -53,7 +53,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     accentColor: '#2B5349',
     badge: 'Volume 4',
     imageSrc: 'https://i.imgur.com/j0qZp6v.png',
-    insideMapSrc: 'https://i.imgur.com/6OYfDT2.png',
+    insideMapSrc: 'https://i.imgur.com/0zrUyqe.png',
     coverImageTheme: 'paul',
     mapHighlights: ['1ª, 2ª e 3ª Viagens Missionárias', 'Viagem a Roma e Naufrágio em Malta', 'As Igrejas do Novo Testamento']
   }
@@ -92,7 +92,7 @@ export const INSIDE_SLIDES_DATA = [
   },
   {
     id: 'slide-7',
-    url: 'https://i.imgur.com/mCGptPf.png',
+    url: 'https://i.imgur.com/0zrUyqe.png',
     alt: 'Página por dentro do Atlas Bíblico Visual - Volume 4'
   },
   {
