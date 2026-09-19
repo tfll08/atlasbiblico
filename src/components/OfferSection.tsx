@@ -107,7 +107,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* Subtitle formatted in two lines */}
         <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-          Acesse os 4 volumes, os bônus e a área de membros com acesso vitalício.
+          Acesse os 4 volumes, todos os bônus e uma área de membros organizada para consulta.
         </p>
 
         {/* Bundle Showcase Image */}
@@ -193,10 +193,10 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           {/* Observação abaixo do preço */}
           <p className="mt-4 text-xs sm:text-sm font-medium text-[#5C6E75] leading-relaxed flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
             <span>Pagamento único</span>
-            <span>•</span>
+            <span>·</span>
+            <span>Sem mensalidade</span>
+            <span>·</span>
             <span>Acesso vitalício</span>
-            <span>•</span>
-            <span>Área de membros com experiência de app</span>
           </p>
         </div>
 
@@ -239,6 +239,11 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               <span>Suporte Exclusivo</span>
             </div>
           </div>
+
+          {/* Discreet confirmation note */}
+          <p className="mt-6 text-xs text-[#5C6E75] text-center font-normal">
+            Após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros.
+          </p>
         </div>
 
       </div>

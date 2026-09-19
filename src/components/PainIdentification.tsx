@@ -19,7 +19,7 @@ export const PainIdentification: React.FC = () => {
           </h2>
 
           <p className="mt-3.5 mx-auto max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Muitos relatos bíblicos ficam mais claros quando você consegue localizar os lugares e acompanhar os caminhos percorridos.
+            Muitos relatos bíblicos ficam mais claros quando você consegue localizar os lugares, acompanhar os caminhos percorridos e entender o contexto de cada acontecimento.
           </p>
         </div>
 
@@ -97,6 +97,13 @@ export const PainIdentification: React.FC = () => {
             </div>
           </div>
 
+        </div>
+
+        {/* Closing Highlight Phrase */}
+        <div className="mt-12 sm:mt-16 text-center">
+          <p className="mx-auto max-w-2xl text-base sm:text-lg md:text-xl font-medium text-[#FAF8F5] leading-relaxed">
+            Você lê o relato, localiza o lugar e acompanha a jornada visualmente.
+          </p>
         </div>
 
       </div>

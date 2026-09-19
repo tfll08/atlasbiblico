@@ -180,11 +180,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
                     {volume.title}
                   </h3>
 
-                  <p className="mt-2.5 text-lg text-[#E0936F] font-migra italic font-normal">
-                    {volume.phrase}
-                  </p>
-
-                  <p className="mt-3.5 text-base leading-relaxed text-white/85">
+                  <p className="mt-3.5 text-base sm:text-lg leading-relaxed text-white/85">
                     {volume.description}
                   </p>
                 </div>

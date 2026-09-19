@@ -6,10 +6,10 @@ interface InsideAtlasPreviewProps {
 }
 
 const BENEFIT_PHRASES = [
-  'Encontre os lugares dos acontecimentos bíblicos',
-  'Acompanhe jornadas e rotas visualmente',
-  'Consulte referências bíblicas na própria página',
-  'Acesse o Atlas como um app no celular'
+  'Localize os lugares envolvidos em uma passagem bíblica',
+  'Acompanhe as jornadas dos personagens',
+  'Consulte mapas durante suas aulas e pregações',
+  'Volte ao material sempre que surgir uma dúvida'
 ];
 
 export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaClick }) => {
@@ -36,7 +36,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
             Veja como você vai consultar o Atlas
           </h2>
           <p className="mx-auto mt-3.5 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed text-balance">
-            Todo o conteúdo fica organizado em uma área de membros com experiência de app. Acesse seus volumes, mapas e referências pelo celular, tablet ou computador.
+            Abra a área de membros, escolha o volume e consulte mapas, jornadas e referências bíblicas em poucos cliques, pelo celular, tablet ou computador.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
           {/* Invitation to press play */}
           <div className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-semibold text-[#B08830] border border-[#EAE5DB] mb-5 shadow-2xs">
             <Play className="h-3 w-3 fill-[#B08830]" />
-            <span>Clique no play para assistir</span>
+            <span>Veja a área de membros por dentro</span>
           </div>
 
           {/* Video Container Frame */}
@@ -83,8 +83,15 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
           </div>
         </div>
 
+        {/* Supporting statement below video */}
+        <div className="mt-8 sm:mt-10 text-center mx-auto max-w-2xl px-4">
+          <p className="text-sm sm:text-base md:text-lg font-medium text-[#173B4D] leading-relaxed text-balance">
+            O Atlas foi feito para acompanhar o seu estudo: você encontra o lugar, acompanha a jornada e consulta o contexto sem precisar procurar tudo separadamente.
+          </p>
+        </div>
+
         {/* Feature Benefit Cards */}
-        <div className="mt-12 sm:mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 max-w-6xl mx-auto">
+        <div className="mt-10 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-4 max-w-6xl mx-auto">
           {BENEFIT_PHRASES.map((phrase, i) => (
             <div
               key={i}

@@ -18,7 +18,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <span>4 Bônus Exclusivos</span>
           </div>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            E para deixar sua experiência de estudo ainda mais completa...
+            Além do Atlas, você também recebe guias para complementar seus estudos.
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
             <span className="block">Você também recebe 4 guias visuais práticos</span>
