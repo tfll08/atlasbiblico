@@ -7,7 +7,7 @@ interface HeroProps {
 
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
   return (
-    <section id="hero" className="bg-white px-5 pt-8 sm:pt-14 pb-16 sm:pb-24">
+    <section id="hero" className="bg-white px-3.5 xs:px-4 sm:px-6 pt-8 sm:pt-14 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
         {/* Product Brand with Logo above Headline */}
@@ -27,16 +27,18 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </div>
 
         {/* Big Editorial Headline */}
-        <h1 className="mx-auto max-w-5xl font-heading text-[1.45rem] xs:text-[1.65rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.25] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Veja onde os acontecimentos da{' '}
-          <span className="font-normal normal-case text-terracotta font-migra italic">
-            Bíblia
-          </span>{' '}
-          realmente aconteceram
+        <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[clamp(1.35rem,5.3vw,1.75rem)] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.22] sm:leading-[1.18] tracking-tight text-foreground">
+          <span className="block sm:inline">Veja onde os acontecimentos da</span>{' '}
+          <span className="block sm:inline">
+            <span className="font-normal normal-case text-terracotta font-migra italic">
+              Bíblia
+            </span>{' '}
+            realmente aconteceram
+          </span>
         </h1>
 
         {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3 sm:mt-5 max-w-xl text-[0.82rem] xs:text-[0.88rem] sm:text-lg leading-[1.38] sm:leading-relaxed text-balance">
+        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[0.92rem] xs:text-[1rem] sm:text-lg leading-[1.4] sm:leading-relaxed text-balance">
           <span className="font-semibold text-terracotta sm:block">
             Um atlas visual para acompanhar lugares, rotas e jornadas bíblicas
           </span>{' '}
