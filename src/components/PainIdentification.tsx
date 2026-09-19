@@ -12,15 +12,14 @@ export const PainIdentification: React.FC = () => {
           </span>
 
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white text-balance break-words">
-            Já leu um relato bíblico e ficou tentando imaginar{' '}
+            Você lê o relato. O Atlas ajuda a{' '}
             <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
-              onde tudo aquilo aconteceu?
+              visualizar o contexto
             </span>
           </h2>
 
-          <p className="mt-3.5 mx-auto max-w-xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
-            <span className="block">Muitos relatos ganham clareza ao visualizar lugares e rotas.</span>
-            <span className="block">Veja abaixo um exemplo de página dentro do Atlas.</span>
+          <p className="mt-3.5 mx-auto max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
+            Muitos relatos bíblicos ficam mais claros quando você consegue localizar os lugares e acompanhar os caminhos percorridos.
           </p>
         </div>
 

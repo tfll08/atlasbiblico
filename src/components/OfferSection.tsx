@@ -50,7 +50,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Map,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades e contextos</strong> organizados visualmente
+          <strong className="font-bold text-[#173B4D]">Mapas, rotas, cidades e contextos bíblicos</strong> organizados visualmente
         </span>
       ),
     },
@@ -66,7 +66,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Gift,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">4 guias visuais complementares</strong> + presente surpresa
+          <strong className="font-bold text-[#173B4D]">4 guias visuais</strong> + presente surpresa
         </span>
       ),
     },
@@ -82,7 +82,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: LayoutDashboard,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">Área de membros em formato de app</strong> para facilitar o acesso
+          <strong className="font-bold text-[#173B4D]">Área de membros</strong> com experiência de app
         </span>
       ),
     },
@@ -96,19 +96,18 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
         <div className="flex items-center justify-center">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
             <Sparkles className="h-3.5 w-3.5" />
-            Acesso completo e imediato
+            Acesse o Atlas completo
           </span>
         </div>
 
         {/* Title */}
         <h2 className="mt-5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-          Visualize os lugares e acompanhe as jornadas da Bíblia enquanto você estuda.
+          Tenha o Atlas completo para consultar enquanto você estuda.
         </h2>
 
         {/* Subtitle formatted in two lines */}
-        <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
-          <span className="block">Garanta acesso completo à coleção visual</span>
-          <span className="block">com todos os bônus e atualizações inclusas.</span>
+        <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
+          Acesse os 4 volumes, os bônus e a área de membros com acesso vitalício.
         </p>
 
         {/* Bundle Showcase Image */}
@@ -154,8 +153,8 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
         </div>
 
         {/* Preparation Text for Offer */}
-        <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed">
-          Abra. Encontre. Consulte. Use sempre que precisar.
+        <p className="mx-auto max-w-xl text-base sm:text-lg font-medium text-[#173B4D] leading-relaxed text-balance">
+          Abra. Encontre o lugar. Consulte o contexto. Use sempre que precisar.
         </p>
 
         {/* Unboxed, Clean & Seamless Pricing Block */}
@@ -168,9 +167,9 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             </span>
           </div>
 
-          {/* POR APENAS */}
-          <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.25em] text-[#B08830]">
-            POR APENAS
+          {/* HOJE, ACESSO COMPLETO POR */}
+          <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#B08830]">
+            HOJE, ACESSO COMPLETO POR
           </div>
           
           {/* Price R$ 39,00 */}
@@ -197,7 +196,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             <span>•</span>
             <span>Acesso vitalício</span>
             <span>•</span>
-            <span>Área de membros em formato de app</span>
+            <span>Área de membros com experiência de app</span>
           </p>
         </div>
 
@@ -208,7 +207,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               onClick={onCtaClick}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>QUERO ACESSAR O ATLAS VISUAL</span>
+              <span>QUERO ACESSAR A COLEÇÃO COMPLETA</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
           ) : (
@@ -216,7 +215,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               href={checkoutUrl}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>QUERO ACESSAR O ATLAS VISUAL</span>
+              <span>QUERO ACESSAR A COLEÇÃO COMPLETA</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           )}

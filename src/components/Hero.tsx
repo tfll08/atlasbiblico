@@ -40,10 +40,10 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         {/* Subheadline Directly Below Headline */}
         <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[0.92rem] xs:text-[1rem] sm:text-lg leading-[1.4] sm:leading-relaxed text-balance">
           <span className="font-semibold text-terracotta sm:block">
-            Um atlas visual para acompanhar lugares, rotas e jornadas bíblicas
+            Mapas, cidades, rotas e contextos bíblicos organizados
           </span>{' '}
           <span className="text-muted-foreground sm:block">
-            enquanto você estuda, ensina ou prepara uma mensagem.
+            para você consultar enquanto estuda, ensina ou prepara uma mensagem.
           </span>
         </p>
 

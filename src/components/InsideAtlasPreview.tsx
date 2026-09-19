@@ -33,11 +33,10 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
             VEJA POR DENTRO
           </span>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Veja como o Atlas funciona na prática
+            Veja como você vai consultar o Atlas
           </h2>
-          <p className="mx-auto mt-3.5 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed">
-            <span className="block">Assista ao vídeo e veja por dentro os materiais do Atlas</span>
-            <span className="block">e a área de membros em formato de app.</span>
+          <p className="mx-auto mt-3.5 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed text-balance">
+            Todo o conteúdo fica organizado em uma área de membros com experiência de app. Acesse seus volumes, mapas e referências pelo celular, tablet ou computador.
           </p>
         </div>
 
