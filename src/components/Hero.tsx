@@ -35,15 +35,6 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           com mapas visuais
         </h1>
 
-        {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Uma coleção digital com{' '}
-          <strong className="font-semibold text-terracotta">
-            mapas, cidades, contextos e referências
-          </strong>{' '}
-          para consultar enquanto você estuda, ensina ou prepara uma mensagem.
-        </p>
-
         {/* Hero Transparent Image without background or frame */}
         <div className="relative mx-auto mt-6 sm:mt-8 w-full max-w-4xl flex flex-col items-center justify-center">
           <img
@@ -60,8 +51,17 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           />
         </div>
 
+        {/* Subheadline Below Image */}
+        <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
+          Uma coleção digital com{' '}
+          <strong className="font-semibold text-terracotta">
+            mapas, cidades, contextos e referências
+          </strong>{' '}
+          para consultar enquanto você estuda, ensina ou prepara uma mensagem.
+        </p>
+
         {/* Primary CTA */}
-        <div className="mt-8 sm:mt-10 flex justify-center">
+        <div className="mt-6 sm:mt-8 flex justify-center">
           <button
             onClick={onCtaClick}
             id="hero-cta-btn"
