@@ -15,16 +15,16 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
         <div className="text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
             <Sparkles className="h-3.5 w-3.5 text-[#C4932F]" />
-            <span>4 Bônus Exclusivos</span>
+            <span>4 GUIAS VISUAIS INCLUÍDOS</span>
           </div>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Além do Atlas, você também recebe guias para complementar seus estudos.
+            E para deixar sua experiência de estudo ainda mais completa...
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
-            <span className="block">Você também recebe 4 guias visuais práticos</span>
-            <span className="block">
-              para <span className="font-semibold text-terracotta">aprofundar seu estudo</span> quando precisar.
-            </span>
+          <p className="mx-auto mt-3 max-w-xl text-xs xs:text-sm sm:text-base font-semibold text-[#173B4D] leading-relaxed">
+            Você também recebe 4 guias visuais complementares
+          </p>
+          <p className="mx-auto mt-1 max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
+            Personagens, linha do tempo, profetas, reis e conflitos organizados para você consultar quando precisar.
           </p>
         </div>
 
@@ -65,13 +65,13 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                   </p>
                 </div>
 
-                {/* Price Tag with Slashed Red Price and Green Gratis */}
+                {/* Price Tag with Slashed Red Price and Green Incluso */}
                 <div className="mt-5 pt-4 border-t border-[#EAE5DB] flex items-center justify-between">
                   <span className="text-red-500 font-semibold text-sm line-through">
                     Valor: {guide.originalPrice || (index < 2 ? 'R$ 29,90' : 'R$ 27,90')}
                   </span>
                   <span className="font-bold text-emerald-600 text-xs uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
-                    Grátis
+                    Incluso
                   </span>
                 </div>
               </div>
@@ -116,7 +116,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
               </h3>
               
               <p className="mt-3 text-base leading-relaxed text-[#5C6E75]">
-                Um material extra criado para colocar seus conhecimentos à prova de uma forma leve e prática.
+                Um material extra visual para revisar seus conhecimentos de uma forma leve e prática.
               </p>
 
               <p className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B08830] bg-white px-3.5 py-1.5 rounded-lg border border-[#EAE5DB] shadow-2xs">

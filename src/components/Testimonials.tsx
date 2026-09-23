@@ -230,17 +230,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-3.5 sm:mt-4 max-w-xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5]">
-            <span className="block">Veja a experiência de quem já está usando o material</span>
-            <span className="block">para estudar a Bíblia com apoio visual e profundidade.</span>
+          <p className="mx-auto mt-3.5 sm:mt-4 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
+            Veja a experiência de quem já recebeu o Atlas e está usando o material durante seus estudos.
           </p>
 
-          {/* Social Proof Stars Summary */}
-          <div className="mt-4 flex items-center justify-center gap-1.5 text-[#E5C158]">
-            {[...Array(5)].map((_, i) => (
-              <Star key={i} className="h-4 w-4 fill-[#E5C158] text-[#E5C158]" />
-            ))}
-            <span className="ml-2 text-xs sm:text-sm font-semibold text-white/90">
+          {/* Social Proof Summary */}
+          <div className="mt-4 flex items-center justify-center">
+            <span className="text-xs sm:text-sm font-semibold text-white/90">
               Depoimentos reais de quem já recebeu o Atlas
             </span>
           </div>

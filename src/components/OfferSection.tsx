@@ -66,7 +66,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       icon: Gift,
       content: (
         <span>
-          <strong className="font-bold text-[#173B4D]">4 guias visuais</strong> + presente surpresa
+          <strong className="font-bold text-[#173B4D]">4 guias complementares</strong> + presente surpresa
         </span>
       ),
     },
@@ -102,12 +102,12 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* Title */}
         <h2 className="mt-5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-          Tenha o Atlas completo para consultar enquanto você estuda.
+          Tenha o Atlas Bíblico Visual completo sempre à mão
         </h2>
 
         {/* Subtitle formatted in two lines */}
         <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-          Acesse os 4 volumes, todos os bônus e uma área de membros organizada para consulta.
+          4 volumes, 4 guias visuais, +300 páginas e acesso vitalício em uma área de membros organizada para você consultar quando precisar.
         </p>
 
         {/* Bundle Showcase Image */}
@@ -160,16 +160,14 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
         {/* Unboxed, Clean & Seamless Pricing Block */}
         <div className="mt-8 mb-6 flex flex-col items-center justify-center">
           
-          {/* De: R$ 166,00 */}
-          <div className="text-sm sm:text-base font-semibold text-red-500">
-            <span className="line-through decoration-red-500 font-bold text-red-500">
-              De: R$ 166,00
-            </span>
+          {/* Valor de referência da coleção completa: ~R$ 116 */}
+          <div className="text-sm sm:text-base font-medium text-[#5C6E75]">
+            Valor de referência da coleção completa: ~R$ 116
           </div>
 
-          {/* HOJE, ACESSO COMPLETO POR */}
+          {/* ACESSO COMPLETO POR APENAS */}
           <div className="mt-2.5 text-xs sm:text-sm font-bold uppercase tracking-[0.2em] text-[#B08830]">
-            HOJE, ACESSO COMPLETO POR
+            ACESSO COMPLETO POR APENAS
           </div>
           
           {/* Price R$ 39,00 */}
@@ -207,7 +205,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               onClick={onCtaClick}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>QUERO ACESSAR A COLEÇÃO COMPLETA</span>
+              <span>QUERO ACESSAR O ATLAS COMPLETO</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </button>
           ) : (
@@ -215,7 +213,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               href={checkoutUrl}
               className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer"
             >
-              <span>QUERO ACESSAR A COLEÇÃO COMPLETA</span>
+              <span>QUERO ACESSAR O ATLAS COMPLETO</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
             </a>
           )}
@@ -224,19 +222,15 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-[#5C6E75]">
             <div className="flex items-center gap-1.5 font-medium">
               <Lock className="h-3.5 w-3.5 text-emerald-600" />
-              <span>Pagamento 100% Seguro</span>
-            </div>
-            <div className="flex items-center gap-1.5 font-medium text-[#173B4D]">
-              <Mail className="h-3.5 w-3.5 text-[#C85A32]" />
-              <span className="font-semibold">Acesso por e-mail</span>
+              <span>Pagamento seguro</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <ShieldCheck className="h-3.5 w-3.5 text-[#173B4D]" />
-              <span>Garantia Incondicional de 7 Dias</span>
+              <span>Garantia de 7 dias</span>
             </div>
             <div className="flex items-center gap-1.5 font-medium">
               <Headphones className="h-3.5 w-3.5 text-[#C4932F]" />
-              <span>Suporte Exclusivo</span>
+              <span>Suporte por e-mail e whatsapp</span>
             </div>
           </div>
 

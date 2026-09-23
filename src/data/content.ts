@@ -7,7 +7,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'O Mundo da Bíblia',
     subtitle: 'Geografia, Impérios e Regiões das Escrituras',
     phrase: 'Encontre os lugares por trás dos relatos bíblicos.',
-    description: 'Para localizar cidades, regiões, rios, montanhas e outros lugares presentes nos relatos bíblicos.',
+    description: 'Localize cidades, regiões, rios, montanhas e outros lugares presentes nos relatos bíblicos.',
     accentColor: '#1B4958',
     badge: 'Volume 1',
     imageSrc: 'https://i.imgur.com/oYbpctK.png',
@@ -21,7 +21,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'Os Patriarcas',
     subtitle: 'De Ur dos Caldeus ao Sinai e Entrada em Canaã',
     phrase: 'Acompanhe as jornadas que marcaram a história dos patriarcas.',
-    description: 'Para acompanhar as jornadas de Abraão, Isaque, Jacó e José e visualizar onde os principais acontecimentos ocorreram.',
+    description: 'Acompanhe as jornadas de Abraão, Isaque, Jacó e José e veja onde os principais acontecimentos ocorreram.',
     accentColor: '#8C4827',
     badge: 'Volume 2',
     imageSrc: 'https://i.imgur.com/GCPoAHE.png',
@@ -35,7 +35,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'Os Caminhos de Jesus',
     subtitle: 'Os Lugares e Trajetos dos Quatro Evangelhos',
     phrase: 'Explore os lugares por onde Jesus passou.',
-    description: 'Para visualizar as cidades, regiões e trajetos ligados à vida e ao ministério de Jesus.',
+    description: 'Visualize cidades, regiões e trajetos ligados à vida e ao ministério de Jesus.',
     accentColor: '#B08830',
     badge: 'Volume 3',
     imageSrc: 'https://i.imgur.com/CfnIevz.png',
@@ -49,7 +49,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'As Viagens de Paulo',
     subtitle: 'As Rotas Missionárias no Mundo Mediterrâneo',
     phrase: 'Acompanhe as viagens missionárias de Paulo.',
-    description: 'Para seguir as rotas das viagens missionárias de Paulo e entender como o Evangelho se expandiu pelo mundo mediterrâneo.',
+    description: 'Siga as rotas das viagens missionárias de Paulo e veja como o Evangelho se expandiu pelo mundo mediterrâneo.',
     accentColor: '#2B5349',
     badge: 'Volume 4',
     imageSrc: 'https://i.imgur.com/j0qZp6v.png',
@@ -170,6 +170,16 @@ export const FAQ_DATA: FaqItem[] = [
     id: 'faq-5',
     question: 'Preciso entender muito de Bíblia?',
     answer: 'Não. O material foi criado para funcionar como apoio visual tanto para quem está começando quanto para quem já estuda as Escrituras há mais tempo.'
+  },
+  {
+    id: 'faq-6',
+    question: 'Preciso assistir aulas ou seguir uma ordem?',
+    answer: 'Não. O Atlas foi criado para consulta. Você pode abrir diretamente o volume, mapa ou tema que precisar durante seu estudo.'
+  },
+  {
+    id: 'faq-7',
+    question: 'O acesso é vitalício?',
+    answer: 'Sim. O pagamento é feito uma única vez e o acesso ao material é vitalício.'
   }
 ];
 

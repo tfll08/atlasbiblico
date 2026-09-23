@@ -33,10 +33,10 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
             VEJA POR DENTRO
           </span>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Veja como você vai consultar o Atlas
+            Veja como o Atlas funciona na prática
           </h2>
           <p className="mx-auto mt-3.5 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed text-balance">
-            Abra a área de membros, escolha o volume e consulte mapas, jornadas e referências bíblicas em poucos cliques, pelo celular, tablet ou computador.
+            Abra a área de membros, escolha o volume e consulte mapas, jornadas e referências em poucos cliques, pelo celular, tablet ou computador.
           </p>
         </div>
 
@@ -81,13 +81,6 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
               </div>
             )}
           </div>
-        </div>
-
-        {/* Supporting statement below video */}
-        <div className="mt-8 sm:mt-10 text-center mx-auto max-w-2xl px-4">
-          <p className="text-sm sm:text-base md:text-lg font-medium text-[#173B4D] leading-relaxed text-balance">
-            O Atlas foi feito para acompanhar o seu estudo: você encontra o lugar, acompanha a jornada e consulta o contexto sem precisar procurar tudo separadamente.
-          </p>
         </div>
 
         {/* Feature Benefit Cards */}

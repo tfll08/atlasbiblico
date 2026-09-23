@@ -71,7 +71,20 @@ export default function App() {
   };
 
   const handleOpenDirectCheckout = () => {
-    window.location.href = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+    let url = 'https://pagamento.projetoreino.com/checkout/212527976:1';
+    if (typeof window !== 'undefined' && window.location.search) {
+      try {
+        const u = new URL(url);
+        const searchParams = new URLSearchParams(window.location.search);
+        searchParams.forEach((value, key) => {
+          u.searchParams.set(key, value);
+        });
+        url = u.toString();
+      } catch {
+        // fallback
+      }
+    }
+    window.location.href = url;
   };
 
   return (
@@ -108,7 +121,7 @@ export default function App() {
         <AccessInstructions />
 
         {/* 10. PERGUNTAS FREQUENTES (Azul) */}
-        <FaqSection onCtaClick={handleScrollToOffer} />
+        <FaqSection onCtaClick={handleOpenDirectCheckout} />
       </main>
 
       {/* 12. RODAPÉ (Azul Escuro / Petróleo) */}

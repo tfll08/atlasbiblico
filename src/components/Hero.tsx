@@ -28,23 +28,22 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Big Editorial Headline */}
         <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[clamp(1.35rem,5.3vw,1.75rem)] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.22] sm:leading-[1.18] tracking-tight text-foreground">
-          <span className="block sm:inline">Veja onde os acontecimentos da</span>{' '}
+          <span className="block sm:inline">Entenda os lugares, rotas e jornadas da</span>{' '}
           <span className="block sm:inline">
             <span className="font-normal normal-case text-terracotta font-migra italic">
               Bíblia
             </span>{' '}
-            realmente aconteceram
+            com mapas visuais
           </span>
         </h1>
 
         {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[0.92rem] xs:text-[1rem] sm:text-lg leading-[1.4] sm:leading-relaxed text-balance">
-          <span className="font-semibold text-terracotta sm:block">
-            Mapas, cidades, rotas e contextos bíblicos organizados
-          </span>{' '}
-          <span className="text-muted-foreground sm:block">
-            para você consultar enquanto estuda, ensina ou prepara uma mensagem.
-          </span>
+        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[0.92rem] xs:text-[1rem] sm:text-lg leading-[1.4] sm:leading-relaxed text-muted-foreground text-balance">
+          Uma coleção digital com{' '}
+          <strong className="font-semibold text-terracotta">
+            mapas, cidades, contextos e referências
+          </strong>{' '}
+          para consultar enquanto você estuda, ensina ou prepara uma mensagem.
         </p>
 
         {/* Hero Transparent Image without background or frame */}
@@ -61,9 +60,6 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             draggable={false}
             className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-md"
           />
-          <p className="mt-3.5 text-xs sm:text-sm font-medium tracking-wide text-[#5C6E75] text-center">
-            Mapas e rotas bíblicas · Cidades e contextos
-          </p>
         </div>
 
         {/* Primary CTA */}
@@ -73,7 +69,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             id="hero-cta-btn"
             className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 sm:py-5 text-center text-sm sm:text-base font-bold tracking-wide uppercase text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
           >
-            QUERO ACESSAR O ATLAS VISUAL
+            QUERO ACESSAR O ATLAS COMPLETO
           </button>
         </div>
 

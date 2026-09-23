@@ -148,9 +148,8 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             </span>{' '}
             para você consultar quando precisar
           </h2>
-          <p className="mt-3.5 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#D1E0E5] leading-relaxed">
-            <span className="block">Quatro volumes temáticos completos com mapas</span>
-            <span className="block">e contextos organizados de cada período bíblico.</span>
+          <p className="mt-3.5 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#D1E0E5] leading-relaxed text-balance">
+            Quatro volumes com mapas, rotas, lugares e contextos organizados por períodos e jornadas bíblicas.
           </p>
         </div>
 
@@ -211,7 +210,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
         {/* Phrase at the end of "A Coleção" */}
         <div className="mt-10 sm:mt-12 text-center max-w-3xl mx-auto">
           <p className="text-sm sm:text-base text-[#D1E0E5] font-medium leading-relaxed bg-white/10 border border-white/15 rounded-xl px-6 py-4 backdrop-blur-xs text-balance">
-            Abra no celular, tablet ou computador e consulte sempre que precisar durante seus estudos, aulas ou pregações.
+            Abra no celular, tablet ou computador e consulte durante seus estudos, aulas ou mensagens.
           </p>
         </div>
 

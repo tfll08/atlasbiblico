@@ -25,7 +25,7 @@ export const AccessInstructions: React.FC = () => {
       stepNumber: '04',
       icon: Smartphone,
       title: 'Acesse onde quiser',
-      description: 'Use no celular, tablet ou computador. Se quiser, também pode baixar e imprimir.'
+      description: 'Use pelo celular, tablet ou computador. Se preferir, também pode baixar e imprimir os materiais.'
     }
   ];
 
@@ -41,9 +41,8 @@ export const AccessInstructions: React.FC = () => {
           <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-[#173B4D]">
             Como você recebe o acesso
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
-            <span className="block">Passo a passo simples e prático para começar</span>
-            <span className="block">a usar o seu material imediatamente.</span>
+          <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
+            Em poucos passos, seus materiais estarão disponíveis para consulta.
           </p>
         </div>
 
