@@ -20,10 +20,10 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
             E para deixar sua experiência de estudo ainda mais completa...
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-xs xs:text-sm sm:text-base font-semibold text-[#173B4D] leading-relaxed">
+          <p className="mx-auto mt-3 max-w-xl text-[0.95rem] sm:text-base font-semibold text-[#173B4D] leading-relaxed">
             Você também recebe 4 guias visuais complementares
           </p>
-          <p className="mx-auto mt-1 max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed">
+          <p className="mx-auto mt-1 max-w-xl text-[0.9rem] sm:text-base text-[#5C6E75] leading-relaxed">
             Personagens, linha do tempo, profetas, reis e conflitos organizados para você consultar quando precisar.
           </p>
         </div>

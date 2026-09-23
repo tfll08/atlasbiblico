@@ -41,7 +41,7 @@ export const AccessInstructions: React.FC = () => {
           <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-[#173B4D]">
             Como você recebe o acesso
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
+          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
             Em poucos passos, seus materiais estarão disponíveis para consulta.
           </p>
         </div>

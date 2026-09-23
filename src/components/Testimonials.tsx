@@ -230,7 +230,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
             </span>
           </h2>
 
-          <p className="mx-auto mt-3.5 sm:mt-4 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
+          <p className="mx-auto mt-3.5 sm:mt-4 max-w-2xl text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
             Veja a experiência de quem já recebeu o Atlas e está usando o material durante seus estudos.
           </p>
 

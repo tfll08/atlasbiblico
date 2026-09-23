@@ -42,7 +42,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
           <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-white text-balance break-words">
             Dúvidas frequentes
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#D1E0E5] leading-relaxed">
+          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#D1E0E5] leading-relaxed">
             <span className="block">Tire suas dúvidas sobre o acesso, conteúdo</span>
             <span className="block">e formato do Atlas Bíblico Visual.</span>
           </p>

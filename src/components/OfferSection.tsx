@@ -106,7 +106,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
         </h2>
 
         {/* Subtitle formatted in two lines */}
-        <p className="mt-3 mx-auto max-w-xl text-xs xs:text-sm sm:text-base text-[#5C6E75] leading-relaxed text-balance">
+        <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
           4 volumes, 4 guias visuais, +300 páginas e acesso vitalício em uma área de membros organizada para você consultar quando precisar.
         </p>
 

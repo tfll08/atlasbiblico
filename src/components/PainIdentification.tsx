@@ -15,7 +15,7 @@ export const PainIdentification: React.FC = () => {
             Você lê o relato. O Atlas mostra onde cada parte aconteceu.
           </h2>
 
-          <p className="mt-3.5 mx-auto max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
+          <p className="mt-3.5 mx-auto max-w-2xl text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
             Localize os lugares, acompanhe os caminhos percorridos e veja como cidades e regiões se conectam ao relato bíblico.
           </p>
         </div>

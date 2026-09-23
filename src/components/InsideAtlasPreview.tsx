@@ -35,7 +35,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
             Veja como o Atlas funciona na prática
           </h2>
-          <p className="mx-auto mt-3.5 max-w-2xl text-xs xs:text-sm sm:text-base md:text-lg text-[#5C6E75] leading-relaxed text-balance">
+          <p className="mx-auto mt-3.5 max-w-2xl text-[0.95rem] sm:text-base md:text-lg text-[#5C6E75] leading-relaxed text-balance">
             Abra a área de membros, escolha o volume e consulte mapas, jornadas e referências em poucos cliques, pelo celular, tablet ou computador.
           </p>
         </div>

@@ -36,7 +36,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </h1>
 
         {/* Subheadline Directly Below Headline */}
-        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[0.92rem] xs:text-[1rem] sm:text-lg leading-[1.4] sm:leading-relaxed text-muted-foreground text-balance">
+        <p className="mx-auto mt-3.5 sm:mt-5 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
           Uma coleção digital com{' '}
           <strong className="font-semibold text-terracotta">
             mapas, cidades, contextos e referências
