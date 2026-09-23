@@ -27,14 +27,12 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </div>
 
         {/* Big Editorial Headline */}
-        <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[clamp(1.35rem,5.3vw,1.75rem)] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.22] sm:leading-[1.18] tracking-tight text-foreground">
-          <span className="block sm:inline">Entenda os lugares, rotas e jornadas da</span>{' '}
-          <span className="block sm:inline">
-            <span className="font-normal normal-case text-terracotta font-migra italic">
-              Bíblia
-            </span>{' '}
-            com mapas visuais
-          </span>
+        <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[1.65rem] xs:text-[1.9rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.24] sm:leading-[1.18] tracking-tight text-foreground text-balance">
+          Entenda os lugares, rotas e jornadas da{' '}
+          <span className="font-normal normal-case text-terracotta font-migra italic">
+            Bíblia
+          </span>{' '}
+          com mapas visuais
         </h1>
 
         {/* Subheadline Directly Below Headline */}
