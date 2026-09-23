@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImageComparisonSlider } from './ImageComparisonSlider';
 
 export const PainIdentification: React.FC = () => {
   return (
@@ -51,18 +52,15 @@ export const PainIdentification: React.FC = () => {
             </div>
           </div>
 
-          {/* Central Image Container */}
-          <div className="relative mx-auto max-w-[340px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[620px] rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-white/10 border-2 border-white/20 shadow-2xl backdrop-blur-xs">
-            <img
-              src="https://i.imgur.com/GXIy7Ky.png"
-              alt="Páginas e mapas do Atlas Bíblico Visual com rotas e contextos detalhados"
-              width={1000}
-              height={700}
-              loading="lazy"
-              decoding="async"
-              referrerPolicy="no-referrer"
-              draggable={false}
-              className="w-full h-auto object-contain rounded-xl sm:rounded-2xl select-none filter drop-shadow-lg"
+          {/* Central Comparison Slider (Antes e Depois com Pinça) */}
+          <div className="relative mx-auto max-w-[340px] sm:max-w-[480px] md:max-w-[560px] lg:max-w-[640px]">
+            <ImageComparisonSlider
+              beforeImage="/images/antes-comparacao.webp"
+              afterImage="/images/depois-comparacao.webp"
+              beforeLabel="Antes"
+              afterLabel="Depois"
+              beforeAlt="Visão sem mapas e contextos visuais"
+              afterAlt="Páginas e mapas do Atlas Bíblico Visual com rotas e contextos detalhados"
             />
           </div>
 
