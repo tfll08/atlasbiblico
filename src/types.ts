@@ -33,6 +33,7 @@ export interface ComplementaryGuideItem {
   accentColor: string;
   iconName: string;
   imageSrc: string;
+  imageSrcSm?: string;
   fallbackSrc?: string;
   originalPrice?: string;
   fillCard?: boolean;

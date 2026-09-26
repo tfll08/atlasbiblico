@@ -40,6 +40,8 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
               <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-[#EAE5DB] bg-[#FAF8F5]">
                 <img
                   src={guide.imageSrc}
+                  srcSet={guide.imageSrcSm ? `${guide.imageSrcSm} 640w, ${guide.imageSrc} 1200w` : undefined}
+                  sizes="(max-width: 640px) 100vw, 544px"
                   alt={guide.title}
                   width={1586}
                   height={992}
@@ -47,6 +49,12 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                   decoding="async"
                   referrerPolicy="no-referrer"
                   draggable={false}
+                  onError={(e) => {
+                    if (guide.fallbackSrc && e.currentTarget.src !== guide.fallbackSrc) {
+                      e.currentTarget.src = guide.fallbackSrc;
+                      e.currentTarget.removeAttribute('srcset');
+                    }
+                  }}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                 />
                 <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/90 backdrop-blur-xs px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10">
