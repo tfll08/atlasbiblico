@@ -35,6 +35,7 @@ export interface ComplementaryGuideItem {
   imageSrc: string;
   fallbackSrc?: string;
   originalPrice?: string;
+  fillCard?: boolean;
 }
 
 export interface FaqItem {

@@ -37,17 +37,17 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
               className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative text-[#173B4D]"
             >
               {/* Image & Bonus Badge Container */}
-              <div className="relative bg-white flex items-center justify-center overflow-hidden border-b border-[#EAE5DB]">
+              <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-[#EAE5DB] bg-[#FAF8F5]">
                 <img
                   src={guide.imageSrc}
                   alt={guide.title}
-                  width={800}
-                  height={500}
+                  width={1586}
+                  height={992}
                   loading="lazy"
                   decoding="async"
                   referrerPolicy="no-referrer"
                   draggable={false}
-                  className="w-full h-[220px] sm:h-[260px] object-contain p-3 sm:p-4 transition-transform duration-500 hover:scale-[1.02]"
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                 />
                 <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/90 backdrop-blur-xs px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10">
                   <Sparkles className="h-3 w-3 text-[#E5C158]" />
