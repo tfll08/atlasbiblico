@@ -9,7 +9,7 @@ export const PainIdentification: React.FC = () => {
         {/* Section Header */}
         <div>
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C158]">
-            ABRA, CONSULTE E CONTINUE
+            ABRA. LOCALIZE. ENTENDA. CONTINUE SEU ESTUDO.
           </span>
 
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white text-balance break-words">
