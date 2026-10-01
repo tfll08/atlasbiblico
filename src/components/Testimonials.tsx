@@ -5,36 +5,61 @@ interface TestimonialsProps {
   onCtaClick?: () => void;
 }
 
-const TESTIMONIAL_IMAGES = [
+interface TestimonialImage {
+  id: string;
+  src: string;
+  fallbackSrc?: string;
+  alt: string;
+}
+
+const TESTIMONIAL_IMAGES: TestimonialImage[] = [
   {
     id: 'depoimento-1',
-    src: 'https://i.imgur.com/Va6temt.jpeg',
+    src: '/images/depoimento-1.webp',
+    fallbackSrc: 'https://i.imgur.com/Va6temt.jpeg',
     alt: 'Depoimento de leitor sobre o Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-2',
-    src: 'https://i.imgur.com/AU9FO0p.jpeg',
+    src: '/images/depoimento-2.webp',
+    fallbackSrc: 'https://i.imgur.com/AU9FO0p.jpeg',
     alt: 'Feedback sobre os mapas e clareza do Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-3',
-    src: 'https://i.imgur.com/NocHzLy.jpeg',
+    src: '/images/depoimento-3.webp',
+    fallbackSrc: 'https://i.imgur.com/NocHzLy.jpeg',
     alt: 'Avaliação da experiência de estudo bíblico com o Atlas',
   },
   {
     id: 'depoimento-4',
-    src: 'https://i.imgur.com/lAJacRD.jpeg',
+    src: '/images/depoimento-4.webp',
+    fallbackSrc: 'https://i.imgur.com/lAJacRD.jpeg',
     alt: 'Comentário sobre a riqueza de detalhes e mapas bíblicos',
   },
   {
     id: 'depoimento-5',
-    src: 'https://i.imgur.com/12mF9Me.jpeg',
+    src: '/images/depoimento-5.webp',
+    fallbackSrc: 'https://i.imgur.com/12mF9Me.jpeg',
     alt: 'Depoimento recomendando o Atlas Bíblico Visual para estudos',
   },
   {
     id: 'depoimento-6',
-    src: 'https://i.imgur.com/WrJjTyK.jpeg',
+    src: '/images/depoimento-6.webp',
+    fallbackSrc: 'https://i.imgur.com/WrJjTyK.jpeg',
     alt: 'Depoimento destacando a riqueza de mapas e estudos bíblicos do Atlas',
+  },
+  {
+    id: 'depoimento-7',
+    src: '/images/depoimento-7.webp',
+    fallbackSrc: 'https://i.imgur.com/sFgNQJP.jpeg',
+    alt: 'Depoimento sobre a clareza visual e facilidade de entendimento do Atlas',
+  },
+  {
+    id: 'depoimento-8',
+    src: '/images/depoimento-8.webp',
+    fallbackSrc: 'https://i.imgur.com/5Bdb2b0.jpeg',
+    alt: 'Depoimento elogiando a qualidade e profundidade dos mapas do Atlas',
   },
 ];
 
@@ -327,6 +352,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                       decoding="async"
                       referrerPolicy="no-referrer"
                       draggable={false}
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        if (item.fallbackSrc && target.src !== item.fallbackSrc) {
+                          target.src = item.fallbackSrc;
+                        }
+                      }}
                       className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.02]"
                     />
                   </div>
