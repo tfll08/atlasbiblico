@@ -121,8 +121,8 @@ export default function App() {
         {/* 1. HERO (Branco) - Leva à oferta */}
         <Hero onCtaClick={handleScrollToOffer} />
 
-        {/* 2. COMPREENSÃO E CONTEXTO - MAPA COM SETAS (Azul) */}
-        <PainIdentification />
+        {/* 2. COMPREENSÃO E CONTEXTO - MAPA COM SETAS (Azul) - Leva à oferta */}
+        <PainIdentification onCtaClick={handleScrollToOffer} />
 
         {/* 3. VEJA O QUE VOCÊ VAI ENCONTRAR NO ATLAS - VÍDEO + BENEFÍCIOS (Branco) - Leva à oferta */}
         <InsideAtlasPreview onCtaClick={handleScrollToOffer} />

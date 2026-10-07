@@ -1,7 +1,11 @@
 import React from 'react';
 import { ImageComparisonSlider } from './ImageComparisonSlider';
 
-export const PainIdentification: React.FC = () => {
+interface PainIdentificationProps {
+  onCtaClick?: () => void;
+}
+
+export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaClick }) => {
   return (
     <section id="contexto-e-lugares" className="bg-[#173A45] px-4 sm:px-6 py-16 sm:py-24 text-white overflow-hidden scroll-mt-6">
       <div className="mx-auto max-w-5xl text-center">
@@ -100,6 +104,18 @@ export const PainIdentification: React.FC = () => {
             Abra o mapa, localize o lugar e continue sua leitura com mais clareza.
           </p>
         </div>
+
+        {/* Section CTA Button leading to offer */}
+        {onCtaClick && (
+          <div className="mt-8 sm:mt-10 flex justify-center">
+            <button
+              onClick={onCtaClick}
+              className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-white px-8 sm:px-12 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-[#173B4D] transition-all hover:bg-white/95 hover:scale-[1.02] active:scale-[0.99] shadow-md cursor-pointer"
+            >
+              QUERO ACESSAR O ATLAS COMPLETO
+            </button>
+          </div>
+        )}
 
       </div>
     </section>
