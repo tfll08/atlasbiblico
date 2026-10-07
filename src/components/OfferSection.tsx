@@ -89,7 +89,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
   ];
 
   return (
-    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-white content-visibility-auto scroll-mt-6">
+    <section id="oferta" className="relative px-5 py-16 sm:py-24 bg-white scroll-mt-6">
       <div className="mx-auto max-w-4xl text-center">
         
         {/* Top Badge */}

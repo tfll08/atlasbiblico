@@ -30,7 +30,7 @@ export const AccessInstructions: React.FC = () => {
   ];
 
   return (
-    <section id="como-receber-acesso" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D] content-visibility-auto">
+    <section id="como-receber-acesso" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D]">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}

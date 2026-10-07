@@ -4,9 +4,9 @@ interface WarrantyProps {
   onCtaClick?: () => void;
 }
 
-export const Warranty: React.FC<WarrantyProps> = () => {
+export const Warranty: React.FC<WarrantyProps> = ({ onCtaClick }) => {
   return (
-    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white content-visibility-auto">
+    <section id="garantia" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white scroll-mt-6">
       <div className="mx-auto max-w-3xl">
         <div className="relative overflow-hidden flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl bg-white/10 border border-white/20 p-8 sm:p-10 shadow-xl backdrop-blur-xs text-center sm:text-left text-white">
           
@@ -132,6 +132,18 @@ export const Warranty: React.FC<WarrantyProps> = () => {
             </p>
           </div>
         </div>
+
+        {/* Guarantee CTA Button */}
+        {onCtaClick && (
+          <div className="mt-8 sm:mt-10 flex justify-center">
+            <button
+              onClick={onCtaClick}
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-white px-8 sm:px-12 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-[#173A45] transition-all hover:bg-white/95 hover:scale-[1.02] active:scale-[0.99] shadow-md cursor-pointer"
+            >
+              Quero garantir meu acesso com risco zero
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

@@ -54,20 +54,45 @@ export default function App() {
     };
   }, []);
 
-  // Scroll directly to the video in "Tudo o que você recebe"
-  const handleScrollToReceiveVideo = () => {
-    const videoElement = document.getElementById('video-colecao') || document.getElementById('tudo-o-que-recebe');
-    if (videoElement) {
-      videoElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-  };
-
-  // Scroll to "Oferta"
+  // Scroll to "Oferta" - robustly optimized for mobile, tablets and desktop
   const handleScrollToOffer = () => {
     const offerElement = document.getElementById('oferta');
-    if (offerElement) {
-      offerElement.scrollIntoView({ behavior: 'smooth' });
-    }
+    if (!offerElement) return;
+
+    const performScroll = (behavior: ScrollBehavior = 'smooth') => {
+      const topBanner = document.getElementById('top-announcement-banner');
+      const bannerHeight = topBanner ? topBanner.offsetHeight : 0;
+      const rect = offerElement.getBoundingClientRect();
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      // Offset so the offer badge and headline have clean top breathing room
+      const targetY = currentScrollY + rect.top - bannerHeight - 12;
+
+      window.scrollTo({
+        top: Math.max(0, targetY),
+        behavior,
+      });
+    };
+
+    // 1. Initial smooth scroll
+    performScroll('smooth');
+
+    // 2. Mobile resilience & dynamic layout stabilization checks
+    // On mobile browsers, viewport shifts or dynamic address bar show/hide
+    // can interrupt smooth scrolls or stop before the true destination.
+    // Check at progressive intervals to guarantee precise arrival at #oferta.
+    const checkpoints = [350, 700, 1100];
+    checkpoints.forEach((delay, idx) => {
+      setTimeout(() => {
+        const topBanner = document.getElementById('top-announcement-banner');
+        const bannerHeight = topBanner ? topBanner.offsetHeight : 0;
+        const rect = offerElement.getBoundingClientRect();
+        const expectedTop = bannerHeight + 12;
+        // If still off-target by more than 40px
+        if (Math.abs(rect.top - expectedTop) > 40) {
+          performScroll(idx === checkpoints.length - 1 ? 'auto' : 'smooth');
+        }
+      }, delay);
+    });
   };
 
   const handleOpenDirectCheckout = () => {
@@ -93,34 +118,34 @@ export default function App() {
       <TopBanner />
 
       <main className="flex-1 w-full">
-        {/* 1. HERO (Branco) */}
-        <Hero onCtaClick={handleScrollToReceiveVideo} />
+        {/* 1. HERO (Branco) - Leva à oferta */}
+        <Hero onCtaClick={handleScrollToOffer} />
 
         {/* 2. COMPREENSÃO E CONTEXTO - MAPA COM SETAS (Azul) */}
         <PainIdentification />
 
-        {/* 3. VEJA O QUE VOCÊ VAI ENCONTRAR NO ATLAS - VÍDEO + BENEFÍCIOS (Branco) */}
+        {/* 3. VEJA O QUE VOCÊ VAI ENCONTRAR NO ATLAS - VÍDEO + BENEFÍCIOS (Branco) - Leva à oferta */}
         <InsideAtlasPreview onCtaClick={handleScrollToOffer} />
 
-        {/* 4. COLEÇÃO COM OS 4 VOLUMES (Azul) */}
+        {/* 4. COLEÇÃO COM OS 4 VOLUMES (Azul) - Leva à oferta */}
         <VolumesShowcase onCtaClick={handleScrollToOffer} />
 
-        {/* 5. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) */}
+        {/* 5. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) - Leva à oferta */}
         <ComplementaryGuides onCtaClick={handleScrollToOffer} />
 
-        {/* 6. DEPOIMENTOS EM CARROSSEL (Azul) */}
+        {/* 6. DEPOIMENTOS EM CARROSSEL (Azul) - Leva à oferta */}
         <Testimonials onCtaClick={handleScrollToOffer} />
 
-        {/* 7. OFERTA COMPLETA (Branco) */}
+        {/* 7. OFERTA COMPLETA (Branco) - Checkout direto */}
         <OfferSection />
 
-        {/* 8. GARANTIA INCONDICIONAL DE 7 DIAS (Azul) */}
+        {/* 8. GARANTIA INCONDICIONAL DE 7 DIAS (Azul) - Leva à oferta */}
         <Warranty onCtaClick={handleScrollToOffer} />
 
         {/* 9. COMO VOCÊ RECEBE O ACESSO (Branco) */}
         <AccessInstructions />
 
-        {/* 10. PERGUNTAS FREQUENTES (Azul) */}
+        {/* 10. PERGUNTAS FREQUENTES (Azul) - Checkout direto */}
         <FaqSection onCtaClick={handleOpenDirectCheckout} />
       </main>
 

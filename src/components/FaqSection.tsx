@@ -31,7 +31,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
   };
 
   return (
-    <section id="faq" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white content-visibility-auto scroll-mt-6">
+    <section id="faq" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white scroll-mt-6">
       <div className="mx-auto max-w-3xl">
         
         {/* Section Header */}

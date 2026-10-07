@@ -24,7 +24,7 @@ export const InsideAtlasPreview: React.FC<InsideAtlasPreviewProps> = ({ onCtaCli
   };
 
   return (
-    <section id="veja-por-dentro" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] overflow-hidden scroll-mt-6 content-visibility-auto">
+    <section id="veja-por-dentro" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] overflow-hidden scroll-mt-6">
       <div className="mx-auto max-w-7xl">
         
         {/* Header */}

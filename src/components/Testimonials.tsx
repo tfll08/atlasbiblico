@@ -237,7 +237,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   return (
     <section
       id="depoimentos"
-      className="bg-[#173A45] px-3 xs:px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden content-visibility-auto scroll-mt-6"
+      className="bg-[#173A45] px-3 xs:px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden scroll-mt-6"
     >
       <div className="mx-auto max-w-6xl">
         
