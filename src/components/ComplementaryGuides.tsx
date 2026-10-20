@@ -8,23 +8,20 @@ interface ComplementaryGuidesProps {
 
 export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaClick }) => {
   return (
-    <section id="materiais-complementares" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D]">
+    <section id="materiais-complementares" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white scroll-mt-6">
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-            <Sparkles className="h-3.5 w-3.5 text-[#C4932F]" />
-            <span>4 GUIAS VISUAIS INCLUÍDOS</span>
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E5C158] border border-white/20 shadow-2xs">
+            <Sparkles className="h-3.5 w-3.5 text-[#E5C158]" />
+            <span>4 BÔNUS INCLUÍDOS</span>
           </div>
-          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            E para deixar sua experiência de estudo ainda mais completa...
+          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
+            Receba 4 bônus para complementar seu estudo bíblico
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-[0.95rem] sm:text-base font-semibold text-[#173B4D] leading-relaxed">
-            Você também recebe 4 guias visuais complementares
-          </p>
-          <p className="mx-auto mt-1 max-w-xl text-[0.9rem] sm:text-base text-[#5C6E75] leading-relaxed">
-            Personagens, linha do tempo, profetas, reis e conflitos organizados para você consultar quando precisar.
+          <p className="mx-auto mt-3 max-w-2xl text-[0.95rem] sm:text-base text-[#D1E0E5] leading-relaxed text-balance">
+            Personagens, linha do tempo, profetas e reinos organizados para consultar junto do Atlas.
           </p>
         </div>
 
@@ -34,10 +31,10 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <div
               key={guide.id}
               id={`complementary-${guide.id}`}
-              className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-xl relative text-[#173B4D]"
+              className="overflow-hidden rounded-2xl bg-white/10 border border-white/15 shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.13] hover:border-white/25 relative text-white backdrop-blur-xs"
             >
               {/* Image & Bonus Badge Container */}
-              <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-[#EAE5DB] bg-[#FAF8F5]">
+              <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-white/15 bg-black/20">
                 <img
                   src={guide.imageSrc}
                   srcSet={guide.imageSrcSm ? `${guide.imageSrcSm} 640w, ${guide.imageSrc} 1200w` : undefined}
@@ -57,7 +54,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                   }}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                 />
-                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/90 backdrop-blur-xs px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10">
+                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/90 backdrop-blur-xs px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10 border border-white/20">
                   <Sparkles className="h-3 w-3 text-[#E5C158]" />
                   <span>Bônus {index + 1}</span>
                 </div>
@@ -65,20 +62,20 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
 
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <h3 className="font-heading text-lg font-bold tracking-tight text-[#173B4D]">
+                  <h3 className="font-heading text-lg font-bold tracking-tight text-white">
                     {guide.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#5C6E75]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#D1E0E5]">
                     {guide.description}
                   </p>
                 </div>
 
                 {/* Price Tag with Slashed Red Price and Green Incluso */}
-                <div className="mt-5 pt-4 border-t border-[#EAE5DB] flex items-center justify-between">
-                  <span className="text-red-500 font-semibold text-sm line-through">
+                <div className="mt-5 pt-4 border-t border-white/15 flex items-center justify-between">
+                  <span className="text-red-300 font-semibold text-sm line-through">
                     Valor: {guide.originalPrice || (index < 2 ? 'R$ 29,90' : 'R$ 27,90')}
                   </span>
-                  <span className="font-bold text-emerald-600 text-xs uppercase tracking-wider bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full">
+                  <span className="font-bold text-emerald-300 text-xs uppercase tracking-wider bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full">
                     Incluso
                   </span>
                 </div>
@@ -87,50 +84,13 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           ))}
         </div>
 
-        {/* PRESENTE SURPRESA SECTION */}
-        <div
-          id="presente-surpresa"
-          className="mt-12 overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md text-[#173B4D]"
-        >
-          <div className="grid md:grid-cols-2 items-center">
-            {/* Gift Mockup Image - Full Bleed Object Cover */}
-            <div className="w-full h-full flex items-center justify-center p-4 sm:p-6 bg-white border-b md:border-b-0 md:border-r border-[#EAE5DB]">
-              <img
-                src="https://i.imgur.com/vQOLSq6.png"
-                alt="Presente Surpresa - Atlas Bíblico Visual"
-                width={800}
-                height={600}
-                loading="lazy"
-                decoding="async"
-                referrerPolicy="no-referrer"
-                draggable={false}
-                className="w-full h-auto max-h-[360px] object-contain rounded-xl select-none filter drop-shadow-md transition-transform duration-500 hover:scale-[1.02]"
-              />
-            </div>
-
-            {/* Gift Text */}
-            <div className="p-8 sm:p-12">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3 py-1 text-xs font-semibold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-                <Sparkles className="h-3.5 w-3.5" />
-                Presente surpresa
-              </span>
-              
-              <h3 className="mt-4 font-heading text-xl sm:text-2xl md:text-3xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-                E ainda tem um{' '}
-                <span className="inline sm:inline-block font-normal normal-case text-terracotta accent-serif">
-                  presente
-                </span>{' '}
-                esperando por você
-              </h3>
-              
-              <p className="mt-3 text-base leading-relaxed text-[#5C6E75]">
-                Um material extra visual para revisar seus conhecimentos de uma forma leve e prática.
-              </p>
-
-              <p className="mt-4 inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#B08830] bg-white px-3.5 py-1.5 rounded-lg border border-[#EAE5DB] shadow-2xs">
-                ✦ Você só descobre o que é depois de garantir seu acesso.
-              </p>
-            </div>
+        {/* Frase Presente Surpresa */}
+        <div className="mt-10 sm:mt-12 text-center">
+          <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-4 shadow-md text-white backdrop-blur-xs">
+            <Sparkles className="h-4 w-4 text-[#E5C158] shrink-0" />
+            <span className="text-sm sm:text-base font-semibold">
+              E mais um presente surpresa disponível na sua área de membros.
+            </span>
           </div>
         </div>
 
@@ -139,7 +99,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           <div className="mt-12 sm:mt-16 flex justify-center">
             <button
               onClick={onCtaClick}
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#173B4D] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
+              className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-white px-8 sm:px-12 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-[#173B4D] transition-colors hover:bg-white/90 shadow-md cursor-pointer"
             >
               Quero garantir todos os bônus inclusos
             </button>

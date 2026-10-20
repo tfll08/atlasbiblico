@@ -237,31 +237,24 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   return (
     <section
       id="depoimentos"
-      className="bg-[#173A45] px-3 xs:px-4 sm:px-6 py-16 sm:py-24 text-white relative overflow-hidden scroll-mt-6"
+      className="bg-white px-3 xs:px-4 sm:px-6 py-16 sm:py-24 text-[#173B4D] relative overflow-hidden scroll-mt-6"
     >
       <div className="mx-auto max-w-6xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#E5C158]/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E5C158] border border-[#E5C158]/30 shadow-2xs">
-            <MessageSquareQuote className="h-3.5 w-3.5 text-[#E5C158]" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
+            <MessageSquareQuote className="h-3.5 w-3.5 text-[#C4932F]" />
             <span>Depoimentos Reais</span>
           </div>
 
-          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
-            Veja o que estão dizendo sobre o{' '}
-            <span className="font-normal normal-case text-[#E0936F] font-migra italic inline sm:inline-block">
-              Atlas
-            </span>
+          <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
+            Veja a experiência de quem já recebeu o Atlas
           </h2>
-
-          <p className="mx-auto mt-3.5 sm:mt-4 max-w-2xl text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Veja a experiência de quem já recebeu o Atlas e está usando o material durante seus estudos.
-          </p>
 
           {/* Social Proof Summary */}
           <div className="mt-4 flex items-center justify-center">
-            <span className="text-xs sm:text-sm font-semibold text-white/90">
+            <span className="text-xs sm:text-sm font-semibold text-[#5C6E75]">
               Depoimentos reais de quem já recebeu o Atlas
             </span>
           </div>
@@ -282,13 +275,13 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
         >
           {/* Efeito Blur Lateral Esquerdo - Otimizado para Mobile */}
           <div 
-            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-r from-[#173A45] via-[#173A45]/70 to-transparent sm:backdrop-blur-xs"
+            className="pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-r from-white via-white/80 to-transparent sm:backdrop-blur-xs"
             aria-hidden="true"
           />
 
           {/* Efeito Blur Lateral Direito - Otimizado para Mobile */}
           <div 
-            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-l from-[#173A45] via-[#173A45]/70 to-transparent sm:backdrop-blur-xs"
+            className="pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-6 xs:w-10 sm:w-28 md:w-36 bg-gradient-to-l from-white via-white/80 to-transparent sm:backdrop-blur-xs"
             aria-hidden="true"
           />
 
@@ -301,7 +294,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
               scrollPrev();
             }}
             aria-label="Depoimento anterior"
-            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
+            className="absolute left-1 sm:left-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/95 text-[#173B4D] shadow-md border border-[#EAE5DB] backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white active:scale-95 cursor-pointer"
           >
             <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2.5]" />
           </button>
@@ -315,7 +308,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
               scrollNext();
             }}
             aria-label="Próximo depoimento"
-            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-[#173A45]/90 text-white shadow-xl border border-white/30 backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-[#173A45] active:scale-95 cursor-pointer"
+            className="absolute right-1 sm:right-3 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 xs:h-9 xs:w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full bg-white/95 text-[#173B4D] shadow-md border border-[#EAE5DB] backdrop-blur-md transition-all duration-200 hover:scale-110 hover:bg-white active:scale-95 cursor-pointer"
           >
             <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 stroke-[2.5]" />
           </button>
@@ -341,8 +334,8 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                 data-carousel-item
                 className="w-[220px] xs:w-[250px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
               >
-                <div className="overflow-hidden rounded-2xl bg-white/5 border border-white/20 shadow-xl backdrop-blur-xs transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 hover:border-white/40">
-                  <div className="relative aspect-[9/16] w-full bg-[#0D262F] flex items-center justify-center overflow-hidden">
+                <div className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#C4932F]/40">
+                  <div className="relative aspect-[9/16] w-full bg-[#173A45] flex items-center justify-center overflow-hidden">
                     <img
                       src={item.src}
                       alt={item.alt}
@@ -367,7 +360,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
           </div>
 
           <div className="mt-4 text-center">
-            <span className="text-xs text-[#D1E0E5]/70 font-medium tracking-wide">
+            <span className="text-xs text-[#5C6E75] font-medium tracking-wide">
               Rolagem contínua automática • Toque ou use as setas para pausar e navegar
             </span>
           </div>
@@ -378,7 +371,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
           <div className="mt-10 sm:mt-14 flex justify-center">
             <button
               onClick={onCtaClick}
-              className="inline-flex w-full sm:w-auto items-center justify-center rounded-md bg-[#C17D5C] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#A96848] shadow-md cursor-pointer"
+              className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 text-center text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"
             >
               Quero garantir meu acesso ao atlas
             </button>

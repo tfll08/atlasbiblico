@@ -49,7 +49,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'As Viagens de Paulo',
     subtitle: 'As Rotas Missionárias no Mundo Mediterrâneo',
     phrase: 'Acompanhe as viagens missionárias de Paulo.',
-    description: 'Siga as rotas das viagens missionárias de Paulo e veja como o Evangelho se expandiu pelo mundo mediterrâneo.',
+    description: 'Acompanhe as viagens missionárias de Paulo e as cidades por onde ele passou.',
     accentColor: '#2B5349',
     badge: 'Volume 4',
     imageSrc: 'https://i.imgur.com/j0qZp6v.png',
@@ -119,7 +119,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-2',
     title: 'Linha do Tempo Bíblica Visual',
-    description: 'Veja rapidamente o que aconteceu antes, depois e em qual período cada acontecimento se encaixa.',
+    description: 'Veja a sequência dos acontecimentos e situe cada um em seu período.',
     theme: 'timeline',
     accentColor: '#A37222',
     iconName: 'Clock',
@@ -145,7 +145,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
   {
     id: 'guide-4',
     title: 'Reinos, Reis e Conflitos da Bíblia',
-    description: 'Encontre reis, reinos, divisões e conflitos que ajudam a situar os acontecimentos bíblicos.',
+    description: 'Entenda as relações entre governantes, reinos e conflitos bíblicos.',
     theme: 'kingdoms',
     accentColor: '#345243',
     iconName: 'Shield',
@@ -161,37 +161,37 @@ export const FAQ_DATA: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'O Atlas é físico ou digital?',
-    answer: 'O Atlas Bíblico Visual é 100% digital. O conteúdo fica disponível em uma área de membros com experiência de app, que pode ser acessada facilmente pelo celular, tablet ou computador.'
+    answer: 'O Atlas é totalmente digital. Você recebe acesso aos quatro volumes e aos bônus na área de membros. Nenhum material físico é enviado.'
   },
   {
     id: 'faq-2',
-    question: 'Como vou receber o material?',
-    answer: 'Após a confirmação do pagamento, você recebe as instruções de acesso á área de membros no e-mail cadastrado na compra.'
+    question: 'Preciso instalar algum aplicativo?',
+    answer: 'Não. Você pode acessar pelo navegador do celular, tablet ou computador. Se preferir, adicione à tela inicial do celular para abrir como um aplicativo.'
   },
   {
     id: 'faq-3',
-    question: 'Posso acessar pelo celular?',
-    answer: 'Sim. O Atlas fica disponível em uma área de membros acessível pelo celular, tablet e computador, com experiência de app para facilitar o uso.'
+    question: 'Posso baixar e imprimir os materiais?',
+    answer: 'Sim. Você pode baixar os arquivos e imprimir para seu uso pessoal. Os materiais baixados também podem ser consultados sem internet.'
   },
   {
     id: 'faq-4',
-    question: 'Posso imprimir?',
-    answer: 'Sim. Você pode baixar e imprimir os materiais, se preferir estudar dessa forma.'
+    question: 'Preciso conhecer muito a Bíblia ou seguir uma ordem?',
+    answer: 'Não é necessário ter conhecimento avançado. Você pode escolher o volume relacionado à sua leitura e consultar os mapas no seu ritmo, sem seguir uma sequência obrigatória.'
   },
   {
     id: 'faq-5',
-    question: 'Preciso entender muito de Bíblia?',
-    answer: 'Não. O material foi criado para funcionar como apoio visual tanto para quem está começando quanto para quem já estuda as Escrituras há mais tempo.'
+    question: 'Posso compartilhar os arquivos ou meu acesso?',
+    answer: 'O acesso é individual. Os arquivos e os dados de entrada não podem ser compartilhados. Para indicar o Atlas a outra pessoa, envie o link de compra.'
   },
   {
     id: 'faq-6',
-    question: 'Preciso assistir aulas ou seguir uma ordem?',
-    answer: 'Não. O Atlas foi criado para consulta. Você pode abrir diretamente o volume, mapa ou tema que precisar durante seu estudo.'
+    question: 'E se o e-mail de acesso não chegar?',
+    answer: 'Confira as pastas de spam e promoções. Se não encontrar as instruções após a confirmação do pagamento, entre em contato pelo e-mail suporte@projetoreino.com ou pelo whatsapp.'
   },
   {
     id: 'faq-7',
-    question: 'O acesso é vitalício?',
-    answer: 'Sim. O pagamento é feito uma única vez e o acesso ao material é vitalício.'
+    question: 'O pagamento é único? O acesso é vitalício?',
+    answer: 'Sim. Você paga uma única vez, sem mensalidade, e recebe acesso vitalício conforme as condições apresentadas nos Termos de Uso.'
   }
 ];
 

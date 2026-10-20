@@ -193,11 +193,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Subheadline Below Image */}
         <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Uma coleção digital com{' '}
-          <strong className="font-semibold text-terracotta">
-            mapas, cidades, contextos e referências
-          </strong>{' '}
-          para consultar enquanto você estuda, ensina ou prepara uma mensagem.
+          Localize os acontecimentos da sua leitura e acompanhe as jornadas bíblicas com mapas, explicações e referências organizados para consultar enquanto estuda, prepara aulas ou mensagens.
         </p>
 
         {/* Primary CTA */}
@@ -215,7 +211,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         <ul className="mx-auto mt-6 flex max-w-2xl flex-col items-center justify-center gap-3 text-sm text-muted-foreground sm:flex-row sm:gap-8">
           <li className="flex items-center gap-2">
             <Smartphone className="h-4 w-4 shrink-0 text-gold" />
-            <span>Área de membros estilo app</span>
+            <span>Material 100% digital</span>
           </li>
           <li className="flex items-center gap-2">
             <CreditCard className="h-4 w-4 shrink-0 text-gold" />
@@ -226,6 +222,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             <span>Acesso vitalício</span>
           </li>
         </ul>
+
+        {/* Discreet access phrase */}
+        <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-muted-foreground/75 font-medium tracking-wide">
+          Acesse no celular, tablet ou computador.
+        </p>
 
       </div>
     </section>

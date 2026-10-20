@@ -2,7 +2,6 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
 import { PainIdentification } from './components/PainIdentification';
-import { InsideAtlasPreview } from './components/InsideAtlasPreview';
 import { VolumesShowcase } from './components/VolumesShowcase';
 import { ComplementaryGuides } from './components/ComplementaryGuides';
 import { Testimonials } from './components/Testimonials';
@@ -121,31 +120,28 @@ export default function App() {
         {/* 1. HERO (Branco) - Leva à oferta */}
         <Hero onCtaClick={handleScrollToOffer} />
 
-        {/* 2. COMPREENSÃO E CONTEXTO - MAPA COM SETAS (Azul) - Leva à oferta */}
+        {/* 2. DEMONSTRAÇÃO INTERATIVA - PRÉVIAS REAIS (Azul) - Leva à oferta */}
         <PainIdentification onCtaClick={handleScrollToOffer} />
 
-        {/* 3. VEJA O QUE VOCÊ VAI ENCONTRAR NO ATLAS - VÍDEO + BENEFÍCIOS (Branco) - Leva à oferta */}
-        <InsideAtlasPreview onCtaClick={handleScrollToOffer} />
-
-        {/* 4. COLEÇÃO COM OS 4 VOLUMES (Azul) - Leva à oferta */}
+        {/* 3. COLEÇÃO COM OS 4 VOLUMES (Branco) - Leva à oferta */}
         <VolumesShowcase onCtaClick={handleScrollToOffer} />
 
-        {/* 5. BÔNUS COMPLEMENTARES + PRESENTE SURPRESA (Branco) - Leva à oferta */}
+        {/* 4. BÔNUS COMPLEMENTARES (Azul) - Leva à oferta */}
         <ComplementaryGuides onCtaClick={handleScrollToOffer} />
 
-        {/* 6. DEPOIMENTOS EM CARROSSEL (Azul) - Leva à oferta */}
+        {/* 5. DEPOIMENTOS EM CARROSSEL (Branco) - Leva à oferta */}
         <Testimonials onCtaClick={handleScrollToOffer} />
 
-        {/* 7. OFERTA COMPLETA (Branco) - Checkout direto */}
+        {/* 6. OFERTA COMPLETA (Azul) - Checkout direto */}
         <OfferSection />
 
-        {/* 8. GARANTIA INCONDICIONAL DE 7 DIAS (Azul) - Leva à oferta */}
-        <Warranty onCtaClick={handleScrollToOffer} />
+        {/* 7. GARANTIA INCONDICIONAL DE 7 DIAS (Branco) */}
+        <Warranty />
 
-        {/* 9. COMO VOCÊ RECEBE O ACESSO (Branco) */}
+        {/* 8. COMO VOCÊ RECEBE O ACESSO (Azul) */}
         <AccessInstructions />
 
-        {/* 10. PERGUNTAS FREQUENTES (Azul) - Checkout direto */}
+        {/* 9. PERGUNTAS FREQUENTES (Branco) - Checkout direto */}
         <FaqSection onCtaClick={handleOpenDirectCheckout} />
       </main>
 

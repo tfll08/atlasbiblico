@@ -1,77 +1,70 @@
 import React from 'react';
-import { ShieldCheck, MailCheck, LayoutDashboard, Smartphone } from 'lucide-react';
+import { CreditCard, Mail, Smartphone } from 'lucide-react';
 
 export const AccessInstructions: React.FC = () => {
   const steps = [
     {
       stepNumber: '01',
-      icon: ShieldCheck,
-      title: 'Finalize sua compra',
-      description: 'Pagamento seguro e confirmação automática.'
+      icon: CreditCard,
+      title: '01 — Finalize sua compra',
+      description: 'Informe o e-mail em que deseja receber as instruções de acesso.'
     },
     {
       stepNumber: '02',
-      icon: MailCheck,
-      title: 'Receba seus dados de acesso',
-      description: 'Após a confirmação do pagamento, você recebe as instruções no e-mail cadastrado.'
+      icon: Mail,
+      title: '02 — Receba as instruções por e-mail',
+      description: 'Após a confirmação do pagamento, você recebe os dados para entrar na área de membros.'
     },
     {
       stepNumber: '03',
-      icon: LayoutDashboard,
-      title: 'Entre na área de membros',
-      description: 'Todo o conteúdo fica organizado em um só lugar, com experiência de app para facilitar o acesso.'
-    },
-    {
-      stepNumber: '04',
       icon: Smartphone,
-      title: 'Acesse onde quiser',
-      description: 'Use pelo celular, tablet ou computador. Se preferir, também pode baixar e imprimir os materiais.'
+      title: '03 — Abra e consulte seus materiais',
+      description: 'Acesse pelo navegador do celular, tablet ou computador. Se preferir, adicione à tela inicial do celular para abrir como um aplicativo.'
     }
   ];
 
   return (
-    <section id="como-receber-acesso" className="bg-white px-5 py-14 sm:py-20 text-[#173B4D]">
-      <div className="mx-auto max-w-6xl">
+    <section id="como-receber-acesso" className="bg-[#173A45] px-5 py-14 sm:py-20 text-white scroll-mt-6">
+      <div className="mx-auto max-w-5xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#C4932F]">
-            Praticidade e Segurança
-          </span>
-          <h2 className="mt-2 font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-[#173B4D]">
-            Como você recebe o acesso
+          <h2 className="font-heading text-2xl font-bold tracking-tight sm:text-3xl lg:text-4xl text-white">
+            Como acessar seu Atlas
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
+          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#D1E0E5] leading-relaxed text-balance">
             Em poucos passos, seus materiais estarão disponíveis para consulta.
           </p>
         </div>
 
-        {/* 4 Step Cards */}
-        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 3 Step Cards */}
+        <div className="mt-10 sm:mt-12 grid gap-5 sm:gap-6 grid-cols-1 md:grid-cols-3">
           {steps.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="relative flex flex-col justify-start rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] p-6 shadow-xs transition-all duration-300 hover:shadow-md hover:-translate-y-1 text-[#173B4D]"
+                className="relative flex flex-col justify-between rounded-2xl bg-white/10 border border-white/20 p-6 sm:p-7 shadow-xl backdrop-blur-xs text-white transition-all duration-300 hover:bg-white/[0.13] hover:border-white/30 hover:-translate-y-1"
               >
-                {/* Step badge & Icon */}
-                <div className="w-full flex items-center justify-between mb-4">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-[#173B4D] border border-[#EAE5DB] shadow-2xs">
-                    <Icon className="h-5 w-5 text-[#C4932F] stroke-[2.2]" />
+                <div>
+                  {/* Step badge & Icon */}
+                  <div className="w-full flex items-center justify-between mb-4">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-[#E5C158] border border-white/20 shadow-2xs">
+                      <Icon className="h-5 w-5 text-[#E5C158] stroke-[2.2]" />
+                    </div>
+                    <span className="font-heading text-xl font-black text-[#E5C158]/70">
+                      {item.stepNumber}
+                    </span>
                   </div>
-                  <span className="font-heading text-xl font-black text-[#D8AC4F]/60">
-                    {item.stepNumber}
-                  </span>
-                </div>
 
-                {/* Title & Description */}
-                <h3 className="font-heading text-base font-bold text-[#173B4D] leading-snug">
-                  {item.title}
-                </h3>
-                <p className="mt-2 text-xs sm:text-sm leading-relaxed text-[#5C6E75]">
-                  {item.description}
-                </p>
+                  {/* Title & Description */}
+                  <h3 className="font-heading text-base sm:text-lg font-bold text-white leading-snug">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2.5 text-xs sm:text-sm leading-relaxed text-[#D1E0E5]">
+                    {item.description}
+                  </p>
+                </div>
               </div>
             );
           })}

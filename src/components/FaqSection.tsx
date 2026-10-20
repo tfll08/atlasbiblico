@@ -31,18 +31,18 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
   };
 
   return (
-    <section id="faq" className="bg-[#173A45] px-5 py-16 sm:py-24 text-white scroll-mt-6">
+    <section id="faq" className="bg-white px-5 py-16 sm:py-24 text-[#173B4D] scroll-mt-6">
       <div className="mx-auto max-w-3xl">
         
         {/* Section Header */}
         <div className="text-center">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E5C158]">
+          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
             Perguntas frequentes
-          </span>
-          <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-white text-balance break-words">
+          </div>
+          <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-[#173B4D] text-balance break-words">
             Dúvidas frequentes
           </h2>
-          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#D1E0E5] leading-relaxed">
+          <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed">
             <span className="block">Tire suas dúvidas sobre o acesso, conteúdo</span>
             <span className="block">e formato do Atlas Bíblico Visual.</span>
           </p>
@@ -56,28 +56,28 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
               <div
                 key={item.id}
                 id={`faq-item-${item.id}`}
-                className="overflow-hidden rounded-2xl bg-white/10 border border-white/20 shadow-xs transition-all text-white backdrop-blur-xs"
+                className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-xs transition-all text-[#173B4D]"
               >
                 {/* Question Trigger */}
                 <button
                   type="button"
                   onClick={() => toggleItem(item.id)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between p-6 text-left cursor-pointer transition-colors hover:bg-white/15"
+                  className="flex w-full items-center justify-between p-6 text-left cursor-pointer transition-colors hover:bg-white"
                 >
-                  <span className="text-base font-bold text-white pr-4">
+                  <span className="text-base font-bold text-[#173B4D] pr-4">
                     {item.question}
                   </span>
                   <ChevronDown
-                    className={`h-5 w-5 shrink-0 text-white/70 transition-transform duration-200 ${
-                      isOpen ? 'rotate-180 text-[#E5C158]' : ''
+                    className={`h-5 w-5 shrink-0 text-[#C4932F] transition-transform duration-200 ${
+                      isOpen ? 'rotate-180' : ''
                     }`}
                   />
                 </button>
 
                 {/* Answer */}
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-4 text-sm sm:text-base leading-relaxed text-[#D1E0E5] animate-fadeIn border-t border-white/15 bg-black/20">
+                  <div className="px-6 pb-6 pt-4 text-sm sm:text-base leading-relaxed text-[#5C6E75] animate-fadeIn border-t border-[#EAE5DB] bg-white">
                     <p>{item.answer}</p>
                   </div>
                 )}
