@@ -148,7 +148,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           {onCtaClick ? (
             <button
               onClick={onCtaClick}
-              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer border border-emerald-400/20"
+              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#16A34A] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-2xl shadow-emerald-950/50 transition-all duration-300 hover:bg-[#15803D] hover:scale-[1.02] active:scale-[0.99] cursor-pointer border border-emerald-300/30"
             >
               <span>QUERO ACESSAR O ATLAS COMPLETO</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -156,7 +156,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           ) : (
             <a
               href={checkoutUrl}
-              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#265342] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-xl transition-all duration-300 hover:bg-[#1f4537] hover:scale-[1.02] active:scale-[0.99] cursor-pointer border border-emerald-400/20"
+              className="animate-breathe group relative inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-xl bg-[#16A34A] px-8 sm:px-14 py-4 sm:py-5 text-base sm:text-lg font-bold uppercase tracking-[0.08em] text-white shadow-2xl shadow-emerald-950/50 transition-all duration-300 hover:bg-[#15803D] hover:scale-[1.02] active:scale-[0.99] cursor-pointer border border-emerald-300/30"
             >
               <span>QUERO ACESSAR O ATLAS COMPLETO</span>
               <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -178,11 +178,6 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               <span>Suporte por e-mail e whatsapp</span>
             </div>
           </div>
-
-          {/* Discreet confirmation note */}
-          <p className="mt-5 text-xs text-[#D1E0E5]/75 text-center font-normal">
-            Após a confirmação do pagamento, você recebe por e-mail o acesso à área de membros.
-          </p>
         </div>
 
       </div>
