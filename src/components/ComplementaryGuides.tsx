@@ -18,7 +18,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <span>4 BÔNUS INCLUÍDOS</span>
           </div>
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-white text-balance break-words">
-            Receba 4 bônus para complementar seu estudo bíblico
+            Receba <span className="font-migra italic text-[#E5C158]">4 bônus</span> para complementar seu estudo bíblico
           </h2>
           <p className="mx-auto mt-3 max-w-2xl text-[0.95rem] sm:text-base text-[#D1E0E5] leading-relaxed text-balance">
             Personagens, linha do tempo, profetas e reinos organizados para consultar junto do Atlas.

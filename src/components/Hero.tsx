@@ -178,7 +178,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </div>
 
           <img
-            src="https://i.imgur.com/GqMNX5T.png"
+            src="/images/hero-bundle.webp"
             alt="Volumes do Atlas Bíblico Visual"
             width={1200}
             height={900}
@@ -187,13 +187,21 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             fetchPriority="high"
             referrerPolicy="no-referrer"
             draggable={false}
+            onError={(e) => {
+              if (e.currentTarget.src !== 'https://i.imgur.com/GqMNX5T.png') {
+                e.currentTarget.src = 'https://i.imgur.com/GqMNX5T.png';
+              }
+            }}
             className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-md"
           />
         </div>
 
         {/* Subheadline Below Image */}
         <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Localize os acontecimentos da sua leitura e acompanhe as jornadas bíblicas com mapas, explicações e referências organizados para consultar enquanto estuda, prepara aulas ou mensagens.
+          Visualize onde os acontecimentos bíblicos ocorreram e como os lugares se conectam.{' '}
+          <strong className="font-bold text-[#173B4D]">
+            Consulte mapas, trajetos e referências junto da sua Bíblia.
+          </strong>
         </p>
 
         {/* Primary CTA */}

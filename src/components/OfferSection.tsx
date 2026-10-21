@@ -44,13 +44,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
 
         {/* Title */}
         <h2 className="mt-5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance break-words">
-          Seu Atlas Bíblico Visual completo
+          Seu Atlas Bíblico Visual <span className="font-migra italic text-[#E5C158]">completo</span>
         </h2>
 
         {/* Bundle Showcase Image */}
         <div className="my-8 w-full flex justify-center">
           <img
-            src="https://i.imgur.com/punOLdB.png"
+            src="/images/offer-bundle.webp"
             alt="Coleção Atlas Bíblico Visual Completo"
             width={1200}
             height={800}
@@ -58,6 +58,11 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             decoding="async"
             referrerPolicy="no-referrer"
             draggable={false}
+            onError={(e) => {
+              if (e.currentTarget.src !== 'https://i.imgur.com/punOLdB.png') {
+                e.currentTarget.src = 'https://i.imgur.com/punOLdB.png';
+              }
+            }}
             className="w-full max-w-2xl h-auto object-contain select-none filter drop-shadow-2xl transition-transform duration-500 hover:scale-[1.01]"
           />
         </div>
@@ -80,8 +85,8 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               'Arquivos disponíveis para baixar e imprimir',
               'Acesso pelo celular, tablet ou computador',
               'Área de membros com experiência de app',
+              'Acesso liberado após a confirmação do pagamento',
               'Acesso vitalício',
-              'Acesso imediato',
             ].map((text, idx) => (
               <div key={idx} className="flex items-center gap-2.5 sm:gap-3">
                 <div className="w-5 h-5 rounded-full bg-[#BDEFE4] text-[#082F5B] flex items-center justify-center font-extrabold text-xs shrink-0 select-none">

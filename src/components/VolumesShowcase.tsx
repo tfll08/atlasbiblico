@@ -18,12 +18,14 @@ const VolumeImageCarousel: React.FC<VolumeCarouselProps> = ({ volume }) => {
   const images = [
     {
       src: volume.imageSrc || '',
+      fallbackSrc: volume.fallbackSrc || '',
       alt: `Capa de ${volume.title} - ${volume.badge}`,
       label: 'Capa do Volume',
       isMap: false
     },
     {
       src: volume.insideMapSrc || volume.imageSrc || '',
+      fallbackSrc: volume.fallbackMapSrc || volume.fallbackSrc || '',
       alt: `Mapa por dentro de ${volume.title}`,
       label: 'Mapa por dentro',
       isMap: true
@@ -53,6 +55,11 @@ const VolumeImageCarousel: React.FC<VolumeCarouselProps> = ({ volume }) => {
           decoding="async"
           referrerPolicy="no-referrer"
           draggable={false}
+          onError={(e) => {
+            if (currentImage.fallbackSrc && e.currentTarget.src !== currentImage.fallbackSrc) {
+              e.currentTarget.src = currentImage.fallbackSrc;
+            }
+          }}
           className="w-full h-full object-contain rounded-xl select-none transition-transform duration-500 group-hover:scale-[1.02]"
         />
 
@@ -134,7 +141,8 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             A COLEÇÃO COMPLETA
           </div>
           <h2 className="mt-3 mx-auto max-w-4xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            4 volumes para consultar e estudar a Bíblia
+            4 volumes para consultar e estudar a{' '}
+            <span className="font-migra italic text-[#C4932F]">Bíblia</span>
           </h2>
           <p className="mt-3.5 mx-auto max-w-2xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
             Escolha o volume relacionado à sua leitura e consulte os lugares, trajetos e contextos daquele período.

@@ -36,10 +36,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ onCtaClick }) => {
         
         {/* Section Header */}
         <div className="text-center">
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-            Perguntas frequentes
-          </div>
-          <h2 className="mt-3 font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-[#173B4D] text-balance break-words">
+          <h2 className="font-heading text-2xl font-bold leading-tight tracking-tight sm:text-4xl text-[#173B4D] text-balance break-words">
             Dúvidas frequentes
           </h2>
           <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Zap } from 'lucide-react';
+import { Eye } from 'lucide-react';
 
 interface PainIdentificationProps {
   onCtaClick?: () => void;
@@ -123,14 +123,14 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
         {/* 1. ESTRUTURA DO CABEÇALHO */}
         <div className="flex flex-col items-center">
           {/* Tag/Badge Superior */}
-          <div className="inline-flex items-center gap-1.5 rounded-full bg-[#BDEFE4] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#082F5B] border border-[#12BFA6]/30 shadow-2xs">
-            <Zap className="h-3.5 w-3.5 text-[#082F5B] fill-[#082F5B] animate-pulse" />
+          <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#E5C158] border border-white/20 shadow-2xs backdrop-blur-xs">
+            <Eye className="h-3.5 w-3.5 text-[#E5C158]" />
             <span>VEJA O MATERIAL POR DENTRO</span>
           </div>
 
           {/* Título da Seção */}
           <h2 className="mt-3.5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-white text-balance break-words">
-            Conheça os mapas que vão acompanhar seu estudo da Bíblia
+            Conheça os <span className="font-migra italic text-[#E5C158]">mapas</span> que vão acompanhar seu estudo da Bíblia
           </h2>
 
           {/* Subtítulo */}

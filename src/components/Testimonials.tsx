@@ -249,15 +249,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
           </div>
 
           <h2 className="mt-3 mx-auto max-w-3xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Veja a experiência de quem já recebeu o Atlas
+            Veja a experiência de quem já recebeu o{' '}
+            <span className="font-migra italic text-[#C4932F]">Atlas</span>
           </h2>
-
-          {/* Social Proof Summary */}
-          <div className="mt-4 flex items-center justify-center">
-            <span className="text-xs sm:text-sm font-semibold text-[#5C6E75]">
-              Depoimentos reais de quem já recebeu o Atlas
-            </span>
-          </div>
         </div>
 
         {/* Carousel Container with lateral blur overlay and controls */}

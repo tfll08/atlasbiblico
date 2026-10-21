@@ -10,6 +10,7 @@ export interface VolumeItem {
   imageSrc?: string;
   insideMapSrc?: string;
   fallbackSrc?: string;
+  fallbackMapSrc?: string;
   coverImageTheme?: 'world' | 'patriarchs' | 'jesus' | 'paul';
   mapHighlights?: string[];
 }

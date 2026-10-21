@@ -6,19 +6,19 @@ export const AccessInstructions: React.FC = () => {
     {
       stepNumber: '01',
       icon: CreditCard,
-      title: '01 — Finalize sua compra',
+      title: 'Finalize sua compra',
       description: 'Informe o e-mail em que deseja receber as instruções de acesso.'
     },
     {
       stepNumber: '02',
       icon: Mail,
-      title: '02 — Receba as instruções por e-mail',
+      title: 'Receba as instruções por e-mail',
       description: 'Após a confirmação do pagamento, você recebe os dados para entrar na área de membros.'
     },
     {
       stepNumber: '03',
       icon: Smartphone,
-      title: '03 — Abra e consulte seus materiais',
+      title: 'Abra e consulte seus materiais',
       description: 'Acesse pelo navegador do celular, tablet ou computador. Se preferir, adicione à tela inicial do celular para abrir como um aplicativo.'
     }
   ];
