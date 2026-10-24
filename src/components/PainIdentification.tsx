@@ -1,5 +1,5 @@
-import React from 'react';
-import { Eye } from 'lucide-react';
+import React, { useState } from 'react';
+import { Eye, ArrowRight } from 'lucide-react';
 
 interface PainIdentificationProps {
   onCtaClick?: () => void;
@@ -12,6 +12,40 @@ interface MarqueeItem {
   alt: string;
   borderColor: string;
 }
+
+interface ReadingTheme {
+  id: string;
+  label: string;
+  volumeBadge: string;
+  text: string;
+}
+
+const READING_THEMES: ReadingTheme[] = [
+  {
+    id: 'paulo',
+    label: 'Viagens de Paulo',
+    volumeBadge: 'Volume 4',
+    text: 'Está lendo sobre as viagens de Paulo? Abra o mapa correspondente no Atlas, localize as cidades mencionadas e acompanhe o percurso enquanto lê sua Bíblia.',
+  },
+  {
+    id: 'jesus',
+    label: 'Caminhos de Jesus',
+    volumeBadge: 'Volume 3',
+    text: 'Está lendo os Evangelhos? Abra o mapa correspondente no Atlas, visualize por quais vilas Jesus passou e compreenda as distâncias reais enquanto lê sua Bíblia.',
+  },
+  {
+    id: 'patriarcas',
+    label: 'Patriarcas',
+    volumeBadge: 'Volume 2',
+    text: 'Está lendo sobre Abraão, Isaque, Jacó ou José? Abra o mapa correspondente no Atlas, acompanhe as rotas pelo deserto e entenda o caminho até a Terra Prometida enquanto lê sua Bíblia.',
+  },
+  {
+    id: 'mundo-biblia',
+    label: 'O Mundo da Bíblia',
+    volumeBadge: 'Volume 1',
+    text: 'Está lendo sobre impérios, nações e cenários do Antigo Testamento? Abra o mapa correspondente no Atlas, localize os territórios e rios e compreenda o contexto geográfico enquanto lê sua Bíblia.',
+  },
+];
 
 const MARQUEE_ITEMS: MarqueeItem[] = [
   {
@@ -116,6 +150,10 @@ const TRIPLE_ROW_1 = [...ROW_1, ...ROW_1, ...ROW_1];
 const TRIPLE_ROW_2 = [...ROW_2, ...ROW_2, ...ROW_2];
 
 export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaClick }) => {
+  const [selectedThemeId, setSelectedThemeId] = useState<string>('paulo');
+
+  const currentTheme = READING_THEMES.find((t) => t.id === selectedThemeId) || READING_THEMES[0];
+
   return (
     <section id="demonstracao-interativa" className="bg-[#173A45] py-16 sm:py-24 text-white overflow-hidden scroll-mt-6 relative">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 text-center">
@@ -212,7 +250,67 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
 
       </div>
 
-      {/* 3. BOTÃO DE AÇÃO PARA A OFERTA */}
+      {/* 3. BLOCO SIMPLIFICADO: COMO USAR DURANTE A LEITURA */}
+      <div className="mt-14 sm:mt-18 mx-auto max-w-4xl px-4 sm:px-6">
+        <div className="relative rounded-3xl bg-white/10 border border-white/20 p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-md text-center">
+          
+          {/* Título */}
+          <h3 className="font-heading text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            Como usar durante a leitura
+          </h3>
+
+          {/* Temas Clicáveis (4 Volumes) */}
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+            {READING_THEMES.map((theme) => {
+              const isSelected = selectedThemeId === theme.id;
+              return (
+                <button
+                  key={theme.id}
+                  onClick={() => setSelectedThemeId(theme.id)}
+                  className={`px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    isSelected
+                      ? 'bg-[#E5C158] text-[#173B4D] font-bold shadow-md scale-105'
+                      : 'bg-white/10 text-white/85 hover:bg-white/20 hover:text-white border border-white/15'
+                  }`}
+                >
+                  {theme.label}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Texto dinâmico que muda conforme o tema escolhido */}
+          <div className="mt-6 mx-auto max-w-2xl rounded-2xl bg-black/20 border border-white/15 p-5 sm:p-6 shadow-inner min-h-[96px] flex items-center justify-center">
+            <p className="text-base sm:text-lg text-white font-medium leading-relaxed transition-opacity duration-300">
+              {currentTheme.text}
+            </p>
+          </div>
+
+          {/* Três passos abaixo: Leia a passagem → Consulte o mapa → Localize os lugares */}
+          <div className="mt-8 pt-6 border-t border-white/15">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5 text-xs sm:text-sm md:text-base font-semibold text-white">
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
+                <span>Leia a passagem</span>
+              </div>
+
+              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0 rotate-90 sm:rotate-0" />
+
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
+                <span>Consulte o mapa</span>
+              </div>
+
+              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0 rotate-90 sm:rotate-0" />
+
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
+                <span>Localize os lugares</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* 4. BOTÃO DE AÇÃO PARA A OFERTA */}
       {onCtaClick && (
         <div className="mt-12 sm:mt-16 flex justify-center px-4">
           <button
