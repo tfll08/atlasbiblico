@@ -287,19 +287,31 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
           </div>
 
           {/* Três passos abaixo: Leia a passagem → Consulte o mapa → Localize os lugares */}
-          <div className="mt-8 pt-6 border-t border-white/15">
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 md:gap-5 text-xs sm:text-sm md:text-base font-semibold text-white">
+          <div className="mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-white/15">
+            {/* Modo Mobile: Em uma única linha de texto, sem caixinhas */}
+            <div className="block sm:hidden text-center">
+              <p className="text-[11px] min-[360px]:text-xs font-semibold text-white/95 leading-normal flex items-center justify-center gap-1.5 min-[360px]:gap-2">
+                <span>Leia a passagem</span>
+                <span className="text-[#E5C158] font-bold select-none">→</span>
+                <span>Consulte o mapa</span>
+                <span className="text-[#E5C158] font-bold select-none">→</span>
+                <span>Localize os lugares</span>
+              </p>
+            </div>
+
+            {/* Modo Desktop / Tablet */}
+            <div className="hidden sm:flex items-center justify-center gap-3 sm:gap-4 md:gap-5 text-xs sm:text-sm md:text-base font-semibold text-white">
               <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
                 <span>Leia a passagem</span>
               </div>
 
-              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0 rotate-90 sm:rotate-0" />
+              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0" />
 
               <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
                 <span>Consulte o mapa</span>
               </div>
 
-              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0 rotate-90 sm:rotate-0" />
+              <ArrowRight className="h-4 w-4 text-[#E5C158] shrink-0" />
 
               <div className="flex items-center gap-2 bg-white/10 px-4 py-2.5 rounded-xl border border-white/15 shadow-2xs">
                 <span>Localize os lugares</span>
