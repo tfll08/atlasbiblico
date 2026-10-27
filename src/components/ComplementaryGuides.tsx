@@ -73,7 +73,7 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                 {/* Price Tag with Slashed Red Price and Green Incluso */}
                 <div className="mt-5 pt-4 border-t border-white/15 flex items-center justify-between">
                   <span className="text-red-300 font-semibold text-sm line-through">
-                    Valor: {guide.originalPrice || (index < 2 ? 'R$ 29,90' : 'R$ 27,90')}
+                    Valor: {guide.originalPrice || (index < 2 ? 'R$ 19,90' : 'R$ 17,90')}
                   </span>
                   <span className="font-bold text-emerald-300 text-xs uppercase tracking-wider bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full">
                     Incluso
@@ -84,12 +84,12 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           ))}
         </div>
 
-        {/* Frase Presente Surpresa */}
+        {/* Frase Material Extra de Revisão */}
         <div className="mt-10 sm:mt-12 text-center">
           <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-4 shadow-md text-white backdrop-blur-xs">
             <Sparkles className="h-4 w-4 text-[#E5C158] shrink-0" />
             <span className="text-sm sm:text-base font-semibold">
-              E mais um presente surpresa disponível na sua área de membros.
+              E você ainda recebe um material extra de revisão dentro da área de membros
             </span>
           </div>
         </div>

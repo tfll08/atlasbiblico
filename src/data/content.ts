@@ -7,7 +7,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'O Mundo da Bíblia',
     subtitle: 'Geografia, Impérios e Regiões das Escrituras',
     phrase: 'Encontre os lugares por trás dos relatos bíblicos.',
-    description: 'Localize cidades, regiões, rios, montanhas e outros lugares presentes nos relatos bíblicos.',
+    description: 'Para localizar cidades, regiões, rios e montanhas enquanto você lê os relatos bíblicos.',
     accentColor: '#1B4958',
     badge: 'Volume 1',
     imageSrc: '/images/volumes/vol-1-cover.webp',
@@ -23,7 +23,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'Os Patriarcas',
     subtitle: 'De Ur dos Caldeus ao Sinai e Entrada em Canaã',
     phrase: 'Acompanhe as jornadas que marcaram a história dos patriarcas.',
-    description: 'Acompanhe as jornadas de Abraão, Isaque, Jacó e José e veja onde os principais acontecimentos ocorreram.',
+    description: 'Para acompanhar visualmente as jornadas de Abraão, Isaque, Jacó e José.',
     accentColor: '#8C4827',
     badge: 'Volume 2',
     imageSrc: '/images/volumes/vol-2-cover.webp',
@@ -39,7 +39,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'Os Caminhos de Jesus',
     subtitle: 'Os Lugares e Trajetos dos Quatro Evangelhos',
     phrase: 'Explore os lugares por onde Jesus passou.',
-    description: 'Visualize cidades, regiões e trajetos ligados à vida e ao ministério de Jesus.',
+    description: 'Para visualizar as cidades e regiões por onde Jesus passou durante seu ministério.',
     accentColor: '#B08830',
     badge: 'Volume 3',
     imageSrc: '/images/volumes/vol-3-cover.webp',
@@ -55,7 +55,7 @@ export const VOLUMES_DATA: VolumeItem[] = [
     title: 'As Viagens de Paulo',
     subtitle: 'As Rotas Missionárias no Mundo Mediterrâneo',
     phrase: 'Acompanhe as viagens missionárias de Paulo.',
-    description: 'Acompanhe as viagens missionárias de Paulo e as cidades por onde ele passou.',
+    description: 'Para seguir as rotas missionárias de Paulo e entender como as cidades se conectavam.',
     accentColor: '#2B5349',
     badge: 'Volume 4',
     imageSrc: '/images/volumes/vol-4-cover.webp',
@@ -122,7 +122,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     imageSrcSm: '/images/bonus-1-sm.webp',
     fallbackSrc: 'https://i.imgur.com/X0Ln8TE.png',
     fillCard: true,
-    originalPrice: 'R$ 29,90'
+    originalPrice: 'R$ 19,90'
   },
   {
     id: 'guide-2',
@@ -135,7 +135,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     imageSrcSm: '/images/bonus-2-sm.webp',
     fallbackSrc: 'https://i.imgur.com/YMDrMLB.png',
     fillCard: true,
-    originalPrice: 'R$ 29,90'
+    originalPrice: 'R$ 19,90'
   },
   {
     id: 'guide-3',
@@ -148,7 +148,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     imageSrcSm: '/images/bonus-3-sm.webp',
     fallbackSrc: 'https://i.imgur.com/cqMjDkR.png',
     fillCard: true,
-    originalPrice: 'R$ 27,90'
+    originalPrice: 'R$ 17,90'
   },
   {
     id: 'guide-4',
@@ -161,7 +161,7 @@ export const COMPLEMENTARY_GUIDES: ComplementaryGuideItem[] = [
     imageSrcSm: '/images/bonus-4-sm.webp',
     fallbackSrc: 'https://i.imgur.com/mBivgv8.png',
     fillCard: true,
-    originalPrice: 'R$ 27,90'
+    originalPrice: 'R$ 17,90'
   }
 ];
 

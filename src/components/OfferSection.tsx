@@ -81,7 +81,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             {[
               '+300 páginas para consulta',
               '4 volumes completos do Atlas Bíblico Visual',
-              '4 guias visuais + presente surpresa',
+              '4 guias visuais + material extra de revisão',
               'Arquivos disponíveis para baixar e imprimir',
               'Acesso pelo celular, tablet ou computador',
               'Área de membros com experiência de app',
