@@ -59,7 +59,7 @@ export const EverythingYouReceive: React.FC<EverythingYouReceiveProps> = ({ onCt
     },
     {
       icon: Layers,
-      title: '+300 páginas de conteúdo visual',
+      title: '+300 páginas visuais de mapas e conteúdos bíblicos para consulta',
       description: 'Material organizado para facilitar a compreensão e a consulta durante o estudo bíblico.'
     }
   ];

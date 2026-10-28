@@ -188,16 +188,21 @@ export const FAQ_DATA: FaqItem[] = [
   },
   {
     id: 'faq-5',
-    question: 'Posso compartilhar os arquivos ou meu acesso?',
-    answer: 'O acesso é individual. Os arquivos e os dados de entrada não podem ser compartilhados. Para indicar o Atlas a outra pessoa, envie o link de compra.'
+    question: 'Os mapas são interativos ou em 3D?',
+    answer: 'Os mapas são materiais visuais ilustrados em PDF, não mapas 3D navegáveis ou interativos. Você pode abrir, ampliar e consultar as páginas pelo celular, tablet ou computador durante seus estudos, aulas e pregações.'
   },
   {
     id: 'faq-6',
+    question: 'O Atlas pertence a alguma denominação cristã?',
+    answer: 'Não. O Atlas Bíblico Visual é um material de estudo não denominacional, com foco em mapas, lugares, jornadas e contextos bíblicos. Pode ser utilizado por cristãos de diferentes denominações.'
+  },
+  {
+    id: 'faq-7',
     question: 'E se o e-mail de acesso não chegar?',
     answer: 'Confira as pastas de spam e promoções. Se não encontrar as instruções após a confirmação do pagamento, entre em contato pelo e-mail suporte@projetoreino.com ou pelo whatsapp.'
   },
   {
-    id: 'faq-7',
+    id: 'faq-8',
     question: 'O pagamento é único? O acesso é vitalício?',
     answer: 'Sim. Você paga uma única vez, sem mensalidade, e recebe acesso vitalício conforme as condições apresentadas nos Termos de Uso.'
   }

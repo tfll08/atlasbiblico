@@ -182,9 +182,21 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
           })}
         </div>
 
+        {/* Frase discreta não denominacional */}
+        <div className="mt-10 sm:mt-12 mx-auto max-w-2xl text-center px-4">
+          <p className="text-xs sm:text-sm text-[#5C6E75] leading-relaxed">
+            <strong className="text-[#173B4D] font-bold block sm:inline">
+              Material de estudo bíblico não denominacional.
+            </strong>{' '}
+            <span>
+              O Atlas é focado na geografia, nos lugares e nos contextos das Escrituras, podendo ser utilizado por cristãos de diferentes denominações.
+            </span>
+          </p>
+        </div>
+
         {/* Section CTA */}
         {onCtaClick && (
-          <div className="mt-12 sm:mt-16 flex justify-center">
+          <div className="mt-8 sm:mt-10 flex justify-center">
             <button
               onClick={onCtaClick}
               className="animate-breathe inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-[#173B4D] px-8 sm:px-12 py-4 text-center text-sm font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#173B4D]/90 shadow-md cursor-pointer"

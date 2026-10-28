@@ -79,7 +79,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
           {/* Lista de Itens com Checkmark Customizado */}
           <div className="space-y-3">
             {[
-              '+300 páginas para consulta',
+              '+300 páginas visuais de mapas e conteúdos bíblicos para consulta',
               '4 volumes completos do Atlas Bíblico Visual',
               '4 guias visuais + material extra de revisão',
               'Arquivos disponíveis para baixar e imprimir',
