@@ -177,23 +177,27 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             </svg>
           </div>
 
-          <img
-            src="/images/hero-bundle.webp"
-            alt="Volumes do Atlas Bíblico Visual"
-            width={1200}
-            height={900}
-            loading="eager"
-            decoding="async"
-            fetchPriority="high"
-            referrerPolicy="no-referrer"
-            draggable={false}
-            onError={(e) => {
-              if (e.currentTarget.src !== 'https://i.imgur.com/GqMNX5T.png') {
-                e.currentTarget.src = 'https://i.imgur.com/GqMNX5T.png';
-              }
-            }}
-            className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-md"
-          />
+          <picture className="w-full max-w-3xl flex justify-center">
+            <source media="(max-width: 640px)" srcSet="/images/hero-bundle-mobile.webp" type="image/webp" />
+            <source media="(min-width: 641px)" srcSet="/images/hero-bundle.webp" type="image/webp" />
+            <img
+              src="/images/hero-bundle.webp"
+              alt="Volumes do Atlas Bíblico Visual"
+              width={1200}
+              height={900}
+              loading="eager"
+              decoding="async"
+              fetchPriority="high"
+              referrerPolicy="no-referrer"
+              draggable={false}
+              onError={(e) => {
+                if (e.currentTarget.src !== 'https://i.imgur.com/GqMNX5T.png') {
+                  e.currentTarget.src = 'https://i.imgur.com/GqMNX5T.png';
+                }
+              }}
+              className="w-full max-w-3xl h-auto object-contain select-none filter drop-shadow-md"
+            />
+          </picture>
         </div>
 
         {/* Subheadline Below Image */}

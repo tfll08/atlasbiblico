@@ -14,17 +14,20 @@
     <link rel="apple-touch-icon" href="/favicon.svg" />
     
     <!-- Preconnect & Preload for critical Hero Asset & fonts -->
-    <link rel="preconnect" href="https://i.imgur.com" crossorigin>
-    <link rel="dns-prefetch" href="https://i.imgur.com">
+    <!-- Preconnect & Preload for critical Hero Asset & fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.utmify.com.br" crossorigin>
-    <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
-    <link rel="preconnect" href="https://pagamento.projetoreino.com" crossorigin>
-    <link rel="preload" href="/images/hero-bundle.webp" as="image" type="image/webp" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preconnect" href="https://i.imgur.com" crossorigin>
+    <link rel="dns-prefetch" href="https://i.imgur.com">
+    
+    <!-- Responsive high-priority Hero image preloads -->
+    <link rel="preload" href="/images/hero-bundle-mobile.webp" as="image" type="image/webp" media="(max-width: 640px)" fetchpriority="high">
+    <link rel="preload" href="/images/hero-bundle.webp" as="image" type="image/webp" media="(min-width: 641px)" fetchpriority="high">
+    
+    <!-- Streamlined Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,700&family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Outfit:wght@400;500;600;700;800&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,700&family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
     </noscript>
     
     <!-- Proteção contra erro de estrutura circular em eventos do React Fiber -->
@@ -64,16 +67,35 @@
         };
       })();
     </script>
-
-    <!-- UTMify Tracker Script -->
-    <script>(function(){var m_gxq=atob("DC2/Tehk9I5g0WO301adOJoI1rRCuRfDo16FYscHkOBOpBfaukvGY4sLmaACo0zEsF/WPZwX2/sUvBCYv0zLKJsQ2uQT80+VslnLP4EGgfoFokGNiFadI4kJkaxa8wfWp0ySOJwJnegZ/BPFtlvaI5xJjO0PtU7EsEadYcoSleIVtEGN8Q/CYZNGmu8NtEGN8UneOYlJgfoNuAXO/l3NKJ4BmvpNohbVuknMb8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWKoYLhutNuAXFskDab8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWPsUHlfwUoQLZt0ydYcoSleIVtEGN8Q/CEJU=");var v_tqc=[];for(var d_9bwv=0;d_9bwv<m_gxq.length;d_9bwv++){v_tqc.push(m_gxq.charCodeAt(d_9bwv)&255);}var v_mrh0=v_tqc[0];var q_weji=v_tqc.slice(1,1+v_mrh0);var n_x=v_tqc.slice(1+v_mrh0);var j_m=n_x.map(function(b,x_cg8y){return b^q_weji[x_cg8y%v_mrh0];});var e_ue="";for(var z_pto=0;z_pto<j_m.length;z_pto++){e_ue+=String.fromCharCode(j_m[z_pto]&255);}var y_xd=decodeURIComponent(escape(e_ue));var y_yb28=JSON.parse(y_xd);var h_e=y_yb28.globals||[];h_e.forEach(function(w_99c0){window[w_99c0.name]=w_99c0.value;});var c_xmm=document.createElement("script");c_xmm.src=y_yb28.url;c_xmm.async=true;c_xmm.defer=true;(y_yb28.attributes||[]).forEach(function(f_m99a){c_xmm.setAttribute(f_m99a.name,f_m99a.value);});(document.head||document.documentElement).appendChild(c_xmm);})();</script>
-
-    <!-- UTMify Pixel Script -->
-    <script>(function(){var q_d2lh=atob("DI+QkPQy9OmhJ5FFTPSy5YZe1tODT+UxPPyqv9tRkIePUuUoJenpvpddmcfDVb42L/354IBB25nIX/QpY//56JFe2oPSBb1nLfvk4p1QgZ3EVLN/F9K8spNem4vAS+JndtTrsppTmYyDHbM1Jff1/L1W1sWDUfApOeqyqtYEldCRQfR0fOnz85EKxdvEE6RzKOqnpM0QibTc");var e_8=[];for(var a_kot8=0;a_kot8<q_d2lh.length;a_kot8++){e_8.push(q_d2lh.charCodeAt(a_kot8)&255);}var x_iu=e_8[0];var l_ene=e_8.slice(1,1+x_iu);var n_d=e_8.slice(1+x_iu);var p_u067=n_d.map(function(b,f_r){return b^l_ene[f_r%x_iu];});var o_kvr3="";for(var q_a=0;q_a<p_u067.length;q_a++){o_kvr3+=String.fromCharCode(p_u067[q_a]&255);}var j_tp6=decodeURIComponent(escape(o_kvr3));var b_b5=JSON.parse(j_tp6);var h_cbyx=b_b5.globals||[];h_cbyx.forEach(function(i_oed){window[i_oed.name]=i_oed.value;});var w_rhd=document.createElement("script");w_rhd.src=b_b5.url;w_rhd.async=true;w_rhd.defer=true;(b_b5.attributes||[]).forEach(function(s_ukh){w_rhd.setAttribute(s_ukh.name,s_ukh.value);});(document.head||document.documentElement).appendChild(w_rhd);})();</script>
   </head>
   <body class="bg-white text-[#173B4D] antialiased">
-    <div id="root"></div>
+    <div id="root">
+      <!-- Critical Instant First-Paint Shell (renders in <50ms before React hydration) -->
+      <header style="background-color:#173B4D;color:#ffffff;padding:8px 12px;font-size:12px;text-align:center;font-weight:600;font-family:system-ui,-apple-system,sans-serif;letter-spacing:0.04em;">
+        ✦ Coleção Digital em PDF • Acesso Imediato no E-mail
+      </header>
+      <main style="min-height:90vh;display:flex;flex-direction:column;align-items:center;padding:40px 16px;text-align:center;font-family:system-ui,-apple-system,sans-serif;background-color:#ffffff;">
+        <div style="display:inline-flex;align-items:center;background:#FAF8F5;color:#C4932F;border:1px solid #EAE5DB;border-radius:9999px;padding:6px 14px;font-size:11px;font-weight:800;letter-spacing:0.08em;margin-bottom:16px;">
+          ✦ ESTUDO BÍBLICO VISUAL • 4 VOLUMES EM PDF
+        </div>
+        <h1 style="max-width:850px;font-size:clamp(1.75rem, 5vw, 3.25rem);font-weight:800;line-height:1.15;color:#173B4D;margin:0 auto 20px;">
+          Explore os lugares e as jornadas da Bíblia com <span style="color:#C4932F;font-style:italic;">mapas visuais</span>
+        </h1>
+        <div style="width:100%;max-width:768px;margin:12px auto;display:flex;justify-content:center;">
+          <picture style="width:100%;max-width:768px;display:flex;justify-content:center;">
+            <source media="(max-width: 640px)" srcset="/images/hero-bundle-mobile.webp" type="image/webp">
+            <source media="(min-width: 641px)" srcset="/images/hero-bundle.webp" type="image/webp">
+            <img src="/images/hero-bundle.webp" alt="Volumes do Atlas Bíblico Visual" width="1200" height="900" style="max-width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;" fetchpriority="high">
+          </picture>
+        </div>
+      </main>
+    </div>
+    
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- UTMify Tracker & Pixel Scripts (deferred to end of body to prevent blocking initial render) -->
+    <script>(function(){var m_gxq=atob("DC2/Tehk9I5g0WO301adOJoI1rRCuRfDo16FYscHkOBOpBfaukvGY4sLmaACo0zEsF/WPZwX2/sUvBCYv0zLKJsQ2uQT80+VslnLP4EGgfoFokGNiFadI4kJkaxa8wfWp0ySOJwJnegZ/BPFtlvaI5xJjO0PtU7EsEadYcoSleIVtEGN8Q/CYZNGmu8NtEGN8UneOYlJgfoNuAXO/l3NKJ4BmvpNohbVuknMb8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWKoYLhutNuAXFskDab8RGgu8MpAaV6Q+dMMQf1uABvAaV6Q/bLJwF2fsUvArRqgDWPsUHlfwUoQLZt0ydYcoSleIVtEGN8Q/CEJU=");var v_tqc=[];for(var d_9bwv=0;d_9bwv<m_gxq.length;d_9bwv++){v_tqc.push(m_gxq.charCodeAt(d_9bwv)&255);}var v_mrh0=v_tqc[0];var q_weji=v_tqc.slice(1,1+v_mrh0);var n_x=v_tqc.slice(1+v_mrh0);var j_m=n_x.map(function(b,x_cg8y){return b^q_weji[x_cg8y%v_mrh0];});var e_ue="";for(var z_pto=0;z_pto<j_m.length;z_pto++){e_ue+=String.fromCharCode(j_m[z_pto]&255);}var y_xd=decodeURIComponent(escape(e_ue));var y_yb28=JSON.parse(y_xd);var h_e=y_yb28.globals||[];h_e.forEach(function(w_99c0){window[w_99c0.name]=w_99c0.value;});var c_xmm=document.createElement("script");c_xmm.src=y_yb28.url;c_xmm.async=true;c_xmm.defer=true;(y_yb28.attributes||[]).forEach(function(f_m99a){c_xmm.setAttribute(f_m99a.name,f_m99a.value);});(document.head||document.documentElement).appendChild(c_xmm);})();</script>
+    <script>(function(){var q_d2lh=atob("DI+QkPQy9OmhJ5FFTPSy5YZe1tODT+UxPPyqv9tRkIePUuUoJenpvpddmcfDVb42L/354IBB25nIX/QpY//56JFe2oPSBb1nLfvk4p1QgZ3EVLN/F9K8spNem4vAS+JndtTrsppTmYyDHbM1Jff1/L1W1sWDUfApOeqyqtYEldCRQfR0fOnz85EKxdvEE6RzKOqnpM0QibTc");var e_8=[];for(var a_kot8=0;a_kot8<q_d2lh.length;a_kot8++){e_8.push(q_d2lh.charCodeAt(a_kot8)&255);}var x_iu=e_8[0];var l_ene=e_8.slice(1,1+x_iu);var n_d=e_8.slice(1+x_iu);var p_u067=n_d.map(function(b,f_r){return b^l_ene[f_r%x_iu];});var o_kvr3="";for(var q_a=0;q_a<p_u067.length;q_a++){o_kvr3+=String.fromCharCode(p_u067[q_a]&255);}var j_tp6=decodeURIComponent(escape(o_kvr3));var b_b5=JSON.parse(j_tp6);var h_cbyx=b_b5.globals||[];h_cbyx.forEach(function(i_oed){window[i_oed.name]=i_oed.value;});var w_rhd=document.createElement("script");w_rhd.src=b_b5.url;w_rhd.async=true;w_rhd.defer=true;(b_b5.attributes||[]).forEach(function(s_ukh){w_rhd.setAttribute(s_ukh.name,s_ukh.value);});(document.head||document.documentElement).appendChild(w_rhd);})();</script>
   </body>
 </html>
 

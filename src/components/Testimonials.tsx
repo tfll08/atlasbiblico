@@ -15,51 +15,57 @@ interface TestimonialImage {
 const TESTIMONIAL_IMAGES: TestimonialImage[] = [
   {
     id: 'depoimento-1',
-    src: '/images/depoimento-1.webp',
-    fallbackSrc: 'https://i.imgur.com/Va6temt.jpeg',
+    src: '/images/depoimentos/depoimento-1.webp',
+    fallbackSrc: 'https://i.imgur.com/ORTcK0u.png',
     alt: 'Depoimento de leitor sobre o Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-2',
-    src: '/images/depoimento-2.webp',
-    fallbackSrc: 'https://i.imgur.com/AU9FO0p.jpeg',
+    src: '/images/depoimentos/depoimento-2.webp',
+    fallbackSrc: 'https://i.imgur.com/OGxgnqP.png',
     alt: 'Feedback sobre os mapas e clareza do Atlas Bíblico Visual',
   },
   {
     id: 'depoimento-3',
-    src: '/images/depoimento-3.webp',
-    fallbackSrc: 'https://i.imgur.com/NocHzLy.jpeg',
+    src: '/images/depoimentos/depoimento-3.webp',
+    fallbackSrc: 'https://i.imgur.com/hYWUK3K.png',
     alt: 'Avaliação da experiência de estudo bíblico com o Atlas',
   },
   {
     id: 'depoimento-4',
-    src: '/images/depoimento-4.webp',
-    fallbackSrc: 'https://i.imgur.com/lAJacRD.jpeg',
+    src: '/images/depoimentos/depoimento-4.webp',
+    fallbackSrc: 'https://i.imgur.com/LYuJ0BM.png',
     alt: 'Comentário sobre a riqueza de detalhes e mapas bíblicos',
   },
   {
     id: 'depoimento-5',
-    src: '/images/depoimento-5.webp',
-    fallbackSrc: 'https://i.imgur.com/12mF9Me.jpeg',
+    src: '/images/depoimentos/depoimento-5.webp',
+    fallbackSrc: 'https://i.imgur.com/jownJmF.png',
     alt: 'Depoimento recomendando o Atlas Bíblico Visual para estudos',
   },
   {
     id: 'depoimento-6',
-    src: '/images/depoimento-6.webp',
-    fallbackSrc: 'https://i.imgur.com/WrJjTyK.jpeg',
+    src: '/images/depoimentos/depoimento-6.webp',
+    fallbackSrc: 'https://i.imgur.com/1SJOrva.png',
     alt: 'Depoimento destacando a riqueza de mapas e estudos bíblicos do Atlas',
   },
   {
     id: 'depoimento-7',
-    src: '/images/depoimento-7.webp',
-    fallbackSrc: 'https://i.imgur.com/sFgNQJP.jpeg',
+    src: '/images/depoimentos/depoimento-7.webp',
+    fallbackSrc: 'https://i.imgur.com/AMBZ3G7.png',
     alt: 'Depoimento sobre a clareza visual e facilidade de entendimento do Atlas',
   },
   {
     id: 'depoimento-8',
-    src: '/images/depoimento-8.webp',
-    fallbackSrc: 'https://i.imgur.com/5Bdb2b0.jpeg',
+    src: '/images/depoimentos/depoimento-8.webp',
+    fallbackSrc: 'https://i.imgur.com/a9OLyvI.png',
     alt: 'Depoimento elogiando a qualidade e profundidade dos mapas do Atlas',
+  },
+  {
+    id: 'depoimento-9',
+    src: '/images/depoimentos/depoimento-9.webp',
+    fallbackSrc: 'https://i.imgur.com/4JUsKQO.png',
+    alt: 'Depoimento sobre a praticidade de consulta durante leituras e pregações',
   },
 ];
 
@@ -75,12 +81,11 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
   const dragStartXRef = useRef(0);
   const dragScrollLeftRef = useRef(0);
 
-  // Create 4 sets for continuous infinite seamless looping
+  // Create 3 sets for continuous infinite seamless looping with 9 cards
   const infiniteTestimonials = [
     ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set0-${idx}` })),
     ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set1-${idx}` })),
     ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set2-${idx}` })),
-    ...TESTIMONIAL_IMAGES.map((item, idx) => ({ ...item, uniqueKey: `set3-${idx}` })),
   ];
 
   // Helper to pause auto scroll on user action and resume after a delay
@@ -114,7 +119,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
     const step = getCardStep();
     const setWidth = step * TESTIMONIAL_IMAGES.length;
 
-    if (container.scrollLeft >= setWidth * 2.6) {
+    if (container.scrollLeft >= setWidth * 1.9) {
       container.scrollLeft -= setWidth;
     }
 
@@ -127,7 +132,7 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
     const step = getCardStep();
     const setWidth = step * TESTIMONIAL_IMAGES.length;
 
-    if (container.scrollLeft <= setWidth * 0.4) {
+    if (container.scrollLeft <= setWidth * 0.1) {
       container.scrollLeft += setWidth;
     }
 
@@ -329,12 +334,12 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                 className="w-[220px] xs:w-[250px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
               >
                 <div className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#C4932F]/40">
-                  <div className="relative aspect-[9/16] w-full bg-[#173A45] flex items-center justify-center overflow-hidden">
+                  <div className="relative aspect-[4/5] w-full bg-[#FAF8F5] flex items-center justify-center overflow-hidden">
                     <img
                       src={item.src}
                       alt={item.alt}
-                      width={1080}
-                      height={1920}
+                      width={600}
+                      height={750}
                       loading="lazy"
                       decoding="async"
                       referrerPolicy="no-referrer"
