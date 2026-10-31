@@ -216,5 +216,14 @@
   animation-play-state: paused;
 }
 
+/* Efeito de folha quadriculada (graph paper) */
+.bg-grid-paper {
+  background-color: #FFFFFF;
+  background-image: 
+    linear-gradient(to right, rgba(23, 59, 77, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(23, 59, 77, 0.08) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
 
 
