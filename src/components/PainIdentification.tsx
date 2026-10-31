@@ -173,7 +173,7 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
 
           {/* Subtítulo */}
           <p className="mt-3.5 mx-auto max-w-2xl text-[0.95rem] sm:text-base md:text-lg leading-relaxed text-[#D1E0E5] text-balance">
-            Veja páginas reais do Atlas, com lugares, jornadas e explicações para consultar durante sua leitura.
+            Veja páginas reais do Atlas e descubra como ele é usado durante a leitura.
           </p>
         </div>
 

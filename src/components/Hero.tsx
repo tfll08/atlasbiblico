@@ -28,11 +28,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Big Editorial Headline */}
         <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[1.65rem] xs:text-[1.9rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.24] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Explore os lugares e as jornadas da{' '}
+          Os{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
-            Bíblia
+            lugares da Bíblia
           </span>{' '}
-          com mapas visuais
+          explicados por mapas, rotas e jornadas
         </h1>
 
         {/* Hero Transparent Image without background or frame */}
@@ -202,9 +202,9 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Subheadline Below Image */}
         <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Uma coleção digital de mapas e guias em PDF, com cidades, rotas e contextos bíblicos organizados para você{' '}
+          Explore mapas, cidades, rotas e jornadas bíblicas em uma coleção visual para{' '}
           <strong className="font-bold text-[#173B4D]">
-            visualizar onde os acontecimentos ocorreram e consultar durante seus estudos, aulas e pregações.
+            consultar durante seus estudos, aulas ou pregações.
           </strong>
         </p>
 

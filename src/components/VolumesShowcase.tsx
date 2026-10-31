@@ -141,11 +141,10 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             A COLEÇÃO COMPLETA
           </div>
           <h2 className="mt-3 mx-auto max-w-4xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            4 volumes para consultar e estudar a{' '}
-            <span className="font-migra italic text-[#C4932F]">Bíblia</span>
+            Uma coleção organizada por grandes <span className="font-migra italic text-[#C4932F]">jornadas bíblicas</span>
           </h2>
           <p className="mt-3.5 mx-auto max-w-2xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-            Escolha o volume relacionado à sua leitura e consulte os lugares, trajetos e contextos daquele período.
+            Em vez de procurar informações espalhadas, escolha o volume relacionado ao trecho que está lendo e consulte o mapa, a rota e o contexto daquele período.
           </p>
         </div>
 
@@ -185,12 +184,7 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
         {/* Frase discreta não denominacional */}
         <div className="mt-10 sm:mt-12 mx-auto max-w-2xl text-center px-4">
           <p className="text-xs sm:text-sm text-[#5C6E75] leading-relaxed">
-            <strong className="text-[#173B4D] font-bold block sm:inline">
-              Material de estudo bíblico não denominacional.
-            </strong>{' '}
-            <span>
-              O Atlas é focado na geografia, nos lugares e nos contextos das Escrituras, podendo ser utilizado por cristãos de diferentes denominações.
-            </span>
+            Material de estudo geográfico e histórico, desenvolvido para cristãos de diferentes denominações.
           </p>
         </div>
 
