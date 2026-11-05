@@ -141,11 +141,8 @@ export const VolumesShowcase: React.FC<VolumesShowcaseProps> = ({ onCtaClick }) 
             A COLEÇÃO COMPLETA
           </div>
           <h2 className="mt-3 mx-auto max-w-4xl font-heading text-2xl font-bold leading-snug tracking-tight sm:text-4xl lg:text-5xl sm:leading-tight text-[#173B4D] text-balance break-words">
-            Uma coleção organizada por grandes <span className="font-migra italic text-[#C4932F]">jornadas bíblicas</span>
+            4 volumes para acompanhar diferentes períodos e <span className="font-migra italic text-[#C4932F]">jornadas da Bíblia</span>
           </h2>
-          <p className="mt-3.5 mx-auto max-w-2xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-            Em vez de procurar informações espalhadas, escolha o volume relacionado ao trecho que está lendo e consulte o mapa, a rota e o contexto daquele período.
-          </p>
         </div>
 
         {/* 4 Volumes Showcase - Grid 2x2 para melhor visualização */}

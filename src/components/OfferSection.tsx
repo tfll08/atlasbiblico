@@ -45,22 +45,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
       <div className="relative z-10 mx-auto max-w-4xl text-center">
         
         {/* 1. CABEÇALHO DA SESSÃO */}
-        {/* Tag/Pill superior com ícone e texto: "Oferta Especial de Lançamento" */}
-        <div className="flex items-center justify-center">
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#FAF8F5] px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-            <Sparkles className="h-3.5 w-3.5 text-[#C4932F]" />
-            <span>OFERTA ESPECIAL</span>
-          </span>
-        </div>
-
-        {/* Título principal em destaque: mantido o atual */}
-        <h2 className="mt-4 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-          Seu Atlas Bíblico Visual <span className="font-migra italic text-[#C4932F]">completo</span>
+        <h2 className="mt-2 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
+          Receba a <span className="font-migra italic text-[#C4932F]">oferta</span> do Atlas Bíblico Visual <span className="font-migra italic text-[#C4932F]">completo</span>
         </h2>
 
         {/* Subtítulo de apoio */}
         <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-          Mapas visuais organizados e quatro bônus para apoiar seu estudo da Bíblia
+          4 volumes + 4 guias + material extra + acesso vitalício
         </p>
 
         {/* 2. CARD PRINCIPAL DE OFERTA */}

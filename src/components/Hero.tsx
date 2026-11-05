@@ -1,11 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Smartphone, CreditCard, Infinity } from 'lucide-react';
 
 interface HeroProps {
   onCtaClick: () => void;
 }
 
+const AUDIENCE_ITEMS = [
+  'quem estuda a Bíblia',
+  'professores de EBD',
+  'líderes e pregadores',
+  'quem prepara aulas e mensagens',
+];
+
 export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
+  const [audienceIndex, setAudienceIndex] = useState(0);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setAudienceIndex((prev) => (prev + 1) % AUDIENCE_ITEMS.length);
+        setIsFading(false);
+      }, 350);
+    }, 2800);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section id="hero" className="bg-white px-3.5 xs:px-4 sm:px-6 pt-8 sm:pt-14 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
@@ -28,11 +50,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Big Editorial Headline */}
         <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[1.65rem] xs:text-[1.9rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.24] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Os lugares e jornadas da{' '}
+          Mapas, rotas e lugares da{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
             Bíblia
           </span>{' '}
-          explicados com mapas e rotas visuais
+          organizados em uma coleção visual
         </h1>
 
         {/* Hero Transparent Image without background or frame */}
@@ -202,10 +224,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Subheadline Below Image */}
         <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Explore mapas, cidades, rotas e jornadas bíblicas em uma coleção visual para{' '}
-          <strong className="font-bold text-[#173B4D]">
-            consultar durante seus estudos, aulas ou pregações.
-          </strong>
+          Consulte lugares, caminhos e contextos bíblicos durante seus estudos, aulas ou pregações
         </p>
 
         {/* Primary CTA */}
@@ -235,10 +254,22 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </li>
         </ul>
 
-        {/* Discreet access phrase */}
-        <p className="mt-3 sm:mt-4 text-xs sm:text-sm text-muted-foreground/75 font-medium tracking-wide">
-          Acesse no celular, tablet ou computador.
-        </p>
+        {/* Dynamic Rotating Audience Line */}
+        <div className="mt-4 sm:mt-5 flex items-center justify-center">
+          <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#FAF8F5] border border-[#EAE5DB] shadow-2xs">
+            <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#5C6E75] shrink-0">
+              Feito para
+            </span>
+            <span className="text-[#C4932F] font-bold select-none text-xs sm:text-sm">→</span>
+            <span
+              className={`font-migra italic font-bold text-[#173B4D] text-sm sm:text-base transition-all duration-300 min-w-[170px] sm:min-w-[210px] text-left ${
+                isFading ? 'opacity-0 -translate-y-0.5' : 'opacity-100 translate-y-0'
+              }`}
+            >
+              {AUDIENCE_ITEMS[audienceIndex]}
+            </span>
+          </div>
+        </div>
 
       </div>
     </section>
