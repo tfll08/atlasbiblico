@@ -67,6 +67,12 @@ const TESTIMONIAL_IMAGES: TestimonialImage[] = [
     fallbackSrc: 'https://i.imgur.com/4JUsKQO.png',
     alt: 'Depoimento sobre a praticidade de consulta durante leituras e pregações',
   },
+  {
+    id: 'depoimento-10',
+    src: '/images/depoimentos/depoimento-10.webp',
+    fallbackSrc: 'https://i.imgur.com/WmPiCud.jpeg',
+    alt: 'Depoimento de leitor recomendando o Atlas Bíblico Visual',
+  },
 ];
 
 export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {

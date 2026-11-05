@@ -120,7 +120,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
                 'Acesso pelo celular, tablet ou computador',
                 'Área de membros com experiência de app',
                 'Acesso liberado após a confirmação do pagamento',
-                'Acesso vitalício',
+                'Acesso vitalício + Atualizações',
               ].map((text, idx) => (
                 <div key={idx} className="flex items-center gap-2.5 sm:gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#173B4D] text-[#E5C158] flex items-center justify-center font-extrabold text-xs shrink-0 select-none shadow-2xs">
