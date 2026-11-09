@@ -50,11 +50,11 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Big Editorial Headline */}
         <h1 className="mx-auto w-full max-w-4xl sm:max-w-5xl font-heading text-[1.65rem] xs:text-[1.9rem] sm:text-4xl md:text-5xl lg:text-[3.25rem] font-bold leading-[1.24] sm:leading-[1.18] tracking-tight text-foreground text-balance">
-          Os lugares e as jornadas da{' '}
+          Entenda os lugares e as jornadas da{' '}
           <span className="font-normal normal-case text-terracotta font-migra italic">
             Bíblia
           </span>{' '}
-          em mapas visuais
+          com mapas visuais
         </h1>
 
         {/* Hero Transparent Image without background or frame */}

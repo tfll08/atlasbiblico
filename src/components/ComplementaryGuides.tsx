@@ -31,10 +31,10 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
             <div
               key={guide.id}
               id={`complementary-${guide.id}`}
-              className="overflow-hidden rounded-2xl bg-white/10 border border-white/15 shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.13] hover:border-white/25 relative text-white backdrop-blur-xs"
+              className="overflow-hidden rounded-2xl bg-white border border-[#EAE5DB] shadow-xl flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:border-[#D8AC4F]/50 relative text-[#173B4D]"
             >
               {/* Image & Bonus Badge Container */}
-              <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-white/15 bg-black/20">
+              <div className="relative w-full aspect-[1586/992] overflow-hidden border-b border-[#EAE5DB] bg-[#FAF8F5]">
                 <img
                   src={guide.imageSrc}
                   srcSet={guide.imageSrcSm ? `${guide.imageSrcSm} 640w, ${guide.imageSrc} 1200w` : undefined}
@@ -54,28 +54,28 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
                   }}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-[1.02]"
                 />
-                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D]/90 backdrop-blur-xs px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10 border border-white/20">
+                <div className="absolute top-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-[#173B4D] px-3 py-1 text-xs font-bold uppercase tracking-wider text-white shadow-md z-10 border border-white/20">
                   <Sparkles className="h-3 w-3 text-[#E5C158]" />
                   <span>Bônus {index + 1}</span>
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-6 flex-1 flex flex-col justify-between bg-white">
                 <div>
-                  <h3 className="font-heading text-lg font-bold tracking-tight text-white">
+                  <h3 className="font-heading text-lg sm:text-xl font-bold tracking-tight text-[#173B4D]">
                     {guide.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[#D1E0E5]">
+                  <p className="mt-2 text-sm leading-relaxed text-[#5C6E75]">
                     {guide.description}
                   </p>
                 </div>
 
                 {/* Price Tag with Slashed Red Price and Green Incluso */}
-                <div className="mt-5 pt-4 border-t border-white/15 flex items-center justify-between">
-                  <span className="text-red-300 font-semibold text-sm line-through">
+                <div className="mt-5 pt-4 border-t border-[#EAE5DB] flex items-center justify-between">
+                  <span className="text-rose-600 font-semibold text-sm line-through">
                     Valor: {guide.originalPrice || (index < 2 ? 'R$ 19,90' : 'R$ 17,90')}
                   </span>
-                  <span className="font-bold text-emerald-300 text-xs uppercase tracking-wider bg-emerald-500/20 border border-emerald-400/30 px-3 py-1 rounded-full">
+                  <span className="font-bold text-emerald-700 text-xs uppercase tracking-wider bg-emerald-50 border border-emerald-300 px-3 py-1 rounded-full shadow-2xs">
                     Incluso
                   </span>
                 </div>
