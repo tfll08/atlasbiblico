@@ -155,9 +155,9 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
             {TRIPLE_ROW_1.map((item, idx) => (
               <div
                 key={`row1-${item.id}-${idx}`}
-                className={`w-[240px] sm:w-[270px] shrink-0 bg-white rounded-[2.5rem] p-3 sm:p-4 border-2 ${item.borderColor} transition-all duration-300 hover:-translate-y-1 hover:border-[#12BFA6] hover:shadow-xl group cursor-pointer`}
+                className={`w-[245px] sm:w-[280px] shrink-0 bg-white rounded-2xl p-1.5 sm:p-2 border-2 ${item.borderColor} transition-all duration-300 hover:-translate-y-1 hover:border-[#12BFA6] hover:shadow-xl group cursor-pointer`}
               >
-                <div className="relative aspect-[3/4] w-full rounded-2xl bg-[#FAFAF9] border border-black/5 p-2 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-[3/4] w-full rounded-xl bg-[#FAFAF9] border border-black/5 p-1 flex items-center justify-center overflow-hidden">
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -172,7 +172,7 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
                         e.currentTarget.src = item.fallbackSrc;
                       }
                     }}
-                    className="w-full h-full object-contain rounded-xl select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="w-full h-full object-contain rounded-lg select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               </div>
@@ -186,9 +186,9 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
             {TRIPLE_ROW_2.map((item, idx) => (
               <div
                 key={`row2-${item.id}-${idx}`}
-                className={`w-[240px] sm:w-[270px] shrink-0 bg-white rounded-[2.5rem] p-3 sm:p-4 border-2 ${item.borderColor} transition-all duration-300 hover:-translate-y-1 hover:border-[#12BFA6] hover:shadow-xl group cursor-pointer`}
+                className={`w-[245px] sm:w-[280px] shrink-0 bg-white rounded-2xl p-1.5 sm:p-2 border-2 ${item.borderColor} transition-all duration-300 hover:-translate-y-1 hover:border-[#12BFA6] hover:shadow-xl group cursor-pointer`}
               >
-                <div className="relative aspect-[3/4] w-full rounded-2xl bg-[#FAFAF9] border border-black/5 p-2 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-[3/4] w-full rounded-xl bg-[#FAFAF9] border border-black/5 p-1 flex items-center justify-center overflow-hidden">
                   <img
                     src={item.src}
                     alt={item.alt}
@@ -203,19 +203,12 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
                         e.currentTarget.src = item.fallbackSrc;
                       }
                     }}
-                    className="w-full h-full object-contain rounded-xl select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="w-full h-full object-contain rounded-lg select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.03]"
                   />
                 </div>
               </div>
             ))}
           </div>
-        </div>
-
-        {/* Legenda discreta abaixo do carrossel */}
-        <div className="mt-4 sm:mt-5 text-center px-4">
-          <p className="text-xs sm:text-sm text-[#D1E0E5]/75 font-medium tracking-wide">
-            Contexto visual com referências para consulta
-          </p>
         </div>
 
       </div>

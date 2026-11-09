@@ -223,8 +223,8 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
         </div>
 
         {/* Subheadline Below Image */}
-        <p className="mx-auto mt-6 sm:mt-7 max-w-2xl text-[1rem] xs:text-[1.05rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Localize cidades, regiões e rotas para entender onde os relatos aconteceram e como cada jornada se conecta
+        <p className="mx-auto mt-6 sm:mt-7 max-w-2xl sm:max-w-3xl text-[0.95rem] xs:text-[1rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
+          Uma coleção digital de mapas e páginas ilustradas para você visualizar onde as histórias bíblicas aconteceram e os caminhos percorridos pelos personagens. Consulte junto com sua Bíblia e compreenda melhor o contexto do que você lê.
         </p>
 
         {/* Primary CTA */}

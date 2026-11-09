@@ -2,9 +2,10 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
 import { PainIdentification } from './components/PainIdentification';
-import { VolumesShowcase } from './components/VolumesShowcase';
-import { ComplementaryGuides } from './components/ComplementaryGuides';
+import { BenefitsSection } from './components/BenefitsSection';
 import { Testimonials } from './components/Testimonials';
+import { WhatYouReceive } from './components/WhatYouReceive';
+import { ComplementaryGuides } from './components/ComplementaryGuides';
 import { OfferSection } from './components/OfferSection';
 import { Warranty } from './components/Warranty';
 import { AccessInstructions } from './components/AccessInstructions';
@@ -123,16 +124,19 @@ export default function App() {
         {/* 2. DEMONSTRAÇÃO INTERATIVA - PRÉVIAS REAIS (Azul) - Leva à oferta */}
         <PainIdentification onCtaClick={handleScrollToOffer} />
 
-        {/* 3. COLEÇÃO COM OS 4 VOLUMES (Branco) - Leva à oferta */}
-        <VolumesShowcase onCtaClick={handleScrollToOffer} />
+        {/* 3. SESSÃO DE BENEFÍCIOS (Nova) - Leva à oferta */}
+        <BenefitsSection onCtaClick={handleScrollToOffer} />
 
-        {/* 4. BÔNUS COMPLEMENTARES (Azul) - Leva à oferta */}
-        <ComplementaryGuides onCtaClick={handleScrollToOffer} />
-
-        {/* 5. DEPOIMENTOS EM CARROSSEL (Branco) - Leva à oferta */}
+        {/* 4. DEPOIMENTOS EM CARROSSEL - Leva à oferta */}
         <Testimonials onCtaClick={handleScrollToOffer} />
 
-        {/* 6. OFERTA COMPLETA (Azul) - Checkout direto */}
+        {/* 5. O QUE VOCÊ VAI RECEBER (4 Volumes + Mockup) - Leva à oferta */}
+        <WhatYouReceive onCtaClick={handleScrollToOffer} />
+
+        {/* 6. BÔNUS COMPLEMENTARES (4 Guias Visuais) - Leva à oferta */}
+        <ComplementaryGuides onCtaClick={handleScrollToOffer} />
+
+        {/* 7. OFERTA COMPLETA - Checkout direto */}
         <OfferSection />
 
         {/* 7. GARANTIA INCONDICIONAL DE 7 DIAS (Branco) */}
