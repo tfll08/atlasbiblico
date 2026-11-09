@@ -40,7 +40,7 @@ export const BenefitsSection: React.FC<BenefitsSectionProps> = ({ onCtaClick }) 
         {/* Cabeçalho da Seção */}
         <div className="text-center">
           <div className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-[#C4932F] border border-[#EAE5DB] shadow-2xs">
-            <span>BENEFÍCIOS DA COLEÇÃO</span>
+            <span>BENEFÍCIOS DO ATLAS</span>
           </div>
 
           <h2 className="mt-3.5 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold leading-snug tracking-tight text-[#173B4D] text-balance break-words">
