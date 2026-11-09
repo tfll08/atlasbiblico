@@ -211,6 +211,13 @@ export const PainIdentification: React.FC<PainIdentificationProps> = ({ onCtaCli
           </div>
         </div>
 
+        {/* Legenda discreta abaixo do carrossel */}
+        <div className="mt-4 sm:mt-5 text-center px-4">
+          <p className="text-xs sm:text-sm text-[#D1E0E5]/75 font-medium tracking-wide">
+            Contexto visual com referências para consulta
+          </p>
+        </div>
+
       </div>
 
       {/* 3. FLUXO DIRETO DE LEITURA */}
