@@ -66,12 +66,6 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
             </span>
           </div>
 
-          {/* Frase de apoio interna */}
-          <div className="pt-2 sm:pt-1 text-center">
-            <p className="text-xs sm:text-sm font-semibold uppercase tracking-[0.16em] text-[#C4932F]">
-              Seus mapas e os 4 bônus em um único acesso
-            </p>
-          </div>
 
           {/* MOCKUP DO PRODUTO com hover sutil e lazy loading */}
           <div className="my-6 sm:my-8 w-full flex justify-center">

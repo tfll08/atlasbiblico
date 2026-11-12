@@ -32,16 +32,9 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
     <section id="hero" className="bg-white px-3.5 xs:px-4 sm:px-6 pt-8 sm:pt-14 pb-16 sm:pb-24">
       <div className="mx-auto max-w-6xl text-center">
         
-        {/* Product Brand with Logo above Headline */}
+        {/* Product Brand / Pill above Headline */}
         <div className="mb-5 sm:mb-7 flex items-center justify-center">
-          <div className="inline-flex items-center gap-2.5 rounded-full bg-[#FAF8F5] px-4 sm:px-5 py-1.5 sm:py-2 border border-[#EAE5DB] shadow-2xs">
-            <img 
-              src="/favicon.svg" 
-              alt="Logo Atlas Bíblico Visual" 
-              width={24}
-              height={24}
-              className="h-4 w-4 sm:h-5 sm:w-5 rounded-md object-contain shrink-0" 
-            />
+          <div className="inline-flex items-center rounded-full bg-[#FAF8F5] px-4 sm:px-5 py-1.5 sm:py-2 border border-[#EAE5DB] shadow-2xs">
             <span className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#173B4D]">
               PARA ESTUDAR A BÍBLIA COM MAIS CONTEXTO
             </span>
