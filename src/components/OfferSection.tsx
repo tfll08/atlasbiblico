@@ -46,12 +46,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
         
         {/* 1. CABEÇALHO DA SESSÃO */}
         <h2 className="mt-2 mx-auto max-w-3xl font-heading text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-[#173B4D] text-balance break-words">
-          Receba a <span className="font-migra italic text-[#C4932F]">oferta</span> do Atlas Bíblico Visual <span className="font-migra italic text-[#C4932F]">completo</span>
+          Tenha o Atlas completo para consultar sempre que estudar a{' '}
+          <span className="font-migra italic text-[#C4932F]">Bíblia</span>
         </h2>
 
         {/* Subtítulo de apoio */}
-        <p className="mt-3 mx-auto max-w-xl text-[0.95rem] sm:text-base text-[#5C6E75] leading-relaxed text-balance">
-          4 volumes + 4 guias + material extra + acesso vitalício
+        <p className="mt-3 mx-auto max-w-xl text-xs sm:text-sm font-bold uppercase tracking-[0.12em] text-[#C4932F] leading-relaxed text-balance">
+          4 VOLUMES + 4 GUIAS + QUIZ BÍBLICO + ACESSO VITALÍCIO
         </p>
 
         {/* 2. CARD PRINCIPAL DE OFERTA */}
@@ -106,7 +107,7 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               {[
                 '+300 páginas visuais de mapas e conteúdos bíblicos para consulta',
                 '4 volumes completos do Atlas Bíblico Visual',
-                '4 guias visuais + material extra de revisão',
+                '4 guias visuais + Quiz Bíblico Visual',
                 'Arquivos disponíveis para baixar e imprimir',
                 'Acesso pelo celular, tablet ou computador',
                 'Área de membros com experiência de app',
@@ -144,13 +145,13 @@ export const OfferSection: React.FC<OfferSectionProps> = ({ onCtaClick }) => {
               </span>
             </div>
 
-            {/* Preço final em tipografia bem grande e pesada: "R$ 39" */}
+            {/* Preço final em tipografia bem grande e pesada: "R$ 45" */}
             <div className="mt-2 flex items-baseline justify-center gap-2 whitespace-nowrap">
               <span className="text-3xl sm:text-4xl lg:text-5xl font-bold accent-serif text-[#C4932F] self-end mb-2 sm:mb-4">
                 R$
               </span>
               <span className="text-7xl sm:text-8xl lg:text-9xl font-black tracking-tight leading-none text-[#173B4D]">
-                39
+                45
               </span>
             </div>
 

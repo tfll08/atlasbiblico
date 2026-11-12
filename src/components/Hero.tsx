@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               className="h-4 w-4 sm:h-5 sm:w-5 rounded-md object-contain shrink-0" 
             />
             <span className="font-heading text-xs sm:text-sm font-bold uppercase tracking-[0.16em] text-[#173B4D]">
-              Atlas Bíblico Visual
+              PARA ESTUDAR A BÍBLIA COM MAIS CONTEXTO
             </span>
           </div>
         </div>

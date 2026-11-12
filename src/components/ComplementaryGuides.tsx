@@ -84,12 +84,18 @@ export const ComplementaryGuides: React.FC<ComplementaryGuidesProps> = ({ onCtaC
           ))}
         </div>
 
-        {/* Frase Material Extra de Revisão */}
+        {/* Frase Quiz Bíblico Visual */}
         <div className="mt-10 sm:mt-12 text-center">
-          <div className="inline-flex items-center gap-2.5 rounded-xl bg-white/10 border border-white/20 px-6 py-4 shadow-md text-white backdrop-blur-xs">
-            <Sparkles className="h-4 w-4 text-[#E5C158] shrink-0" />
-            <span className="text-sm sm:text-base font-semibold">
-              E você ainda recebe um material extra de revisão dentro da área de membros
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 rounded-2xl bg-white/10 border border-white/20 px-6 sm:px-8 py-4 shadow-md text-white backdrop-blur-xs">
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-[#E5C158] shrink-0" />
+              <span className="text-sm sm:text-base font-bold text-[#E5C158]">
+                Quiz Bíblico Visual
+              </span>
+            </div>
+            <span className="hidden sm:inline text-white/40">•</span>
+            <span className="text-xs sm:text-sm md:text-base font-medium text-white/95">
+              Teste seus conhecimentos e revise o que estudou
             </span>
           </div>
         </div>
