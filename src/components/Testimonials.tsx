@@ -10,6 +10,7 @@ interface TestimonialImage {
   src: string;
   fallbackSrc?: string;
   alt: string;
+  fit?: 'cover' | 'contain';
 }
 
 const TESTIMONIAL_IMAGES: TestimonialImage[] = [
@@ -72,6 +73,13 @@ const TESTIMONIAL_IMAGES: TestimonialImage[] = [
     src: '/images/depoimentos/depoimento-10.webp',
     fallbackSrc: 'https://i.imgur.com/WmPiCud.jpeg',
     alt: 'Depoimento de leitor recomendando o Atlas Bíblico Visual',
+  },
+  {
+    id: 'depoimento-11',
+    src: '/images/depoimentos/depoimento-11.png',
+    fallbackSrc: 'https://i.imgur.com/R6jinS7.png',
+    alt: 'Depoimento de compra da leitora Gilka sobre o Atlas Bíblico Visual',
+    fit: 'contain',
   },
 ];
 
@@ -340,7 +348,11 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                 className="w-[220px] xs:w-[250px] sm:w-[280px] md:w-[300px] shrink-0 select-none group"
               >
                 <div className="overflow-hidden rounded-2xl bg-[#FAF8F5] border border-[#EAE5DB] shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-1 hover:border-[#C4932F]/40">
-                  <div className="relative aspect-[4/5] w-full bg-[#FAF8F5] flex items-center justify-center overflow-hidden">
+                  <div
+                    className={`relative aspect-[4/5] w-full flex items-center justify-center overflow-hidden ${
+                      item.fit === 'contain' ? 'bg-white p-2.5 sm:p-3' : 'bg-[#FAF8F5]'
+                    }`}
+                  >
                     <img
                       src={item.src}
                       alt={item.alt}
@@ -356,7 +368,9 @@ export const Testimonials: React.FC<TestimonialsProps> = ({ onCtaClick }) => {
                           target.src = item.fallbackSrc;
                         }
                       }}
-                      className="w-full h-full object-cover select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.02]"
+                      className={`w-full h-full select-none pointer-events-none transition-transform duration-500 group-hover:scale-[1.02] ${
+                        item.fit === 'contain' ? 'object-contain' : 'object-cover'
+                      }`}
                     />
                   </div>
                 </div>
