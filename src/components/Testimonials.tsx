@@ -76,10 +76,9 @@ const TESTIMONIAL_IMAGES: TestimonialImage[] = [
   },
   {
     id: 'depoimento-11',
-    src: '/images/depoimentos/depoimento-11.png',
-    fallbackSrc: 'https://i.imgur.com/R6jinS7.png',
-    alt: 'Depoimento de compra da leitora Gilka sobre o Atlas Bíblico Visual',
-    fit: 'contain',
+    src: '/images/depoimentos/depoimento-11.png?v=2',
+    fallbackSrc: 'https://i.imgur.com/4EnNzHw.png',
+    alt: 'Depoimento da leitora Gilka recomendando o Atlas Bíblico Visual para a família',
   },
 ];
 
