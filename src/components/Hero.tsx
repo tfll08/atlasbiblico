@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Smartphone, CreditCard, Infinity } from 'lucide-react';
 
 interface HeroProps {
   onCtaClick: () => void;
@@ -217,7 +216,14 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
 
         {/* Subheadline Below Image */}
         <p className="mx-auto mt-6 sm:mt-7 max-w-2xl sm:max-w-3xl text-[0.95rem] xs:text-[1rem] sm:text-lg leading-relaxed text-muted-foreground text-balance">
-          Uma coleção digital de mapas e páginas ilustradas para você visualizar onde as histórias bíblicas aconteceram e os caminhos percorridos pelos personagens. Consulte junto com sua Bíblia e compreenda melhor o contexto do que você lê.
+          Uma coleção digital de mapas e páginas ilustradas para você{' '}
+          <strong className="font-semibold text-[#173B4D]">
+            visualizar onde as histórias bíblicas aconteceram
+          </strong>{' '}
+          e os caminhos percorridos pelos personagens. Consulte junto com sua Bíblia e{' '}
+          <strong className="font-semibold text-[#173B4D] underline decoration-[#C85A32]/50 decoration-2 underline-offset-4">
+            compreenda melhor o contexto do que você lê
+          </strong>.
         </p>
 
         {/* Primary CTA */}
@@ -231,24 +237,8 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
           </button>
         </div>
 
-        {/* Features List */}
-        <ul className="mx-auto mt-6 flex max-w-2xl flex-col items-center justify-center gap-3 text-sm text-muted-foreground sm:flex-row sm:gap-8">
-          <li className="flex items-center gap-2">
-            <Smartphone className="h-4 w-4 shrink-0 text-gold" />
-            <span>Material 100% digital</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <CreditCard className="h-4 w-4 shrink-0 text-gold" />
-            <span>Pagamento único</span>
-          </li>
-          <li className="flex items-center gap-2">
-            <Infinity className="h-4 w-4 shrink-0 text-gold" />
-            <span>Acesso vitalício</span>
-          </li>
-        </ul>
-
         {/* Dynamic Rotating Audience Line */}
-        <div className="mt-4 sm:mt-5 flex items-center justify-center">
+        <div className="mt-6 sm:mt-7 flex items-center justify-center">
           <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#FAF8F5] border border-[#EAE5DB] shadow-2xs">
             <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#5C6E75] shrink-0">
               Feito para

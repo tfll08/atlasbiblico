@@ -1,6 +1,7 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { TopBanner } from './components/TopBanner';
 import { Hero } from './components/Hero';
+import { FeatureStrip } from './components/FeatureStrip';
 import { PainIdentification } from './components/PainIdentification';
 import { BenefitsSection } from './components/BenefitsSection';
 import { Testimonials } from './components/Testimonials';
@@ -120,6 +121,9 @@ export default function App() {
       <main className="flex-1 w-full">
         {/* 1. HERO (Branco) - Leva à oferta */}
         <Hero onCtaClick={handleScrollToOffer} />
+
+        {/* TARJA DE DESTAQUES (Terracota) */}
+        <FeatureStrip />
 
         {/* 2. DEMONSTRAÇÃO INTERATIVA - PRÉVIAS REAIS (Azul) - Leva à oferta */}
         <PainIdentification onCtaClick={handleScrollToOffer} />
